@@ -1,6 +1,6 @@
 package Model.test;
 
-import IO.MyDecompressorInputStream;
+import Model.IO.MyDecompressorInputStream;
 import Model.Client.Client;
 import Model.Client.IClientStrategy;
 import Model.Server.Server;

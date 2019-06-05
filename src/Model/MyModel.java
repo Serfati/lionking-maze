@@ -48,7 +48,7 @@ public class MyModel extends Observable implements IModel {
         return mazeSolutionArr;
     }
 
-    private void startServers() {
+    public void startServers() {
         serverMazeGenerator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
         serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
         serverMazeGenerator.start();

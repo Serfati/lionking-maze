@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import View.MazeDisplayer?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" onKeyPressed="#KeyPressed" stylesheets="View.css"
-            xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="View.View">
+            xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="View.MyViewController">
     <left>
         <VBox prefHeight="200.0" prefWidth="178.0" spacing="5.0" BorderPane.alignment="CENTER">
             <children>
@@ -93,8 +93,8 @@
         <Pane BorderPane.alignment="CENTER">
             <children>
                 <MazeDisplayer fx:id="mazeDisplayer" height="600.0"
-                               imageFileNameCharacter="resources/Images/character1.jpg"
-                               imageFileNameWall="resources/Images/wall3.jpg" onMouseClicked="#mouseClicked"
+                               imageFileNameCharacter="resources/Images/moveMe.jpeg"
+                               imageFileNameWall="resources/Images/block.jpeg" onMouseClicked="#mouseClicked"
                                width="600.0"/>
             </children>
             <padding>

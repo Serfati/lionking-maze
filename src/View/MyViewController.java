@@ -21,7 +21,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 @SuppressWarnings("ALL")
-public class View implements Observer, IView {
+public class MyViewController implements Observer, IView {
 
     public MazeDisplayer mazeDisplayer;
     public javafx.scene.control.TextField txtfld_rowsNum;
@@ -159,7 +159,5 @@ public class View implements Observer, IView {
     public void mouseClicked(MouseEvent mouseEvent) {
         this.mazeDisplayer.requestFocus();
     }
-
-    //endregion
 
 }

@@ -1,6 +1,6 @@
 package Model.algorithms.mazeGenerators;
 
-import algorithms.search.MazeState;
+import Model.algorithms.search.MazeState;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  *  @author Serfati                                                           *
  *  @version 1.7                                                              *
  *  @since 31-Mar-19                                                          *
- *  @see algorithms.mazeGenerators                                            *
+ *  @see Model.algorithms.mazeGenerators                                            *
  *                                                                            *
  ******************************************************************************/
 
