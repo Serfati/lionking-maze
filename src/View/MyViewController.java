@@ -1,6 +1,7 @@
 package View;
 
 import ViewModel.MyViewModel;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -11,6 +12,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -19,9 +22,10 @@ import javafx.stage.Stage;
 
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Optional;
 
 @SuppressWarnings("ALL")
-public class View implements Observer, IView {
+public class MyViewController implements Observer, IView {
 
     public MazeDisplayer mazeDisplayer;
     public javafx.scene.control.TextField txtfld_rowsNum;
@@ -139,6 +143,22 @@ public class View implements Observer, IView {
                 System.out.println("Height: "+newSceneHeight);
             }
         });
+    }
+
+    public void exitCorrectly() {
+        Alert alert = new Alert(Alert.AlertType.NONE);
+        ButtonType leaveButton = new ButtonType("Leave", ButtonBar.ButtonData.YES);
+        ButtonType stayButton = new ButtonType("Stay", ButtonBar.ButtonData.NO);
+        alert.getButtonTypes().setAll(stayButton, leaveButton);
+        alert.setContentText("Are you sure you want to exit??");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == leaveButton) {
+            // ... user chose Leave
+            // Close program
+            viewModel.closeModel();
+            Platform.exit();
+        } else
+            alert.close();
     }
 
     public void About(ActionEvent actionEvent) {

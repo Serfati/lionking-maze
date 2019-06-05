@@ -1,8 +1,7 @@
 package Model.test;
-
-import IO.MyDecompressorInputStream;
 import Model.Client.Client;
 import Model.Client.IClientStrategy;
+import Model.IO.MyDecompressorInputStream;
 import Model.Server.Server;
 import Model.Server.ServerStrategyGenerateMaze;
 import Model.Server.ServerStrategySolveSearchProblem;

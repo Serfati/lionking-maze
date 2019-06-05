@@ -1,7 +1,7 @@
 package Model.test;
 
-import IO.MyCompressorOutputStream;
-import IO.MyDecompressorInputStream;
+import Model.IO.MyCompressorOutputStream;
+import Model.IO.MyDecompressorInputStream;
 import Model.algorithms.mazeGenerators.AMazeGenerator;
 import Model.algorithms.mazeGenerators.Maze;
 import Model.algorithms.mazeGenerators.MyMazeGenerator;

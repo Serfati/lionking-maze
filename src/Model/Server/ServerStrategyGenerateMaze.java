@@ -1,6 +1,6 @@
 package Model.Server;
 
-import IO.MyCompressorOutputStream;
+import Model.IO.MyCompressorOutputStream;
 import Model.algorithms.mazeGenerators.IMazeGenerator;
 import Model.algorithms.mazeGenerators.Maze;
 

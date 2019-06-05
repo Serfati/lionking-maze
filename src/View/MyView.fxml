@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import View.MazeDisplayer?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" onKeyPressed="#KeyPressed" stylesheets="View.css"
-            xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="View.View">
+            xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="View.MyViewController">
     <left>
         <VBox prefHeight="200.0" prefWidth="178.0" spacing="5.0" BorderPane.alignment="CENTER">
             <children>
