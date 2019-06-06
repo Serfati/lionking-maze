@@ -7,9 +7,14 @@ import java.util.Observer;
 
 public class MyViewController implements IView, Observer {
 
+    public javafx.scene.control.Label curr_row;
+    public javafx.scene.control.Label curr_col;
+
     private MyViewModel viewModel;
     private NewView newMaze;
     private PropertiesView propertiesMaze;
+
+
 
     @Override
     public void displayMaze(int[][] maze) {
@@ -26,6 +31,14 @@ public class MyViewController implements IView, Observer {
     }
 
     public void SaveMyGame(){
+
+    }
+
+    public void soundMouseClicked(){
+
+    }
+
+    public void solveMaze(){
 
     }
 
