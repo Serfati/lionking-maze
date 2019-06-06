@@ -16,7 +16,7 @@
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#genertNewGame" text="New" />
-                  <MenuItem fx:id="saveGame" mnemonicParsing="false" onAction="#SaveMyGame" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#SaveMyGame" text="Save" />
                   <MenuItem mnemonicParsing="false" onAction="#LodeGame" text="Lode" />
             </items>
           </Menu>

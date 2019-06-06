@@ -9,9 +9,7 @@ public class MyViewController implements IView, Observer {
 
     private MyViewModel viewModel;
     private NewView newMaze;
-    private SaveView saveMaze;
     private PropertiesView propertiesMaze;
-
 
     @Override
     public void displayMaze(int[][] maze) {
@@ -28,7 +26,7 @@ public class MyViewController implements IView, Observer {
     }
 
     public void SaveMyGame(){
-        saveMaze.saveWindow();
+
     }
 
 
@@ -37,7 +35,7 @@ public class MyViewController implements IView, Observer {
     }
 
     public void MazeProperties(){
-
+        propertiesMaze.propertiesWindow();
     }
 
     public void help(){
