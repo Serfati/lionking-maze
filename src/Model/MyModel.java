@@ -23,7 +23,6 @@ import static Model.Server.Configurations.runConf;
 public class MyModel extends Observable implements IModel {
 
     private MazeCharacter mainCharacter = new MazeCharacter("Main_", 0, 0);
-    ;
     private MazeCharacter secondCharacter = new MazeCharacter("Second_", 0, 0);
     private Maze maze;
     private Solution mazeSolution;

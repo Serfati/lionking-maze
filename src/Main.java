@@ -1,5 +1,4 @@
 import Model.*;
-import View.MyViewController;
 import ViewModel.MyViewModel;
 import javafx.application.Application;
 import javafx.event.EventHandler;

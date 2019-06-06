@@ -1,105 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import View.MazeDisplayer?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" onKeyPressed="#KeyPressed" stylesheets="View.css"
-            xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="View.MyViewController">
-    <left>
-        <VBox prefHeight="200.0" prefWidth="178.0" spacing="5.0" BorderPane.alignment="CENTER">
-            <children>
-                <GridPane>
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                    </rowConstraints>
-                    <Label text="Maze rows:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                    <Label text="Maze columns:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                    <TextField fx:id="txtfld_rowsNum" disable="false" text="50" GridPane.columnIndex="1"
-                               GridPane.rowIndex="0"/>
-                    <TextField fx:id="txtfld_columnsNum" disable="false" text="50" GridPane.columnIndex="1"
-                               GridPane.rowIndex="1"/>
-                    <Button fx:id="btn_generateMaze" onAction="#generateMaze" prefHeight="25.0" prefWidth="167.0"
-                            text="Generate Maze" GridPane.columnIndex="0" GridPane.columnSpan="2"
-                            GridPane.rowIndex="2"/>
-                    <Button cancelButton="true" onAction="#solveMaze" prefHeight="25.0" prefWidth="167.0"
-                            text="Solve Maze" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3"/>
-                    <Label text="Char row:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-                    <Label text="Char column:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-                    <Label fx:id="lbl_rowsNum" text="${controller.characterPositionRow}" GridPane.columnIndex="1"
-                           GridPane.rowIndex="4"/>
-                    <Label fx:id="lbl_columnsNum" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-                    <!--<Label GridPane.columnIndex="1" GridPane.rowIndex="4" text="${controller.characterPositionRow}" />-->
-                    <!--<Label GridPane.columnIndex="1" GridPane.rowIndex="5" text="${controller.characterPositionColumn}"/>-->
-                    <!--                    <ChoiceBox value="2 minutes" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                            <items>
-                                                <FXCollections fx:factory="observableArrayList">
-                                                    <String fx:value="2 minutes" />
-                                                    <String fx:value="5 minutes" />
-                                                    <String fx:value="15 minutes" />
-                                                </FXCollections>
-                                            </items>
-                                        </ChoiceBox>-->
-                </GridPane>
-            </children>
-            <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-            </padding>
-        </VBox>
-    </left>
-    <bottom>
-        <HBox BorderPane.alignment="CENTER">
-            <children>
-                <Label text="Status bar"/>
-            </children>
-        </HBox>
-    </bottom>
-    <top>
-        <VBox BorderPane.alignment="CENTER">
-            <children>
-                <MenuBar>
-                    <menus>
-                        <Menu mnemonicParsing="false" text="File">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Close"/>
-                            </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Edit">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Delete"/>
-                            </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Help">
-                            <items>
-                                <MenuItem mnemonicParsing="false" onAction="#About" text="About"/>
-                            </items>
-                        </Menu>
-                    </menus>
-                </MenuBar>
-            </children>
-        </VBox>
-    </top>
-    <center>
-        <Pane BorderPane.alignment="CENTER">
-            <children>
-                <MazeDisplayer fx:id="mazeDisplayer" height="600.0"
-                               imageFileNameCharacter="resources/Images/moveMe.jpeg"
-                               imageFileNameWall="resources/Images/block.jpeg" onMouseClicked="#mouseClicked"
-                               width="600.0"/>
-            </children>
-            <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-            </padding>
-        </Pane>
-    </center>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#genertNewGame" text="New" />
+                  <MenuItem fx:id="saveGame" mnemonicParsing="false" onAction="#SaveMyGame" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#LodeGame" text="Lode" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+              <MenuItem fx:id="myProperties" mnemonicParsing="false" onAction="#MazeProperties" text="Properties" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" onAction="#help" text="Help" />
+            <Menu mnemonicParsing="false" onAction="#About" text="About" />
+            <Menu fx:id="exit" mnemonicParsing="false" onAction="#Exit" text="Exit" />
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="ButtonNewGame" layoutX="92.0" layoutY="101.0" mnemonicParsing="false" onAction="#genertNewGame" prefHeight="79.0" prefWidth="139.0" text="New Game" />
+            <ToggleButton fx:id="Sound_ON_OFF" layoutX="383.0" layoutY="148.0" mnemonicParsing="false" onAction="#ChangeSound" prefHeight="25.0" prefWidth="89.0" text="on /off" />
+            <Canvas fx:id="SoundImage" height="76.0" layoutX="361.0" layoutY="103.0" width="133.0" />
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>
