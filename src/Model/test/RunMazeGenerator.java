@@ -1,6 +1,5 @@
 package Model.test;
 
-
 import Model.algorithms.mazeGenerators.*;
 
 /**

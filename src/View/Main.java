@@ -44,7 +44,7 @@ public class Main extends Application {
     private void SetStageCloseEvent(Stage primaryStage, MyViewController myViewController) {
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             public void handle(WindowEvent windowEvent) {
-                myViewController.exitCorrectly();
+                //myViewController.exitCorrectly();
                 windowEvent.consume();
             }
         });

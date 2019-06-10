@@ -17,7 +17,7 @@ public class MyViewModel extends Observable implements Observer {
     private IModel model;
     private MediaPlayer gameSoundTrack;
     private boolean isPlayed = true;
-    private MazeCharacter mainCharacter = new MazeCharacter("Simba", 0, 0);
+    private MazeCharacter mainCharacter = new MazeCharacter("Crash", 0, 0);
 
 
     public MyViewModel(IModel model) {
@@ -110,7 +110,7 @@ public class MyViewModel extends Observable implements Observer {
     private void startSoundTrack(String character) {
         if (gameSoundTrack != null)
             gameSoundTrack.stop();
-        String musicFile = "resources/Sounds/"+character+"GameSoundTrack.mp3";
+        String musicFile = "Resources/Music/"+character+"gameSoundTrack.mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
         gameSoundTrack = new MediaPlayer(sound);
         gameSoundTrack.setOnEndOfMedia(new Runnable() {
@@ -119,8 +119,11 @@ public class MyViewModel extends Observable implements Observer {
                 gameSoundTrack.seek(Duration.ZERO);
             }
         });
-        if (isPlayed)
+        if (isPlayed) {
             gameSoundTrack.play();
+        }
+        /*gameSoundTrack.play();
+        isPlayed = true;*/
 
     }
 
@@ -130,9 +133,11 @@ public class MyViewModel extends Observable implements Observer {
         else {
             gameSoundTrack.play();
             if (isPlayed) {
+                /*gameSoundTrack.stop();*/
                 gameSoundTrack.setMute(true);
                 isPlayed = false;
             } else {
+                /*gameSoundTrack.play();*/
                 gameSoundTrack.setMute(false);
                 isPlayed = true;
             }

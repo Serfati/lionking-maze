@@ -1,54 +1,42 @@
 package View;
 
 import ViewModel.MyViewModel;
-import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.input.KeyCode;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.Optional;
 
-@SuppressWarnings("ALL")
-public class MyViewController implements Observer, IView {
+public class MyViewController implements IView, Observer {
 
+    public javafx.scene.control.Label curr_row;
+    public javafx.scene.control.Label curr_col;
+    public javafx.scene.control.Button newMaze;
     public MazeDisplayer mazeDisplayer;
-    public javafx.scene.control.TextField txtfld_rowsNum;
-    public javafx.scene.control.TextField txtfld_columnsNum;
-    public javafx.scene.control.Label lbl_rowsNum;
-    public javafx.scene.control.Label lbl_columnsNum;
-    public javafx.scene.control.Button btn_generateMaze;
-    @FXML
+    public ImageView sound_Image;
+
+
     private MyViewModel viewModel;
+    private NewView newGame;
+    private PropertiesView propertiesMaze;
+    private Scene mainScene;
+    private Stage mainStage;
+
     private StringProperty characterPositionRow = new SimpleStringProperty();
     private StringProperty characterPositionColumn = new SimpleStringProperty();
 
-    public void setViewModel(MyViewModel viewModel) {
-        this.viewModel = viewModel;
-    }
 
-    @Override
-    public void update(Observable o, Object arg) {
-        if (o == viewModel) {
-            displayMaze(viewModel.getMaze());
-            btn_generateMaze.setDisable(false);
-        }
-    }
 
     @Override
     public void displayMaze(int[][] maze) {
@@ -58,74 +46,83 @@ public class MyViewController implements Observer, IView {
         mazeDisplayer.setCharacterPosition(characterPositionRow, characterPositionColumn);
         this.characterPositionRow.set(characterPositionRow+"");
         this.characterPositionColumn.set(characterPositionColumn+"");
+
     }
 
-    public void generateMaze() {
-        int heigth = Integer.valueOf(txtfld_rowsNum.getText());
-        int width = Integer.valueOf(txtfld_columnsNum.getText());
-        btn_generateMaze.setDisable(true);
-        viewModel.generateMaze(width, heigth);
-    }
-
-    public void solveMaze(ActionEvent actionEvent) {
-        showAlert();
-    }
-
-    private void showAlert() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setContentText("Solving maze..");
-        alert.show();
+    @Override
+    public void update(Observable o, Object arg) {
+        if (o == viewModel) {
+            displayMaze(viewModel.getMaze());
+            newMaze.setDisable(false);
+        }
     }
 
 
-    //region String Property for Binding
+    private void bindProperties() {
+        curr_row.textProperty().bind(this.characterPositionRow);
+        curr_col.textProperty().bind(this.characterPositionColumn);
+    }
+
+
+    public void genertNewGame() {
+        newGame.WindowNewMaze();
+    }
+
+    public void SaveMyGame() {
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("*.Maze");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showSaveDialog(null);
+        viewModel.saveCurrentMaze(file);
+    }
+
+    public void soundMouseClicked() {
+        viewModel.setSound();
+    }
+
+
+    public void solveMaze() {
+
+    }
+
+
+    public void LodeGame() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Lode Maze:");
+        File file = fileChooser.showOpenDialog(null);
+        viewModel.loadFile(file);
+    }
+
+    public void MazeProperties() {
+        propertiesMaze.propertiesWindow();
+    }
+
+    public void help() {
+
+    }
+
+    public void About() {
+        try {
+            Stage stage = new Stage();
+            stage.setTitle("About:");
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            Parent root = fxmlLoader.load(getClass().getResource("View/About.fxml").openStream());
+            Scene scene = new Scene(root, 400, 350);
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
+            stage.show();
+        } catch(Exception e) {
+
+        }
+    }
+
+    public void Exit() {
+
+    }
 
     public void KeyPressed(KeyEvent keyEvent) {
         viewModel.moveCharacter(keyEvent.getCode());
         keyEvent.consume();
-    }
-
-    public void mouseDragged(MouseEvent mouseEvent) {
-
-        if (mazeDisplayer != null) {
-            int maxSize = Math.max(viewModel.getMaze()[0].length, viewModel.getMaze().length);
-            double cellHeight = mazeDisplayer.getHeight() / maxSize;
-            double cellWidth = mazeDisplayer.getWidth() / maxSize;
-            double canvasHeight = mazeDisplayer.getHeight();
-            double canvasWidth = mazeDisplayer.getWidth();
-            int rowMazeSize = viewModel.getMaze().length;
-            int colMazeSize = viewModel.getMaze()[0].length;
-            double startRow = (canvasHeight / 2-(cellHeight * rowMazeSize / 2)) / cellHeight;
-            double startCol = (canvasWidth / 2-(cellWidth * colMazeSize / 2)) / cellWidth;
-            double mouseX = (int) ((mouseEvent.getX()) / (mazeDisplayer.getWidth() / maxSize)-startCol);
-            double mouseY = (int) ((mouseEvent.getY()) / (mazeDisplayer.getHeight() / maxSize)-startRow);
-            if (!viewModel.isAtTheEnd()) {
-                if (mouseY < viewModel.getMainCharacterPositionRow() && mouseX == viewModel.getMainCharacterPositionColumn())
-                    viewModel.moveCharacter(KeyCode.UP);
-                if (mouseY > viewModel.getMainCharacterPositionRow() && mouseX == viewModel.getMainCharacterPositionColumn())
-                    viewModel.moveCharacter(KeyCode.DOWN);
-                if (mouseX < viewModel.getMainCharacterPositionColumn() && mouseY == viewModel.getMainCharacterPositionRow())
-                    viewModel.moveCharacter(KeyCode.LEFT);
-                if (mouseX > viewModel.getMainCharacterPositionColumn() && mouseY == viewModel.getMainCharacterPositionRow())
-                    viewModel.moveCharacter(KeyCode.RIGHT);
-            }
-        }
-    }
-
-    public String getCharacterPositionRow() {
-        return characterPositionRow.get();
-    }
-
-    public StringProperty characterPositionRowProperty() {
-        return characterPositionRow;
-    }
-
-    public String getCharacterPositionColumn() {
-        return characterPositionColumn.get();
-    }
-
-    public StringProperty characterPositionColumnProperty() {
-        return characterPositionColumn;
     }
 
     public void setResizeEvent(Scene scene) {
@@ -145,41 +142,18 @@ public class MyViewController implements Observer, IView {
         });
     }
 
-    public void exitCorrectly() {
-        Alert alert = new Alert(Alert.AlertType.NONE);
-        ButtonType leaveButton = new ButtonType("Leave", ButtonBar.ButtonData.YES);
-        ButtonType stayButton = new ButtonType("Stay", ButtonBar.ButtonData.NO);
-        alert.getButtonTypes().setAll(stayButton, leaveButton);
-        alert.setContentText("Are you sure you want to exit??");
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == leaveButton) {
-            // ... user chose Leave
-            // Close program
-            viewModel.closeModel();
-            Platform.exit();
-        } else
-            alert.close();
+
+    public void setViewModel(MyViewModel viewModel) {
+        this.viewModel = viewModel;
     }
 
-    public void About(ActionEvent actionEvent) {
-        try {
-            Stage stage = new Stage();
-            stage.setTitle("AboutController");
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent root = fxmlLoader.load(getClass().getResource("About.fxml").openStream());
-            Scene scene = new Scene(root, 400, 350);
-            stage.setScene(scene);
-            stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
-            stage.show();
-        } catch(Exception e) {
+    public void initialize(MyViewModel viewModel, Stage mainStage, Scene mainScene) {
 
-        }
+        this.viewModel = viewModel;
+        this.mainScene = mainScene;
+        this.mainStage = mainStage;
+        bindProperties();
+        setResizeEvent(mainScene);
+        
     }
-
-    public void mouseClicked(MouseEvent mouseEvent) {
-        this.mazeDisplayer.requestFocus();
-    }
-
-    //endregion
-
 }

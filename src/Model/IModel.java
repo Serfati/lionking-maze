@@ -19,7 +19,13 @@ public interface IModel {
 
     int getMainCharacterPositionColumn();
 
+    int getSecondCharacterPositionRow();
+
+    int getSecondCharacterPositionColumn();
+
     String getMainCharacterDirection();
+
+    String getSecondCharacterDirection();
 
     void closeModel();
 
@@ -37,4 +43,6 @@ public interface IModel {
 
     MazeCharacter getLoadedCharacter();
 
+
+    void setMultiPlayerMode(boolean setMode);
 }
