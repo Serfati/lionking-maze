@@ -1,12 +1,16 @@
 .root {
-    -fx-background-color: bisque;
-}
 
+    -fx-background-image: url("lion_king_pictures.jpg");
+    -fx-background-repeat: cover;
+    /*fx-background-size: cover;*/
+
+
+}
 Button {
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-background-color: linear-gradient(#FFA500, #FF4500);
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 

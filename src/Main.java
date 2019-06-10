@@ -22,9 +22,9 @@ public class Main extends Application {
         model.addObserver(viewModel);
 
         //Loading Main Windows
-        primaryStage.setTitle("My Application!");
-        primaryStage.setWidth(800);
-        primaryStage.setHeight(700);
+        primaryStage.setTitle("The Lion King !");
+       // primaryStage.setWidth(800);
+        //primaryStage.setHeight(700);
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(getClass().getResource("View/MyView.fxml").openStream());
         Scene scene = new Scene(root, 800, 700);

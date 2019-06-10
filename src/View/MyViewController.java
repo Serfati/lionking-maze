@@ -1,4 +1,7 @@
 package View;
+import javafx.scene.image.ImageView;
+import javafx.beans.InvalidationListener;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import ViewModel.MyViewModel;
 import javafx.beans.property.SimpleStringProperty;
@@ -8,11 +11,10 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+import javafx.scene.media.Media;
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
@@ -23,14 +25,17 @@ public class MyViewController implements IView, Observer {
     public javafx.scene.control.Label curr_col;
     public javafx.scene.control.Button newMaze;
     public MazeDisplayer mazeDisplayer;
-    public ImageView sound_Image;
-
+    public javafx.scene.control.Slider sound_control;
 
     private MyViewModel viewModel;
     private NewView newGame;
     private PropertiesView propertiesMaze;
     private Scene mainScene;
     private Stage mainStage;
+    private Media media;
+    private MediaPlayer mediaPlayer ;
+
+
 
     private StringProperty characterPositionRow = new SimpleStringProperty();
     private StringProperty characterPositionColumn = new SimpleStringProperty();
@@ -76,7 +81,7 @@ public class MyViewController implements IView, Observer {
     }
 
     public void soundMouseClicked(){
-        viewModel.setSound();
+
     }
 
 
@@ -152,8 +157,24 @@ public class MyViewController implements IView, Observer {
         this.viewModel = viewModel;
         this.mainScene = mainScene;
         this.mainStage = mainStage;
+        String path = new File("resources/Music/backgroundmusic.mp3").getAbsolutePath();
+        media = new Media(new File(path).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        sound_control.setValue(mediaPlayer.getVolume()*100);
+        sound_control.valueProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(javafx.beans.Observable observable) {
+                mediaPlayer.setVolume(sound_control.getValue()/100);
+            }
+        });
+
+        mainStage.setMinWidth(1000);
+        mainStage.setMinHeight(700);
+        mainStage.setFullScreen(true);
         bindProperties();
         setResizeEvent(mainScene);
-        
+
     }
 }
