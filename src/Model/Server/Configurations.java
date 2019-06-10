@@ -14,13 +14,13 @@ import java.util.Properties;
 
 
 public final class Configurations {
-    private static Properties properties = new Properties();
+    public static Properties properties = new Properties();
 
     public synchronized static void runConf() {
         try {
-            File f = new File("resources/config.properties");
+            File f = new File("Resources/config.properties");
             if (!f.exists()) createConf();
-            InputStream input = new FileInputStream("resources/config.properties");
+            InputStream input = new FileInputStream("Resources/config.properties");
             properties.load(input);
         } catch(IOException e) {
             e.printStackTrace();
@@ -30,7 +30,7 @@ public final class Configurations {
     private static void createConf() {
         OutputStream output;
         try {
-            output = new FileOutputStream("resources/config.properties");
+            output = new FileOutputStream("Resources/config.properties");
             // set the ProjectProperties value
             properties.setProperty("MazeGenerator", "MyMazeGenerator");
             properties.setProperty("NumberOfThreads", "7");

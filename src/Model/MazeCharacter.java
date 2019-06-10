@@ -25,27 +25,27 @@ public class MazeCharacter implements Serializable {
         this.characterName = characterName;
     }
 
-    int getCharacterRow() {
+    public int getCharacterRow() {
         return characterRow;
     }
 
-    void setCharacterRow(int characterRow) {
+    public void setCharacterRow(int characterRow) {
         this.characterRow = characterRow;
     }
 
-    int getCharacterCol() {
+    public int getCharacterCol() {
         return characterCol;
     }
 
-    void setCharacterCol(int characterCol) {
+    public void setCharacterCol(int characterCol) {
         this.characterCol = characterCol;
     }
 
-    String getCharacterDirection() {
+    public String getCharacterDirection() {
         return characterDirection;
     }
 
-    void setCharacterDirection(String characterDirection) {
+    public void setCharacterDirection(String characterDirection) {
         this.characterDirection = characterDirection;
     }
 }

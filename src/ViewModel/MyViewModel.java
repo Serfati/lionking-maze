@@ -107,7 +107,7 @@ public class MyViewModel extends Observable implements Observer {
         model.closeModel();
     }
 
-    private void startSoundTrack(String character) {
+    public void startSoundTrack(String character) {
         if (gameSoundTrack != null)
             gameSoundTrack.stop();
         String musicFile = "Resources/Music/"+character+"gameSoundTrack.mp3";
