@@ -1,9 +1,6 @@
 package Model;
-
 import javafx.scene.input.KeyCode;
-
 import java.io.File;
-
 public interface IModel {
 
     void generateMaze(int width, int height);
@@ -16,13 +13,11 @@ public interface IModel {
     String getMainCharacterDirection();
     void closeModel();
     boolean isAtTheEnd();
-
     int[][] getSolution();
-
-    int[][] getMazeSolutionArr();
-
     void saveCurrentMaze(File file, String name);
     void saveOriginalMaze(File file, String name);
     void loadMaze(File file);
     MazeCharacter getLoadedCharacter();
+
+    int[][] getMazeInt();
 }

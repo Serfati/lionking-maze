@@ -8,6 +8,7 @@ import Model.Server.Server;
 import Model.Server.ServerStrategyGenerateMaze;
 import Model.Server.ServerStrategySolveSearchProblem;
 import Model.algorithms.mazeGenerators.Maze;
+import Model.algorithms.mazeGenerators.MyMazeGenerator;
 import Model.algorithms.search.Solution;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
@@ -25,7 +26,6 @@ public class MyModel extends Observable implements IModel {
     private Maze maze;
     private Solution mazeSolution;
     private boolean isAtTheEnd;
-    private int[][] mazeSolutionArr;
 
     private Server serverMazeGenerator;
     private Server serverSolveMaze;
@@ -37,10 +37,6 @@ public class MyModel extends Observable implements IModel {
         isAtTheEnd = false;
         startServers();
 
-    }
-
-    public int[][] getMazeSolutionArr() {
-        return mazeSolutionArr;
     }
 
     private void startServers() {
@@ -81,13 +77,13 @@ public class MyModel extends Observable implements IModel {
                 }
             });
                 clientMazeGenerator.communicateWithServer();
-                int mazeRow = maze.getStartPosition().getRowIndex();
+            MyMazeGenerator m = new MyMazeGenerator();
+            this.maze = m.generate(row, col);
+            int mazeRow = maze.getStartPosition().getRowIndex();
                 int mazeCol = maze.getStartPosition().getColumnIndex();
             mainCharacter = new MazeCharacter("Main_", mazeRow, mazeCol);
-            secondCharacter = new MazeCharacter("Second_", mazeRow, mazeCol);
 
                 isAtTheEnd = false;
-                mazeSolutionArr = null;
                 setChanged();
                 notifyObservers("Maze");
         } catch(UnknownHostException e) {
@@ -97,7 +93,6 @@ public class MyModel extends Observable implements IModel {
 
     @Override
     public void moveCharacter(KeyCode movement) {
-        mazeSolutionArr = null;
         boolean legitKey = false;
         int mainCharacterPositionRow = mainCharacter.getCharacterRow();
         int mainCharacterPositionCol = mainCharacter.getCharacterCol();
@@ -261,7 +256,6 @@ public class MyModel extends Observable implements IModel {
                 }
             });
             clientSolveMaze.communicateWithServer();
-            mazeSolutionArr = mazeSolution.getSolution();
             setChanged();
             notifyObservers("Solution");
         } catch(Exception e) {
@@ -296,7 +290,7 @@ public class MyModel extends Observable implements IModel {
     @Override
     public void saveCurrentMaze(File file, String name) {
         try {
-            FileOutputStream fileWriter = null;
+            FileOutputStream fileWriter;
             fileWriter = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileWriter);
             Maze currentMaze = getCurrentMaze();
@@ -313,8 +307,7 @@ public class MyModel extends Observable implements IModel {
 
     private Maze getCurrentMaze() {
         try {
-            Maze currentMaze = new Maze(maze, mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol());
-            return currentMaze;
+            return new Maze(maze, mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol());
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -353,6 +346,11 @@ public class MyModel extends Observable implements IModel {
     @Override
     public MazeCharacter getLoadedCharacter() {
         return mainCharacter;
+    }
+
+    @Override
+    public int[][] getMazeInt() {
+        return this.maze.mMaze;
     }
 
     @Override

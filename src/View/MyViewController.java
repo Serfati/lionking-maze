@@ -77,6 +77,7 @@ public class MyViewController implements IView, Observer, Initializable {
                 switch(argument) {
                     case "Maze":
                         mazeScrollPane.setVisible(true);
+                        mazeDisplayer.setMazeInt(myViewModel.getMazeInt());
                         mazeDisplayer.setMaze(myViewModel.getMaze());
                         mazeDisplayer.setMainCharacterPosition(myViewModel.getMainCharacterPositionRow(), myViewModel.getMainCharacterPositionColumn());
                         mazeDisplayer.setMainCharacterDirection(myViewModel.getMainCharacterDirection());
@@ -106,6 +107,7 @@ public class MyViewController implements IView, Observer, Initializable {
 
                         MazeCharacter mazeCharacter = myViewModel.getLoadedCharacter();
                         mazeDisplayer.setMaze(myViewModel.getMaze());
+                        mazeDisplayer.setMazeInt(myViewModel.getMazeInt());
                         //MainCharacter
                         mazeDisplayer.setMainCharacterPosition(mazeCharacter.getCharacterRow(), mazeCharacter.getCharacterCol());
                         mazeDisplayer.setMainCharacterDirection("front");
@@ -457,7 +459,6 @@ public class MyViewController implements IView, Observer, Initializable {
 
     private void setHint() {
         icon_partSolution.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            mazeDisplayer.setHint();
             solveMaze();
             event.consume();
         });

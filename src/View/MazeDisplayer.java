@@ -11,8 +11,11 @@ import java.io.FileInputStream;
 public class MazeDisplayer extends Canvas {
 
     private MazeCharacter mainCharacter = new MazeCharacter("Simba_", 0, 0);
-    private MazeCharacter secondCharacter = new MazeCharacter("Simba_Second_", 0, 0);
+    ;
+    private MazeCharacter secondCharacter = new MazeCharacter("Simba_econd_", 0, 0);
+    ;
     private char[][] mazeCharArr;
+    private int[][] mazeIntArr;
     private int[][] mazeSolutionArr;
     private int goalPositionRow;
     private int goalPositionColumn;
@@ -62,7 +65,6 @@ public class MazeDisplayer extends Canvas {
     private int getMainCharacterRow() {
         return mainCharacter.getCharacterRow();
     }
-
     private int getMainCharacterColumn() {
         return mainCharacter.getCharacterCol();
     }
@@ -70,7 +72,6 @@ public class MazeDisplayer extends Canvas {
     private int getSecondCharacterRow() {
         return secondCharacter.getCharacterRow();
     }
-
     private int getSecondCharacterColumn() {
         return secondCharacter.getCharacterCol();
     }
@@ -146,17 +147,12 @@ public class MazeDisplayer extends Canvas {
                 drawSolutionGeneric(solutionImage);
 
                 //Draw Character
-
                 graphicsContext2D.drawImage(mainCharacterImage, (startCol+getMainCharacterColumn()) * cellWidth, (startRow+getMainCharacterRow()) * cellHeight, cellWidth, cellHeight);
-
-                if (!(secondCharacter.getCharacterRow() == mainCharacter.getCharacterRow() && secondCharacter.getCharacterCol() == mainCharacter.getCharacterCol())) {
-                    //Image secondCharacterImage = new Image(new FileInputStream("Resources/Characters/" + secondCharacterName + secondCharacter.getCharacterDirection() + ".png"));
+                if (!(secondCharacter.getCharacterRow() == mainCharacter.getCharacterRow() && secondCharacter.getCharacterCol() == mainCharacter.getCharacterCol()))
                     graphicsContext2D.drawImage(secondCharacterImage, (startCol+getSecondCharacterColumn()) * cellWidth, (startRow+getSecondCharacterRow()) * cellHeight, cellWidth, cellHeight);
-                }
-
-                if (mainCharacter.getCharacterRow() != goalPositionRow || mainCharacter.getCharacterCol() != goalPositionColumn) {
+                if (mainCharacter.getCharacterRow() != goalPositionRow || mainCharacter.getCharacterCol() != goalPositionColumn)
                     graphicsContext2D.drawImage(goalImage, (startCol+goalPositionColumn) * cellWidth, (startRow+goalPositionRow) * cellHeight, cellWidth, cellHeight);
-                }
+
 
             } catch(Exception e) {
                 e.printStackTrace();
@@ -181,7 +177,7 @@ public class MazeDisplayer extends Canvas {
                 for(int i = 0; i < rowMazeSize; i++) {
                     for(int j = 0; j < colMazeSize; j++) {
                         graphicsContext2D.drawImage(backGroundImage, (startCol+j) * cellWidth, (startRow+i) * cellHeight, cellWidth, cellHeight);
-                        if (mazeCharArr[i][j] == '1') {
+                        if (mazeIntArr[i][j] == 1) {
                             graphicsContext2D.drawImage(wallImage, (startCol+j) * cellWidth, (startRow+i) * cellHeight, cellWidth, cellHeight);
                         } else if (mazeCharArr[i][j] == 'E') {
                             setGoalPosition(i, j);
@@ -285,8 +281,11 @@ public class MazeDisplayer extends Canvas {
         this.mazeSolutionArr = mazeSolutionArr;
     }
 
-    void setHint() {
-        this.hint = true;
+    void setHint(boolean hint) {
+        this.hint = hint;
     }
 
+    void setMazeInt(int[][] mazeInt) {
+        this.mazeIntArr = mazeInt;
+    }
 }

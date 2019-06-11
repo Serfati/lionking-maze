@@ -116,4 +116,8 @@ public class MyViewModel extends Observable implements Observer {
     public void closeModel() {
         model.closeModel();
     }
+
+    public int[][] getMazeInt() {
+        return model.getMazeInt();
+    }
 }
