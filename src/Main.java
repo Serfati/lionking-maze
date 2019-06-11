@@ -1,6 +1,5 @@
-package View;
-
 import Model.MyModel;
+import View.MyViewController;
 import ViewModel.MyViewModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,9 +22,9 @@ public class Main extends Application {
 
         primaryStage.setTitle("The Lion King!");
         FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root = fxmlLoader.load(getClass().getResource("MyView.fxml").openStream());
+        Parent root = fxmlLoader.load(getClass().getResource("View/MyView.fxml").openStream());
         Scene scene = new Scene(root, 800, 700);
-        scene.getStylesheets().add(getClass().getResource("ViewStyle.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("View/ViewStyle.css").toExternalForm());
 
         MyViewController myViewController = fxmlLoader.getController();
         myViewController.setResizeEvent(scene);

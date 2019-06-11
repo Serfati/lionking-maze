@@ -28,6 +28,7 @@ public class NewGameController implements IView, Initializable {
     public Button newGame_Button;
     public Label pleaseWait_lbl;
     private MyViewModel myViewModel;
+
     private UnaryOperator<TextFormatter.Change> integerFilter = change -> {
 
         String newText = change.getControlNewText();
@@ -68,7 +69,7 @@ public class NewGameController implements IView, Initializable {
             alert.setGraphic(null);
             alert.setTitle("Error Alert");
             alert.setHeaderText("ERROR!");
-            alert.setContentText("Please enter a number above 5.");
+            alert.setContentText("Please enter a numbers above 5.");
             alert.showAndWait();
             e.printStackTrace();
         }
