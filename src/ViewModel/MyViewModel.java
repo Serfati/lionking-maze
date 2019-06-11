@@ -1,12 +1,10 @@
 package ViewModel;
-
 import Model.IModel;
 import Model.MazeCharacter;
 import javafx.scene.input.KeyCode;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
-
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
@@ -17,10 +15,6 @@ public class MyViewModel extends Observable implements Observer {
     private boolean isPlayed = true;
     private MazeCharacter mainCharacter = new MazeCharacter("Simba_", 0, 0);
     private MazeCharacter secondCharacter = new MazeCharacter("Simba_Second_", 0, 0);
-
-    public MyViewModel(IModel model) {
-        this.model = model;
-    }
 
     @Override
     public void update(Observable o, Object arg) {
@@ -66,6 +60,10 @@ public class MyViewModel extends Observable implements Observer {
         return isPlayed;
     }
 
+    public MyViewModel(IModel model) {
+        this.model = model;
+    }
+
     public MazeCharacter getLoadedCharacter() {
         mainCharacter = model.getLoadedCharacter();
         return mainCharacter;
@@ -76,11 +74,9 @@ public class MyViewModel extends Observable implements Observer {
     public void generateMaze(int row, int col) {
         model.generateMaze(row, col);
     }
-
     public char[][] getMaze() {
         return model.getMaze();
     }
-
     public String getMainCharacterName() {
         return mainCharacter.getCharacterName();
     }
@@ -93,11 +89,9 @@ public class MyViewModel extends Observable implements Observer {
     public String getMainCharacterDirection() {
         return model.getMainCharacterDirection();
     }
-
     public void setMainCharacterName(String character) {
         mainCharacter.setCharacterName(character);
     }
-
     public String getSecondCharacterName() {
         return secondCharacter.getCharacterName();
     }
@@ -116,7 +110,6 @@ public class MyViewModel extends Observable implements Observer {
     public void saveCurrentMaze(File file) {
         model.saveCurrentMaze(file, mainCharacter.getCharacterName());
     }
-
     public void loadFile(File file) {
         model.loadMaze(file);
     }

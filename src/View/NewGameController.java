@@ -70,6 +70,7 @@ public class NewGameController implements IView, Initializable {
             alert.setHeaderText("ERROR!");
             alert.setContentText("Please enter a number above 5.");
             alert.showAndWait();
+            e.printStackTrace();
         }
     }
 
