@@ -58,26 +58,29 @@ public class MyViewController implements IView, Observer, Initializable {
 
     public Label lbl_characterRow;
     public MazeDisplayer mazeDisplayer;
+    NewGameController newGameController;
     public Label lbl_characterColumn;
     public Label lbl_statusBar;
+
     public Label label_mainCharacterRow;
     public Label label_mainCharacterCol;
     public MenuItem save_MenuItem;
     public MenuItem solve_MenuItem;
+    @FXML
+    private MyViewModel myViewModel;
     public javafx.scene.image.ImageView icon_sound;
     public javafx.scene.image.ImageView icon_partSolution;
     public javafx.scene.image.ImageView icon_fullSolution;
     public javafx.scene.image.ImageView icon_makeNewMaze;
     public javafx.scene.image.ImageView icon_zoomImageView;
+    private String soundOnOff = "On";
     public ScrollPane mazeScrollPane;
+    private Stage stageNewGameController;
+
+
     //region String Property for Binding
     public StringProperty CharacterRow = new SimpleStringProperty();
     public StringProperty CharacterColumn = new SimpleStringProperty();
-    NewGameController newGameController;
-    @FXML
-    private MyViewModel myViewModel;
-    private String soundOnOff = "On";
-    private Stage stageNewGameController;
 
     public void setViewModel(MyViewModel myViewModel) {
         this.myViewModel = myViewModel;
@@ -92,13 +95,14 @@ public class MyViewController implements IView, Observer, Initializable {
                 switch(argument) {
                     case "Maze":
                         mazeScrollPane.setVisible(true);
-
+                        mazeDisplayer.setMaze(myViewModel.getMaze());
                         //MainCharacter
                         mazeDisplayer.setMainCharacterPosition(myViewModel.getMainCharacterPositionRow(), myViewModel.getMainCharacterPositionColumn());
                         mazeDisplayer.setMainCharacterDirection(myViewModel.getMainCharacterDirection());
                         mazeDisplayer.setMainCharacterName(myViewModel.getMainCharacterName());
 
                         //Second Character
+                        mazeDisplayer.setSecondCharacterName(myViewModel.getSecondCharacterName());
 
                         //mazeDisplayer.setMazeSolutionArr(null);
                         Platform.runLater(() -> {
@@ -122,13 +126,14 @@ public class MyViewController implements IView, Observer, Initializable {
                     case "Maze Load":
 
                         MazeCharacter mazeCharacter = myViewModel.getLoadedCharacter();
-
+                        mazeDisplayer.setMaze(myViewModel.getMaze());
                         //MainCharacter
                         mazeDisplayer.setMainCharacterPosition(mazeCharacter.getCharacterRow(), mazeCharacter.getCharacterCol());
                         mazeDisplayer.setMainCharacterDirection("front");
                         mazeDisplayer.setMainCharacterName(mazeCharacter.getCharacterName());
 
                         //Second Character
+                        mazeDisplayer.setSecondCharacterName(myViewModel.getSecondCharacterName());
                         mazeDisplayer.setSecondCharacterPosition(myViewModel.getMainCharacterPositionRow(), myViewModel.getMainCharacterPositionColumn());
                         mazeDisplayer.setSecondCharacterDirection(myViewModel.getMainCharacterDirection());
 
@@ -167,7 +172,7 @@ public class MyViewController implements IView, Observer, Initializable {
                         break;
 
                     case "Solution":
-
+                        mazeDisplayer.setMazeSolutionArr(myViewModel.getSolution());
                         Platform.runLater(() -> {
                             lbl_statusBar.setText("Here's the solution");
                             solve_MenuItem.setDisable(false);
@@ -219,6 +224,7 @@ public class MyViewController implements IView, Observer, Initializable {
                 Scene scene = new Scene(root, 600, 400);
 
                 winningStage.setScene(scene);
+
 
 
                 //Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -454,7 +460,7 @@ public class MyViewController implements IView, Observer, Initializable {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 Parent root = fxmlLoader.load(getClass().getResource("NewGame.fxml").openStream());
                 Scene scene = new Scene(root, 650, 500);
-                scene.getStylesheets().add(getClass().getResource("View.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("ViewStyle.css").toExternalForm());
                 stageNewGameController.setScene(scene);
                 stageNewGameController.setResizable(false);
                 newGameController = fxmlLoader.getController();
@@ -477,7 +483,7 @@ public class MyViewController implements IView, Observer, Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader();
             Parent root = fxmlLoader.load(getClass().getResource("Properties.fxml").openStream());
             Scene scene = new Scene(root, 400, 370);
-            scene.getStylesheets().add(getClass().getResource("View.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("ViewStyle.css").toExternalForm());
             stage.setScene(scene);
             PropertiesViewController propertiesViewController = fxmlLoader.getController();
             propertiesViewController.setStage(stage);
@@ -492,8 +498,6 @@ public class MyViewController implements IView, Observer, Initializable {
     }
 
     public void help() {
-        //TODO - DONE
-        // Help: fill content and make sure it looks good
         Stage helpStage = new Stage();
         helpStage.setAlwaysOnTop(true);
         helpStage.setResizable(false);
@@ -509,7 +513,7 @@ public class MyViewController implements IView, Observer, Initializable {
         }
         helpStage.setTitle("Help");
         Scene scene = new Scene(root, 520, 495);
-        scene.getStylesheets().add(getClass().getResource("View.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("ViewStyle.css").toExternalForm());
         helpStage.setScene(scene);
         helpStage.initModality(Modality.WINDOW_MODAL);
         helpStage.show();
@@ -533,7 +537,7 @@ public class MyViewController implements IView, Observer, Initializable {
         }
         aboutStage.setTitle("About");
         Scene scene = new Scene(root, 600, 400);
-        scene.getStylesheets().add(getClass().getResource("View.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("ViewStyle.css").toExternalForm());
         aboutStage.setScene(scene);
         aboutStage.initModality(Modality.APPLICATION_MODAL);
         aboutStage.show();
@@ -603,12 +607,8 @@ public class MyViewController implements IView, Observer, Initializable {
             int colMazeSize = myViewModel.getMaze()[0].length;
             double startRow = (canvasHeight / 2-(cellHeight * rowMazeSize / 2)) / cellHeight;
             double startCol = (canvasWidth / 2-(cellWidth * colMazeSize / 2)) / cellWidth;
-            //double mouseX = 1 + (int) ((mouseEvent.getX() + startRow ) / (mazeDisplayer.getWidth()  / maxSize));
-            //double mouseY = 1 + (int) ((mouseEvent.getY() + startCol ) / (mazeDisplayer.getHeight() / maxSize));
             double mouseX = (int) ((mouseEvent.getX()) / (mazeDisplayer.getWidth() / maxSize)-startCol);
             double mouseY = (int) ((mouseEvent.getY()) / (mazeDisplayer.getHeight() / maxSize)-startRow);
-            //System.out.println("MouseX = " + mouseX);
-            //System.out.println("MouseY = " + mouseY + "\n");
             if (!myViewModel.isAtTheEnd()) {
                 if (mouseY < myViewModel.getMainCharacterPositionRow() && mouseX == myViewModel.getMainCharacterPositionColumn()) {
                     myViewModel.moveCharacter(KeyCode.UP);
@@ -625,6 +625,7 @@ public class MyViewController implements IView, Observer, Initializable {
             }
         }
     }
+
 
 
     public void scrollInOut(ScrollEvent scrollEvent) {
@@ -650,12 +651,8 @@ public class MyViewController implements IView, Observer, Initializable {
 
     public void resetZoom() {
         icon_zoomImageView.setVisible(false);
-        //setFitToHeight(true);
         Timeline timeLine = new Timeline(60);
         timeLine.getKeyFrames().clear();
-
-        //mazeScrollPane.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
-        //mazeDisplayer.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
         timeLine.getKeyFrames().addAll(new KeyFrame(Duration.millis(100), new KeyValue(mazeDisplayer.translateXProperty(), 0)),
                 new KeyFrame(Duration.millis(100), new KeyValue(mazeDisplayer.translateYProperty(), 0)),
                 new KeyFrame(Duration.millis(100), new KeyValue(mazeDisplayer.scaleXProperty(), 1)),

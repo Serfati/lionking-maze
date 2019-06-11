@@ -44,7 +44,6 @@ public class PropertiesViewController extends Dialog implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //valueFactory.setValue(Configurations.getServer_threadPoolSize());
         spinner.setValueFactory(valueFactory);
         algorithmChoiceBox.getItems().addAll("BFS", "DepthFirstSearch", "BestFirstSearch");
         String searchValue = Configurations.properties.getProperty("SearchingAlgorithm");

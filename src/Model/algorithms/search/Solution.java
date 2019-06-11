@@ -24,4 +24,8 @@ public class Solution implements Serializable {
     public ArrayList<AState> getSolutionPath() {
         return this.path == null ? new ArrayList<>() : this.path;
     }
+
+    public int[][] getSolution() {
+        return null;
+    }
 }

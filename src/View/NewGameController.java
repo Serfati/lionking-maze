@@ -19,6 +19,9 @@ import java.util.function.UnaryOperator;
 
 public class NewGameController implements IView, Initializable {
 
+    ArrayList<String> mainCharacterList = new ArrayList(Arrays.asList("Simba_", "Pumba_"));
+    String mainCharacter = "Simba_";
+    String secondCharacter = "Simba_Second_";
     @FXML
     public javafx.scene.image.ImageView newGame_mainCharacter_imageView;
     public TextField newGame_rowsInput;
@@ -27,10 +30,8 @@ public class NewGameController implements IView, Initializable {
     public Button newGame_mainCharacter_nextBtn;
     public Button newGame_Button;
     public CheckBox newGame_multiPlayer_checkBox;
+
     public Label pleaseWait_lbl;
-    ArrayList<String> mainCharacterList = new ArrayList(Arrays.asList("Simba_", "Pumba_"));
-    String mainCharacter = "Simba";
-    String secondCharacter = "Simba_character";
     UnaryOperator<TextFormatter.Change> integerFilter = change -> {
 
         String newText = change.getControlNewText();
@@ -39,8 +40,8 @@ public class NewGameController implements IView, Initializable {
         }
         return null;
     };
-    private MyViewModel myViewModel;
     private Stage stage;
+    private MyViewModel myViewModel;
 
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -52,7 +53,7 @@ public class NewGameController implements IView, Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        File file = new File("Resources/Characters/Simba_character.jpg");
+        File file = new File("Resources/Characters/Simba_character.png");
         Image image = new Image(file.toURI().toString());
         newGame_mainCharacter_imageView.setImage(image);
         newGame_rowsInput.setTextFormatter(new TextFormatter<Integer>(new IntegerStringConverter(), Integer.valueOf(newGame_rowsInput.getText()), integerFilter));
@@ -107,21 +108,19 @@ public class NewGameController implements IView, Initializable {
             alert.setHeaderText("ERROR!");
             alert.setContentText("Please enter a number above 5.");
             alert.showAndWait();
+            e.printStackTrace();
 
         }
-
-
     }
 
     public void getNextMainCharacter() {
         int curIndex = mainCharacterList.indexOf(mainCharacter);
         String nextCharacter = mainCharacterList.get((curIndex+1) % mainCharacterList.size());
-        File file = new File("Resources/Characters/"+nextCharacter+"character.jpg");
+        File file = new File("Resources/Characters/"+nextCharacter+"character.png");
         Image image = new Image(file.toURI().toString());
         newGame_mainCharacter_imageView.setImage(image);
         mainCharacter = nextCharacter;
         secondCharacter = nextCharacter+"Second_";
-        //secondCharacter = secondCharacterList[(curIndex + 1)% secondCharacterList.length];
     }
 
     public void getPrevMainCharacter() {

@@ -53,6 +53,13 @@ public class Maze implements Serializable {
         this.mMaze = mazeArray;
     }
 
+    public Maze(Maze maze, int characterRow, int characterCol) {
+        this.mMaze = maze.mMaze;
+        this.mGoal = maze.mGoal;
+        Position newStart = new Position(characterRow, characterCol);
+        this.mStart = newStart;
+    }
+
     /**
      * This method print the maze where every passage is
      * a empty space and every wall is a "1".
@@ -162,5 +169,27 @@ public class Maze implements Serializable {
      */
     public Position getGoalPosition() {
         return mGoal;
+    }
+
+    public char[][] getMaze() {
+        char[][] mazeCharArr = new char[mMaze.length][mMaze[0].length];
+        for(int i = 0; i < mMaze.length; i++) {
+            for(int j = 0; j < mMaze[i].length; j++) {
+                if (i == mStart.getRowIndex() && j == mStart.getColumnIndex())
+                    mazeCharArr[i][j] = 'S';
+                else if (i == mGoal.getRowIndex() && j == mGoal.getColumnIndex())
+                    mazeCharArr[i][j] = 'E';
+                else if (mMaze[i][j] == 0)
+                    mazeCharArr[i][j] = '0';
+                else if (mMaze[i][j] == 1)
+                    mazeCharArr[i][j] = '1';
+            }
+        }
+        return mazeCharArr;
+    }
+
+    public char getCharAt(int row, int col) {
+        char[][] mazeCharArr = getMaze();
+        return mazeCharArr[row][col];
     }
 }

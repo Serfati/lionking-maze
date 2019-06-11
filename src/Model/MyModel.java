@@ -3,32 +3,29 @@ package Model;
 import Model.Client.Client;
 import Model.Client.IClientStrategy;
 import Model.IO.MyDecompressorInputStream;
+import Model.Server.Configurations;
 import Model.Server.Server;
 import Model.Server.ServerStrategyGenerateMaze;
 import Model.Server.ServerStrategySolveSearchProblem;
 import Model.algorithms.mazeGenerators.Maze;
 import Model.algorithms.search.Solution;
+import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
 
 import java.io.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static Model.Server.Configurations.runConf;
-
 public class MyModel extends Observable implements IModel {
-
     private MazeCharacter mainCharacter = new MazeCharacter("Main_", 0, 0);
     private MazeCharacter secondCharacter = new MazeCharacter("Second_", 0, 0);
     private Maze maze;
     private Solution mazeSolution;
     private boolean isAtTheEnd;
-    private ArrayList mazeSolutionArr;
-    private boolean multiPlayerMode = false;
+    private int[][] mazeSolutionArr;
 
     private Server serverMazeGenerator;
     private Server serverSolveMaze;
@@ -36,17 +33,17 @@ public class MyModel extends Observable implements IModel {
     private ExecutorService threadPool = Executors.newCachedThreadPool();
 
     public MyModel() {
-        runConf();
+        Configurations.runConf();
         isAtTheEnd = false;
         startServers();
 
     }
 
-    public ArrayList getMazeSolutionArr() {
+    public int[][] getMazeSolutionArr() {
         return mazeSolutionArr;
     }
 
-    public void startServers() {
+    private void startServers() {
         serverMazeGenerator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
         serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
         serverMazeGenerator.start();
@@ -60,7 +57,6 @@ public class MyModel extends Observable implements IModel {
 
     @Override
     public void generateMaze(int row, int col) {
-
         try {
             Client clientMazeGenerator = new Client(InetAddress.getLocalHost(), 5400, new IClientStrategy() {
                 @Override
@@ -72,7 +68,6 @@ public class MyModel extends Observable implements IModel {
                         int[] mazeDimensions = new int[]{row, col};
                         toServer.writeObject(mazeDimensions); //send maze dimensions to server
                         toServer.flush();
-
                         byte[] compressedMaze = (byte[]) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
                         InputStream is = new MyDecompressorInputStream(new ByteArrayInputStream(compressedMaze));
                         byte[] decompressedMaze = new byte[mazeDimensions[0] * mazeDimensions[1]+12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
@@ -85,27 +80,19 @@ public class MyModel extends Observable implements IModel {
                     }
                 }
             });
-            //threadPool.execute(() ->{
-            Thread t = new Thread(() -> {
                 clientMazeGenerator.communicateWithServer();
                 int mazeRow = maze.getStartPosition().getRowIndex();
                 int mazeCol = maze.getStartPosition().getColumnIndex();
-                mainCharacter = new MazeCharacter("Main_", mazeRow, mazeCol);
-                secondCharacter = new MazeCharacter("Second_", mazeRow, mazeCol);
+            mainCharacter = new MazeCharacter("Main_", mazeRow, mazeCol);
+            secondCharacter = new MazeCharacter("Second_", mazeRow, mazeCol);
 
                 isAtTheEnd = false;
                 mazeSolutionArr = null;
                 setChanged();
                 notifyObservers("Maze");
-            });
-            t.start();
-            //});
-            //clientMazeGenerator.communicateWithServer();
         } catch(UnknownHostException e) {
             e.printStackTrace();
         }
-
-
     }
 
     @Override
@@ -114,6 +101,9 @@ public class MyModel extends Observable implements IModel {
         boolean legitKey = false;
         int mainCharacterPositionRow = mainCharacter.getCharacterRow();
         int mainCharacterPositionCol = mainCharacter.getCharacterCol();
+        int secondCharacterPositionRow = secondCharacter.getCharacterRow();
+        int secondCharacterPositionCol = secondCharacter.getCharacterCol();
+        boolean multiPlayerMode = false;
         switch(movement) {
             case UP:
             case W:
@@ -176,16 +166,119 @@ public class MyModel extends Observable implements IModel {
                     mainCharacter.setCharacterCol(mainCharacterPositionCol+1);
                 }
                 break;
+            case Q:
+            case NUMPAD7:
+                legitKey = true;
+                mainCharacter.setCharacterDirection("left");
+                if (!multiPlayerMode)
+                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
+                if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
+                    if (!multiPlayerMode) {
+                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
+                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
+                    }
+                    mainCharacter.setCharacterRow(mainCharacterPositionRow-1);
+                    mainCharacter.setCharacterCol(mainCharacterPositionCol-1);
+                }
+                break;
+            case E:
+            case NUMPAD9:
+                legitKey = true;
+                mainCharacter.setCharacterDirection("right");
+                if (!multiPlayerMode)
+                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
+                if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
+                    if (!multiPlayerMode) {
+                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
+                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
+                    }
+                    mainCharacter.setCharacterRow(mainCharacterPositionRow-1);
+                    mainCharacter.setCharacterCol(mainCharacterPositionCol+1);
+                }
+                break;
+            case Z:
+            case NUMPAD1:
+                legitKey = true;
+                mainCharacter.setCharacterDirection("left");
+                if (!multiPlayerMode)
+                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
+                if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {
+                    if (!multiPlayerMode) {
+                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
+                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
+                    }
+                    mainCharacter.setCharacterRow(mainCharacterPositionRow+1);
+                    mainCharacter.setCharacterCol(mainCharacterPositionCol-1);
+                }
+                break;
+            case C:
+            case NUMPAD3:
+                legitKey = true;
+                mainCharacter.setCharacterDirection("right");
+                if (!multiPlayerMode)
+                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
+                if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {
+                    if (!multiPlayerMode) {
+                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
+                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
+                    }
+                    mainCharacter.setCharacterRow(mainCharacterPositionRow+1);
+                    mainCharacter.setCharacterCol(mainCharacterPositionCol+1);
+                }
+                break;
 
+            case H:
+                if (multiPlayerMode) {
+                    legitKey = true;
+                    secondCharacter.setCharacterDirection("left");
+                    if (isNotWall(secondCharacterPositionRow, secondCharacterPositionCol-1)) {
+                        secondCharacter.setCharacterRow(secondCharacterPositionRow);
+                        secondCharacter.setCharacterCol(secondCharacterPositionCol-1);
+                    }
+                }
+                break;
+
+            case J:
+                if (multiPlayerMode) {
+                    legitKey = true;
+                    secondCharacter.setCharacterDirection("front");
+                    if (isNotWall(secondCharacterPositionRow+1, secondCharacterPositionCol)) {
+                        secondCharacter.setCharacterRow(secondCharacterPositionRow+1);
+                        secondCharacter.setCharacterCol(secondCharacterPositionCol);
+                    }
+                }
+                break;
+
+            case U:
+                if (multiPlayerMode) {
+                    legitKey = true;
+                    secondCharacter.setCharacterDirection("back");
+                    if (isNotWall(secondCharacterPositionRow-1, secondCharacterPositionCol)) {
+                        secondCharacter.setCharacterRow(secondCharacterPositionRow-1);
+                        secondCharacter.setCharacterCol(secondCharacterPositionCol);
+                    }
+                }
+                break;
+
+            case K:
+                if (multiPlayerMode) {
+                    legitKey = true;
+                    secondCharacter.setCharacterDirection("right");
+                    if (isNotWall(secondCharacterPositionRow, secondCharacterPositionCol+1)) {
+                        secondCharacter.setCharacterRow(secondCharacterPositionRow);
+                        secondCharacter.setCharacterCol(secondCharacterPositionCol+1);
+                    }
+                }
+                break;
             default:
                 break;
 
         }
-        //TODO
-        //if(mainCharacter. ==maze.getGoalPosition())
-        isAtTheEnd = true;
-        //if(secondCharacter.  == maze.getGoalPosition())
-        isAtTheEnd = true;
+
+        if (maze.getCharAt(mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol()) == 'E')
+            isAtTheEnd = true;
+        if (maze.getCharAt(secondCharacter.getCharacterRow(), secondCharacter.getCharacterCol()) == 'E')
+            isAtTheEnd = true;
 
         if (legitKey) {
             setChanged();
@@ -204,8 +297,7 @@ public class MyModel extends Observable implements IModel {
                         ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
                         ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                         toServer.flush();
-                        //TODO
-                        //toServer.writeObject(new Maze(maze, ); //send maze to server
+                        toServer.writeObject(new Maze(maze, mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol())); //send maze to server
                         toServer.flush();
                         mazeSolution = (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
                         toServer.close();
@@ -214,30 +306,24 @@ public class MyModel extends Observable implements IModel {
                         e.printStackTrace();
                     }
                 }
-
             });
-            //threadPool.execute(()->{
-            Thread t = new Thread(() -> {
                 clientSolveMaze.communicateWithServer();
-                mazeSolutionArr = mazeSolution.getSolutionPath();
+            mazeSolutionArr = mazeSolution.getSolution();
                 setChanged();
                 notifyObservers("Solution");
-            });
-            t.start();
-            //});
-            //clientSolveMaze.communicateWithServer();
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
 
     private boolean isNotWall(int row, int col) {
-        return true;
+        char c = maze.getCharAt(row, col);
+        return (c == 'S' || c == '0' || c == 'E');
     }
 
     @Override
-    public int[][] getMaze() {
-        return maze.mMaze;
+    public char[][] getMaze() {
+        return maze.getMaze();
     }
 
     @Override
@@ -255,22 +341,9 @@ public class MyModel extends Observable implements IModel {
         return mainCharacter.getCharacterDirection();
     }
 
-    public int getSecondCharacterPositionRow() {
-        return secondCharacter.getCharacterRow();
-    }
-
-    public int getSecondCharacterPositionColumn() {
-        return secondCharacter.getCharacterCol();
-    }
-
-    public String getSecondCharacterDirection() {
-        return secondCharacter.getCharacterDirection();
-    }
-
-
     @Override
-    public ArrayList getSolution() {
-        return mazeSolution.getSolutionPath();
+    public int[][] getSolution() {
+        return mazeSolution.getSolution();
     }
 
     @Override
@@ -323,19 +396,13 @@ public class MyModel extends Observable implements IModel {
 
     private Maze getCurrentMaze() {
         try {
-            Maze currentMaze = null;
-            //TODO
-            // currentMaze = new Maze(maze, 0,0);
+            Maze currentMaze = new Maze(maze, mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol());
             return currentMaze;
         } catch(Exception e) {
             e.printStackTrace();
         }
         return null;
 
-    }
-
-    public MazeCharacter getLoadedCharacter() {
-        return mainCharacter;
     }
 
     public void loadMaze(File file) {
@@ -354,12 +421,17 @@ public class MyModel extends Observable implements IModel {
             fin.close();
             oin.close();
         } catch(IOException | ClassNotFoundException e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Loaded Maze ERROR");
+            alert.setHeaderText("Exception caught trying to load:\n"+file.getName());
+            alert.setGraphic(null);
+            alert.setContentText("Loaded file was not a saved maze!\nPlease load the right type of file");
+            alert.show();
         }
     }
 
-    public void setMultiPlayerMode(boolean setMode) {
-        multiPlayerMode = setMode;
+    @Override
+    public MazeCharacter getLoadedCharacter() {
+        return mainCharacter;
     }
-
-
 }

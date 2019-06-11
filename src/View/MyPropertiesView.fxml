@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:id="PropertiesView" maxHeight="-Infinity" maxWidth="-Infinity"
+          minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="418.0"
+          xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="View.PropertiesViewController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="399.0" minWidth="10.0" prefWidth="201.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="10.0" prefWidth="217.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="78.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="267.0" minHeight="7.0" prefHeight="79.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="133.0" text="Choose Algorithm:"
+               textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Label text="Choose Maze Generator:" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+               GridPane.valignment="CENTER">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+
+        <Label layoutX="10.0" layoutY="135.0" text="Number of Theads" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+               GridPane.valignment="CENTER">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+
+        <Spinner fx:id="spinner" initialValue="7" max="100" min="1" prefHeight="31.0" prefWidth="81.0"
+                 GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                 GridPane.valignment="CENTER">
+
+        </Spinner>
+        <Button mnemonicParsing="false" onAction="#saveChanges" prefHeight="35.0" prefWidth="126.0" text="Save Changes"
+                GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
+        <Button mnemonicParsing="false" onAction="#closeButton" prefHeight="35.0" prefWidth="76.0" text="Cancel"
+                GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3"
+                GridPane.valignment="CENTER"/>
+        <ChoiceBox fx:id="algorithmChoiceBox" prefWidth="190.0" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                   GridPane.valignment="CENTER"/>
+
+        <ChoiceBox fx:id="mazeGeneratorChoiceBox" layoutX="245.0" layoutY="28.0" prefWidth="190.0"
+                   GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                   GridPane.valignment="CENTER"/>
+
+
+    </children>
+</GridPane>

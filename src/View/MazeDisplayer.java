@@ -10,8 +10,8 @@ import java.io.FileInputStream;
 
 public class MazeDisplayer extends Canvas {
 
-    private MazeCharacter mainCharacter = new MazeCharacter("Simba_", 0, 0);
-    private MazeCharacter secondCharacter = new MazeCharacter("Simba_", 0, 0);
+    private MazeCharacter mainCharacter = new MazeCharacter("Crash_", 0, 0);
+    private MazeCharacter secondCharacter = new MazeCharacter("Crash_Second_", 0, 0);
     private char[][] mazeCharArr;
     private int[][] mazeSolutionArr;
     private int goalPositionRow;
@@ -62,7 +62,6 @@ public class MazeDisplayer extends Canvas {
     public int getMainCharacterRow() {
         return mainCharacter.getCharacterRow();
     }
-
     public int getMainCharacterColumn() {
         return mainCharacter.getCharacterCol();
     }
@@ -70,7 +69,6 @@ public class MazeDisplayer extends Canvas {
     public int getSecondCharacterRow() {
         return secondCharacter.getCharacterRow();
     }
-
     public int getSecondCharacterColumn() {
         return secondCharacter.getCharacterCol();
     }

@@ -8,7 +8,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -17,7 +16,8 @@ public class MyViewModel extends Observable implements Observer {
     private IModel model;
     private MediaPlayer gameSoundTrack;
     private boolean isPlayed = true;
-    private MazeCharacter mainCharacter = new MazeCharacter("Crash", 0, 0);
+    private MazeCharacter mainCharacter = new MazeCharacter("Simba_", 0, 0);
+    private MazeCharacter secondCharacter = new MazeCharacter("Simba_Second_", 0, 0);
 
 
     public MyViewModel(IModel model) {
@@ -29,7 +29,10 @@ public class MyViewModel extends Observable implements Observer {
         if (o == model) {
             if (arg != null) {
                 String argument = (String) arg;
-                if (argument.equals("Maze Load")) {
+                if (argument == "Maze Load") {
+                    secondCharacter.setCharacterName(model.getLoadedCharacter().getCharacterName()+"Second_");
+                    secondCharacter.setCharacterRow(model.getMainCharacterPositionRow());
+                    secondCharacter.setCharacterCol(model.getMainCharacterPositionColumn());
                     startSoundTrack(model.getLoadedCharacter().getCharacterName());
                 }
             }
@@ -50,39 +53,42 @@ public class MyViewModel extends Observable implements Observer {
         model.generateMaze(row, col);
     }
 
-    public int[][] getMaze() {
+    public char[][] getMaze() {
         return model.getMaze();
-    }
-
-    public int getMainCharacterPositionRow() {
-        return model.getMainCharacterPositionRow();
-    }
-
-    public int getMainCharacterPositionColumn() {
-        return model.getMainCharacterPositionColumn();
-    }
-
-    public String getMainCharacterDirection() {
-        return model.getMainCharacterDirection();
     }
 
     public String getMainCharacterName() {
         return mainCharacter.getCharacterName();
     }
 
+    public int getMainCharacterPositionRow() {
+        return model.getMainCharacterPositionRow();
+    }
+    public int getMainCharacterPositionColumn() {
+        return model.getMainCharacterPositionColumn();
+    }
+    public String getMainCharacterDirection() {
+        return model.getMainCharacterDirection();
+    }
+
     public void setMainCharacterName(String character) {
         mainCharacter.setCharacterName(character);
     }
+
+    public String getSecondCharacterName() {
+        return secondCharacter.getCharacterName();
+    }
+
 
     public boolean isAtTheEnd() {
         return model.isAtTheEnd();
     }
 
-    public ArrayList getSolution() {
+    public int[][] getSolution() {
         return model.getSolution();
     }
 
-    public ArrayList getMazeSolutionArr() {
+    public int[][] getMazeSolutionArr() {
         return model.getMazeSolutionArr();
     }
 
@@ -122,8 +128,6 @@ public class MyViewModel extends Observable implements Observer {
         if (isPlayed) {
             gameSoundTrack.play();
         }
-        /*gameSoundTrack.play();
-        isPlayed = true;*/
 
     }
 
@@ -133,11 +137,9 @@ public class MyViewModel extends Observable implements Observer {
         else {
             gameSoundTrack.play();
             if (isPlayed) {
-                /*gameSoundTrack.stop();*/
                 gameSoundTrack.setMute(true);
                 isPlayed = false;
             } else {
-                /*gameSoundTrack.play();*/
                 gameSoundTrack.setMute(false);
                 isPlayed = true;
             }
@@ -149,5 +151,6 @@ public class MyViewModel extends Observable implements Observer {
         mainCharacter = model.getLoadedCharacter();
         return mainCharacter;
     }
+
 
 }
