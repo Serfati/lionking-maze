@@ -101,19 +101,16 @@ public class MyModel extends Observable implements IModel {
         boolean legitKey = false;
         int mainCharacterPositionRow = mainCharacter.getCharacterRow();
         int mainCharacterPositionCol = mainCharacter.getCharacterCol();
-        int secondCharacterPositionRow = secondCharacter.getCharacterRow();
-        int secondCharacterPositionCol = secondCharacter.getCharacterCol();
-        boolean multiPlayerMode = false;
         switch(movement) {
             case UP:
             case W:
             case NUMPAD8:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("back");
-                if (!multiPlayerMode)
+                if (false)
                     secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol)) {
-                    if (!multiPlayerMode) {
+                    if (false) {
                         secondCharacter.setCharacterRow(mainCharacterPositionRow);
                         secondCharacter.setCharacterCol(mainCharacterPositionCol);
                     }
@@ -126,10 +123,10 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD2:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("front");
-                if (!multiPlayerMode)
+                if (false)
                     secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol)) {
-                    if (!multiPlayerMode) {
+                    if (false) {
                         secondCharacter.setCharacterRow(mainCharacterPositionRow);
                         secondCharacter.setCharacterCol(mainCharacterPositionCol);
                     }
@@ -141,10 +138,10 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD4:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
-                if (!multiPlayerMode)
+                if (false)
                     secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1)) {
-                    if (!multiPlayerMode) {
+                    if (false) {
                         secondCharacter.setCharacterRow(mainCharacterPositionRow);
                         secondCharacter.setCharacterCol(mainCharacterPositionCol);
                     }
@@ -156,10 +153,10 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD6:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
-                if (!multiPlayerMode)
+                if (false)
                     secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1)) {
-                    if (!multiPlayerMode) {
+                    if (false) {
                         secondCharacter.setCharacterRow(mainCharacterPositionRow);
                         secondCharacter.setCharacterCol(mainCharacterPositionCol);
                     }
@@ -170,10 +167,10 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD7:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
-                if (!multiPlayerMode)
+                if (false)
                     secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
-                    if (!multiPlayerMode) {
+                    if (false) {
                         secondCharacter.setCharacterRow(mainCharacterPositionRow);
                         secondCharacter.setCharacterCol(mainCharacterPositionCol);
                     }
@@ -185,10 +182,10 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD9:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
-                if (!multiPlayerMode)
+                if (false)
                     secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
-                    if (!multiPlayerMode) {
+                    if (false) {
                         secondCharacter.setCharacterRow(mainCharacterPositionRow);
                         secondCharacter.setCharacterCol(mainCharacterPositionCol);
                     }
@@ -200,10 +197,10 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD1:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
-                if (!multiPlayerMode)
+                if (false)
                     secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {
-                    if (!multiPlayerMode) {
+                    if (false) {
                         secondCharacter.setCharacterRow(mainCharacterPositionRow);
                         secondCharacter.setCharacterCol(mainCharacterPositionCol);
                     }
@@ -215,59 +212,15 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD3:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
-                if (!multiPlayerMode)
+                if (false)
                     secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {
-                    if (!multiPlayerMode) {
+                    if (false) {
                         secondCharacter.setCharacterRow(mainCharacterPositionRow);
                         secondCharacter.setCharacterCol(mainCharacterPositionCol);
                     }
                     mainCharacter.setCharacterRow(mainCharacterPositionRow+1);
                     mainCharacter.setCharacterCol(mainCharacterPositionCol+1);
-                }
-                break;
-
-            case H:
-                if (multiPlayerMode) {
-                    legitKey = true;
-                    secondCharacter.setCharacterDirection("left");
-                    if (isNotWall(secondCharacterPositionRow, secondCharacterPositionCol-1)) {
-                        secondCharacter.setCharacterRow(secondCharacterPositionRow);
-                        secondCharacter.setCharacterCol(secondCharacterPositionCol-1);
-                    }
-                }
-                break;
-
-            case J:
-                if (multiPlayerMode) {
-                    legitKey = true;
-                    secondCharacter.setCharacterDirection("front");
-                    if (isNotWall(secondCharacterPositionRow+1, secondCharacterPositionCol)) {
-                        secondCharacter.setCharacterRow(secondCharacterPositionRow+1);
-                        secondCharacter.setCharacterCol(secondCharacterPositionCol);
-                    }
-                }
-                break;
-
-            case U:
-                if (multiPlayerMode) {
-                    legitKey = true;
-                    secondCharacter.setCharacterDirection("back");
-                    if (isNotWall(secondCharacterPositionRow-1, secondCharacterPositionCol)) {
-                        secondCharacter.setCharacterRow(secondCharacterPositionRow-1);
-                        secondCharacter.setCharacterCol(secondCharacterPositionCol);
-                    }
-                }
-                break;
-
-            case K:
-                if (multiPlayerMode) {
-                    legitKey = true;
-                    secondCharacter.setCharacterDirection("right");
-                    if (isNotWall(secondCharacterPositionRow, secondCharacterPositionCol+1)) {
-                        secondCharacter.setCharacterRow(secondCharacterPositionRow);
-                        secondCharacter.setCharacterCol(secondCharacterPositionCol+1);
-                    }
                 }
                 break;
             default:
@@ -307,50 +260,14 @@ public class MyModel extends Observable implements IModel {
                     }
                 }
             });
-                clientSolveMaze.communicateWithServer();
+            clientSolveMaze.communicateWithServer();
             mazeSolutionArr = mazeSolution.getSolution();
-                setChanged();
-                notifyObservers("Solution");
+            setChanged();
+            notifyObservers("Solution");
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
-
-    private boolean isNotWall(int row, int col) {
-        char c = maze.getCharAt(row, col);
-        return (c == 'S' || c == '0' || c == 'E');
-    }
-
-    @Override
-    public char[][] getMaze() {
-        return maze.getMaze();
-    }
-
-    @Override
-    public int getMainCharacterPositionRow() {
-        return mainCharacter.getCharacterRow();
-    }
-
-    @Override
-    public int getMainCharacterPositionColumn() {
-        return mainCharacter.getCharacterCol();
-    }
-
-    @Override
-    public String getMainCharacterDirection() {
-        return mainCharacter.getCharacterDirection();
-    }
-
-    @Override
-    public int[][] getSolution() {
-        return mazeSolution.getSolution();
-    }
-
-    @Override
-    public boolean isAtTheEnd() {
-        return isAtTheEnd;
-    }
-
 
     @Override
     public void closeModel() {
@@ -417,7 +334,6 @@ public class MyModel extends Observable implements IModel {
                 setChanged();
                 notifyObservers("Maze Load");
             }
-
             fin.close();
             oin.close();
         } catch(IOException | ClassNotFoundException e) {
@@ -430,8 +346,42 @@ public class MyModel extends Observable implements IModel {
         }
     }
 
+    private boolean isNotWall(int row, int col) {
+        char c = maze.getCharAt(row, col);
+        return (c == 'S' || c == '0' || c == 'E');
+    }
     @Override
     public MazeCharacter getLoadedCharacter() {
         return mainCharacter;
+    }
+
+    @Override
+    public char[][] getMaze() {
+        return maze.getMaze();
+    }
+
+    @Override
+    public int getMainCharacterPositionRow() {
+        return mainCharacter.getCharacterRow();
+    }
+
+    @Override
+    public int getMainCharacterPositionColumn() {
+        return mainCharacter.getCharacterCol();
+    }
+
+    @Override
+    public String getMainCharacterDirection() {
+        return mainCharacter.getCharacterDirection();
+    }
+
+    @Override
+    public int[][] getSolution() {
+        return mazeSolution.getSolution();
+    }
+
+    @Override
+    public boolean isAtTheEnd() {
+        return isAtTheEnd;
     }
 }

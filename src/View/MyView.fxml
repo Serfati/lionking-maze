@@ -104,13 +104,13 @@
                         <javafx.scene.control.Menu mnemonicParsing="false" text="Exit">
                             <items>
                                 <javafx.scene.control.MenuItem mnemonicParsing="false" onAction="#exitButton"
-                                                               text="Exit" visible="true"/>
+                                                               text="Exit"/>
                             </items>
                         </javafx.scene.control.Menu>
                         <javafx.scene.control.Menu mnemonicParsing="false" text="Help">
                             <items>
                                 <javafx.scene.control.MenuItem mnemonicParsing="false" onAction="#help" text="Help"
-                                                               visible="true"/>
+                                />
                             </items>
                         </javafx.scene.control.Menu>
                         <javafx.scene.control.Menu mnemonicParsing="false" text="About">

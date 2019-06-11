@@ -7,14 +7,14 @@ import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
-public class AnimatedZoomOperator {
+class AnimatedZoomOperator {
     private Timeline timeline;
 
-    public AnimatedZoomOperator() {
+    AnimatedZoomOperator() {
         this.timeline = new Timeline(60);
     }
 
-    public void zoom(Node node, double factor, double x, double y) {
+    void zoom(Node node, double factor, double x, double y) {
         // determine scale
         double oldScale = node.getScaleX();
         double scale = oldScale * factor;

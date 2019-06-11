@@ -8,10 +8,7 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -44,21 +41,9 @@ import java.util.ResourceBundle;
 
 public class MyViewController implements IView, Observer, Initializable {
 
-    //TODO - DONE
-    // add generate button to secondary menu
-
-    //TODO- DONE..
-    //Configurations: fix the string he expect regarding the algorithms
-
-    //TODO - Done
-    // set background
-
-    //TODO - DONE..
-    // add shadow character
-
     public Label lbl_characterRow;
     public MazeDisplayer mazeDisplayer;
-    NewGameController newGameController;
+    private NewGameController newGameController;
     public Label lbl_characterColumn;
     public Label lbl_statusBar;
 
@@ -77,15 +62,12 @@ public class MyViewController implements IView, Observer, Initializable {
     public ScrollPane mazeScrollPane;
     private Stage stageNewGameController;
 
-
-    //region String Property for Binding
-    public StringProperty CharacterRow = new SimpleStringProperty();
-    public StringProperty CharacterColumn = new SimpleStringProperty();
+    private StringProperty CharacterRow = new SimpleStringProperty();
+    private StringProperty CharacterColumn = new SimpleStringProperty();
 
     public void setViewModel(MyViewModel myViewModel) {
         this.myViewModel = myViewModel;
     }
-
 
     @Override
     public void update(Observable o, Object arg) {
@@ -96,15 +78,12 @@ public class MyViewController implements IView, Observer, Initializable {
                     case "Maze":
                         mazeScrollPane.setVisible(true);
                         mazeDisplayer.setMaze(myViewModel.getMaze());
-                        //MainCharacter
                         mazeDisplayer.setMainCharacterPosition(myViewModel.getMainCharacterPositionRow(), myViewModel.getMainCharacterPositionColumn());
                         mazeDisplayer.setMainCharacterDirection(myViewModel.getMainCharacterDirection());
                         mazeDisplayer.setMainCharacterName(myViewModel.getMainCharacterName());
 
-                        //Second Character
                         mazeDisplayer.setSecondCharacterName(myViewModel.getSecondCharacterName());
 
-                        //mazeDisplayer.setMazeSolutionArr(null);
                         Platform.runLater(() -> {
                             CharacterColumn.set(myViewModel.getMainCharacterPositionColumn()+"");
                             CharacterRow.set(myViewModel.getMainCharacterPositionRow()+"");
@@ -137,7 +116,6 @@ public class MyViewController implements IView, Observer, Initializable {
                         mazeDisplayer.setSecondCharacterPosition(myViewModel.getMainCharacterPositionRow(), myViewModel.getMainCharacterPositionColumn());
                         mazeDisplayer.setSecondCharacterDirection(myViewModel.getMainCharacterDirection());
 
-                        //mazeDisplayer.setMazeSolutionArr(null);
                         Platform.runLater(() -> {
                             CharacterColumn.set(myViewModel.getMainCharacterPositionColumn()+"");
                             CharacterRow.set(myViewModel.getMainCharacterPositionRow()+"");
@@ -158,7 +136,6 @@ public class MyViewController implements IView, Observer, Initializable {
 
                         mazeDisplayer.setMainCharacterDirection(myViewModel.getMainCharacterDirection());
 
-                        //mazeDisplayer.setMazeSolutionArr(null);
                         Platform.runLater(() -> {
                             CharacterColumn.set(myViewModel.getMainCharacterPositionColumn()+"");
                             CharacterRow.set(myViewModel.getMainCharacterPositionRow()+"");
@@ -183,52 +160,25 @@ public class MyViewController implements IView, Observer, Initializable {
                         break;
                 }
             }
-
-
             if (myViewModel.isAtTheEnd()) {
-                //TODO - DONE
-                // The End: make a cool winning GIF/Video/Pic
-
-
                 Stage winningStage = new Stage();
                 VBox root = new VBox();
                 root.setAlignment(Pos.CENTER);
 
                 MediaPlayer player = new MediaPlayer(new Media(new File("Resources/Music/"+myViewModel.getMainCharacterName()+"winVideo.mp4").toURI().toString()));
                 MediaView mediaView = new MediaView(player);
-
-                //mediaView.setFitWidth(500);
-                //mediaView.setFitHeight(500);
-                player.setOnEndOfMedia(new Runnable() {
-                    @Override
-                    public void run() {
-                        winningStage.close();
-                    }
-                });
-
+                player.setOnEndOfMedia(winningStage::close);
                 Button skipBtn = new Button();
                 skipBtn.setText("Click to skip...");
 
-                skipBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent event) {
-                        player.stop();
-                        winningStage.close();
-                    }
+                skipBtn.setOnMouseClicked(event -> {
+                    player.stop();
+                    winningStage.close();
                 });
-
-
                 root.getChildren().add(mediaView);
                 root.getChildren().add(skipBtn);
-
                 Scene scene = new Scene(root, 600, 400);
-
                 winningStage.setScene(scene);
-
-
-
-                //Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                //alert.setContentText(String.format("Congratulations!!"));
                 Platform.runLater(() -> {
                     save_MenuItem.setDisable(true);
                     solve_MenuItem.setDisable(true);
@@ -239,20 +189,14 @@ public class MyViewController implements IView, Observer, Initializable {
                     player.play();
                     player.setMute(true);
                     winningStage.showAndWait();
-
-
                     newMaze();
                 });
-
             }
-            //mazeDisplayer.redraw();
         }
-
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //Set Binding for Properties
         lbl_characterRow.textProperty().bind(CharacterRow);
         lbl_characterColumn.textProperty().bind(CharacterColumn);
         mazeScrollPane.setVisible(false);
@@ -289,81 +233,51 @@ public class MyViewController implements IView, Observer, Initializable {
         icon_zoomImageView.setImage(image);
         icon_zoomImageView.setVisible(false);
         setZoom();
-
-
     }
 
     private void setZoom() {
-        icon_zoomImageView.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-
-            @Override
-            public void handle(MouseEvent event) {
-                resetZoom();
-                event.consume();
-            }
+        icon_zoomImageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            resetZoom();
+            event.consume();
         });
     }
 
     public void KeyPressed(KeyEvent keyEvent) {
-        if (!myViewModel.isAtTheEnd()) {
-            //TODO - DONE..
-            // make it not able to move the character
-            //TODO when you click something that isn't the controllers it wont make solution disapear
-
+        if (!myViewModel.isAtTheEnd())
             myViewModel.moveCharacter(keyEvent.getCode());
-
-        } else {
+        else
             lbl_statusBar.setText("If you want to play again just generate a new maze!");
-        }
         keyEvent.consume();
     }
 
-
     public void solveMaze() {
-        //TODO - DONE
-        // solve: check why it fails over 20 0
         Platform.runLater(() -> {
             lbl_statusBar.setText("Computing solution, please wait.");
             solve_MenuItem.setDisable(true);
             icon_fullSolution.setVisible(false);
             icon_partSolution.setVisible(false);
         });
-
         myViewModel.generateSolution();
-
-
     }
 
-    public void showAlert(String alertMessage) {
+    private void showAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setGraphic(null);
         alert.setTitle("Error Alert");
-        alert.setContentText(alertMessage);
+        alert.setContentText("Exception!");
         alert.show();
     }
 
-    public void setResizeEvent(Scene scene) {
-        scene.widthProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                mazeDisplayer.redraw();
-
-            }
-        });
-        scene.heightProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                mazeDisplayer.redraw();
-            }
-        });
+    void setResizeEvent(Scene scene) {
+        scene.widthProperty().addListener((observable, oldValue, newValue) -> mazeDisplayer.redraw());
+        scene.heightProperty().addListener((observable, oldValue, newValue) -> mazeDisplayer.redraw());
     }
 
     public void exitButton() {
         exitCorrectly();
     }
 
-
-    public void exitCorrectly() {
+    void exitCorrectly() {
         Alert alert = new Alert(Alert.AlertType.NONE);
         ButtonType leaveButton = new ButtonType("Leave", ButtonBar.ButtonData.YES);
         ButtonType stayButton = new ButtonType("Stay", ButtonBar.ButtonData.NO);
@@ -377,13 +291,9 @@ public class MyViewController implements IView, Observer, Initializable {
             Platform.exit();
         } else {
             // ... user chose CANCEL or closed the dialog
-
             alert.close();
         }
-
     }
-
-
     public void saveFile(ActionEvent event) {
         int[] choose = {0};
         Alert alert = new Alert(Alert.AlertType.NONE);
@@ -398,8 +308,6 @@ public class MyViewController implements IView, Observer, Initializable {
                 choose[0] = 1;
             } else if (type == noButton) {//Original
                 choose[0] = 2;
-            } else {//Cancel
-                choose[0] = 0;
             }
         });
         if (choose[0] == 0) {
@@ -419,10 +327,10 @@ public class MyViewController implements IView, Observer, Initializable {
         });
 
         if (file != null) {
-            if (choose[0] == 1) {//Current
+            if (choose[0] == 1) {
                 myViewModel.saveCurrentMaze(file);
                 lbl_statusBar.setText("Saved current maze");
-            } else if (choose[0] == 2) {//Original
+            } else {
                 myViewModel.saveOriginalMaze(file);
                 lbl_statusBar.setText("Saved original maze");
             }
@@ -432,8 +340,6 @@ public class MyViewController implements IView, Observer, Initializable {
     }
 
     public void loadFile(ActionEvent event) {
-        //TODO-Load - DONE
-        // fix load, check maybe create game state and save it, or maybe ask user for character
         System.out.println("loadFile");
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a maze to load");
@@ -464,15 +370,13 @@ public class MyViewController implements IView, Observer, Initializable {
                 stageNewGameController.setScene(scene);
                 stageNewGameController.setResizable(false);
                 newGameController = fxmlLoader.getController();
-                newGameController.setStage(stageNewGameController);
                 newGameController.setViewModel(myViewModel);
                 stageNewGameController.initModality(Modality.APPLICATION_MODAL);
             }
 
             newGameController.enableButtons();
             stageNewGameController.show();
-        } catch(Exception e) {
-
+        } catch(Exception ignored) {
         }
     }
 
@@ -481,7 +385,7 @@ public class MyViewController implements IView, Observer, Initializable {
             Stage stage = new Stage();
             stage.setTitle("Properties");
             FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent root = fxmlLoader.load(getClass().getResource("Properties.fxml").openStream());
+            Parent root = fxmlLoader.load(getClass().getResource("MyPropertiesView.fxml").openStream());
             Scene scene = new Scene(root, 400, 370);
             scene.getStylesheets().add(getClass().getResource("ViewStyle.css").toExternalForm());
             stage.setScene(scene);
@@ -491,12 +395,9 @@ public class MyViewController implements IView, Observer, Initializable {
                 solve_MenuItem.setDisable(false);
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.show();
-        } catch(Exception e) {
-
+        } catch(Exception ignored) {
         }
-
     }
-
     public void help() {
         Stage helpStage = new Stage();
         helpStage.setAlwaysOnTop(true);
@@ -505,13 +406,13 @@ public class MyViewController implements IView, Observer, Initializable {
 
         Parent root = null;
         try {
-            //change MyView.fxml to help.fxml after designed
             root = FXMLLoader.load(getClass().getResource("Help.fxml"));
         } catch(IOException e) {
             e.printStackTrace();
-            showAlert("Exception!");
+            showAlert();
         }
         helpStage.setTitle("Help");
+        assert root != null;
         Scene scene = new Scene(root, 520, 495);
         scene.getStylesheets().add(getClass().getResource("ViewStyle.css").toExternalForm());
         helpStage.setScene(scene);
@@ -521,8 +422,6 @@ public class MyViewController implements IView, Observer, Initializable {
 
 
     public void About() {
-        //TODO - DONE
-        // About: fill content and make sure it looks good
         Stage aboutStage = new Stage();
         aboutStage.setAlwaysOnTop(true);
         aboutStage.setResizable(false);
@@ -530,12 +429,12 @@ public class MyViewController implements IView, Observer, Initializable {
 
         Parent root = null;
         try {
-            //change MyView.fxml to help.fxml after designed
             root = FXMLLoader.load(getClass().getResource("About.fxml"));
         } catch(IOException e) {
-            showAlert("Exception!");
+            showAlert();
         }
         aboutStage.setTitle("About");
+        assert root != null;
         Scene scene = new Scene(root, 600, 400);
         scene.getStylesheets().add(getClass().getResource("ViewStyle.css").toExternalForm());
         aboutStage.setScene(scene);
@@ -543,59 +442,42 @@ public class MyViewController implements IView, Observer, Initializable {
         aboutStage.show();
     }
 
-    public void setSound() {
-        icon_sound.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-
-            @Override
-            public void handle(MouseEvent event) {
-                if (myViewModel.setSound())
-                    soundOnOff = "On";
-                else
-                    soundOnOff = "Off";
-
-                File file = new File("Resources/Icons/icon_sound"+soundOnOff+".png");
-                Image image = new Image(file.toURI().toString());
-                icon_sound.setImage(image);
-                event.consume();
-            }
+    private void setSound() {
+        icon_sound.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            if (myViewModel.setSound())
+                soundOnOff = "On";
+            else
+                soundOnOff = "Off";
+            File file = new File("Resources/Icons/icon_sound"+soundOnOff+".png");
+            Image image = new Image(file.toURI().toString());
+            icon_sound.setImage(image);
+            event.consume();
         });
     }
 
-    public void setHint() {
-        icon_partSolution.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-
-                mazeDisplayer.setHint(true);
-                solveMaze();
-                event.consume();
-            }
+    private void setHint() {
+        icon_partSolution.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            mazeDisplayer.setHint();
+            solveMaze();
+            event.consume();
         });
     }
 
-    public void setFullSolution() {
-        icon_fullSolution.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                solveMaze();
-                event.consume();
-            }
+    private void setFullSolution() {
+        icon_fullSolution.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            solveMaze();
+            event.consume();
         });
     }
 
-    public void makeNewMaze() {
-        icon_makeNewMaze.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                newMaze();
-                event.consume();
-            }
+    private void makeNewMaze() {
+        icon_makeNewMaze.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            newMaze();
+            event.consume();
         });
     }
-
 
     public void mouseDragged(MouseEvent mouseEvent) {
-
         if (mazeDisplayer != null) {
             lbl_statusBar.setText("");
             int maxSize = Math.max(myViewModel.getMaze()[0].length, myViewModel.getMaze().length);
@@ -626,21 +508,17 @@ public class MyViewController implements IView, Observer, Initializable {
         }
     }
 
-
-
     public void scrollInOut(ScrollEvent scrollEvent) {
-
         try {
-            myViewModel.getMaze();//TODO change this
+            myViewModel.getMaze();
             AnimatedZoomOperator zoomOperator = new AnimatedZoomOperator();
             double zoomFactor;
             if (scrollEvent.isControlDown()) {
                 icon_zoomImageView.setVisible(true);
                 zoomFactor = 1.5;
                 double deltaY = scrollEvent.getDeltaY();
-                if (deltaY < 0) {
+                if (deltaY < 0)
                     zoomFactor = 1 / zoomFactor;
-                }
                 zoomOperator.zoom(mazeDisplayer, zoomFactor, scrollEvent.getSceneX(), scrollEvent.getSceneY());
                 scrollEvent.consume();
             }
@@ -649,7 +527,7 @@ public class MyViewController implements IView, Observer, Initializable {
         }
     }
 
-    public void resetZoom() {
+    private void resetZoom() {
         icon_zoomImageView.setVisible(false);
         Timeline timeLine = new Timeline(60);
         timeLine.getKeyFrames().clear();
@@ -660,6 +538,4 @@ public class MyViewController implements IView, Observer, Initializable {
         timeLine.play();
 
     }
-
-
 }

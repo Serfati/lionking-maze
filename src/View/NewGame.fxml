@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" onKeyPressed="#newGameKeyPressed" prefHeight="500.0" prefWidth="600.0"
-          xmlns="http://javafx.com/javafx/8.0.121" fx:controller="View.NewGameController">
+          xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="View.NewGameController">
     <columnConstraints>
         <ColumnConstraints maxWidth="364.0" minWidth="255.0" prefWidth="350.0"/>
         <ColumnConstraints maxWidth="230.0" minWidth="150.0" prefWidth="158.0"/>
@@ -47,28 +47,29 @@
                 <Insets top="20.0"/>
             </GridPane.margin>
         </ImageView>
-        <Label contentDisplay="CENTER" prefWidth="150.0" text="Rows" textAlignment="CENTER" GridPane.rowIndex="4">
+        <Label contentDisplay="CENTER" prefWidth="150.0" text="Rows" textAlignment="CENTER" textFill="#682626"
+               GridPane.rowIndex="4">
             <GridPane.margin>
                 <Insets left="50.0" top="20.0"/>
             </GridPane.margin>
             <font>
-                <Font name="System Bold" size="28.0"/>
+                <Font name="System Bold" size="20.0"/>
             </font>
         </Label>
-        <Label prefWidth="150.0" text="Columns" textAlignment="CENTER" GridPane.rowIndex="5">
+        <Label prefWidth="150.0" text="Columns" textAlignment="CENTER" textFill="#682626" GridPane.rowIndex="5">
             <GridPane.margin>
                 <Insets left="50.0" top="10.0"/>
             </GridPane.margin>
             <font>
-                <Font name="System Bold" size="28.0"/>
+                <Font name="System Bold" size="19.0"/>
             </font>
         </Label>
-        <Label text="Choose Character" textAlignment="CENTER">
+        <Label text="Choose Character" textAlignment="CENTER" textFill="#682626">
             <GridPane.margin>
                 <Insets left="20.0" top="20.0"/>
             </GridPane.margin>
             <font>
-                <Font name="System Bold" size="36.0"/>
+                <Font name="System Bold" size="23.0"/>
             </font>
         </Label>
         <HBox minHeight="50.0" prefHeight="66.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -90,7 +91,8 @@
         <VBox minWidth="300.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
             <children>
                 <Button id="newGame_Button" fx:id="newGame_Button" minWidth="150.0" mnemonicParsing="false"
-                        onAction="#startGame" prefWidth="100.0" text="Start Game" textAlignment="CENTER">
+                        onAction="#startGame" prefWidth="100.0" text="Start Game" textAlignment="CENTER"
+                        textFill="#682626">
                     <HBox.margin>
                         <Insets left="50.0"/>
                     </HBox.margin>
@@ -100,27 +102,10 @@
                 </Button>
                 <Label fx:id="pleaseWait_lbl" text="Generating a new maze... Please wait" textAlignment="CENTER">
                     <VBox.margin>
-                        <Insets left="20.0" top="10.0"/>
+                        <Insets/>
                     </VBox.margin>
                 </Label>
             </children>
-        </VBox>
-        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="7">
-            <children>
-                <CheckBox fx:id="newGame_multiPlayer_checkBox" mnemonicParsing="false" text="MultiPlayer Mode">
-                    <VBox.margin>
-                        <Insets left="20.0"/>
-                    </VBox.margin>
-                </CheckBox>
-                <Label text="Buttons: { U,H,J,K }" textAlignment="CENTER">
-                    <VBox.margin>
-                        <Insets left="20.0"/>
-                    </VBox.margin>
-                </Label>
-            </children>
-            <GridPane.margin>
-                <Insets left="40.0" top="30.0"/>
-            </GridPane.margin>
         </VBox>
     </children>
 </GridPane>

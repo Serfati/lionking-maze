@@ -10,8 +10,8 @@ import java.io.FileInputStream;
 
 public class MazeDisplayer extends Canvas {
 
-    private MazeCharacter mainCharacter = new MazeCharacter("Crash_", 0, 0);
-    private MazeCharacter secondCharacter = new MazeCharacter("Crash_Second_", 0, 0);
+    private MazeCharacter mainCharacter = new MazeCharacter("Simba_", 0, 0);
+    private MazeCharacter secondCharacter = new MazeCharacter("Simba_Second_", 0, 0);
     private char[][] mazeCharArr;
     private int[][] mazeSolutionArr;
     private int goalPositionRow;
@@ -59,17 +59,19 @@ public class MazeDisplayer extends Canvas {
     }
 
 
-    public int getMainCharacterRow() {
+    private int getMainCharacterRow() {
         return mainCharacter.getCharacterRow();
     }
-    public int getMainCharacterColumn() {
+
+    private int getMainCharacterColumn() {
         return mainCharacter.getCharacterCol();
     }
 
-    public int getSecondCharacterRow() {
+    private int getSecondCharacterRow() {
         return secondCharacter.getCharacterRow();
     }
-    public int getSecondCharacterColumn() {
+
+    private int getSecondCharacterColumn() {
         return secondCharacter.getCharacterCol();
     }
 
@@ -79,17 +81,17 @@ public class MazeDisplayer extends Canvas {
         colMazeSize = maze[0].length;
     }
 
-    public void setGoalPosition(int row, int column) {
+    private void setGoalPosition(int row, int column) {
         goalPositionRow = row;
         goalPositionColumn = column;
     }
 
 
-    public void setSecondCharacterDirection(String direction) {
+    void setSecondCharacterDirection(String direction) {
         secondCharacter.setCharacterDirection(direction);
     }
 
-    public void setSecondCharacterPosition(int row, int column) {
+    void setSecondCharacterPosition(int row, int column) {
 
         oldSecondCharacterRow = secondCharacter.getCharacterRow();
         oldSecondCharacterCol = secondCharacter.getCharacterCol();
@@ -99,11 +101,11 @@ public class MazeDisplayer extends Canvas {
 
     }
 
-    public void setMainCharacterDirection(String direction) {
+    void setMainCharacterDirection(String direction) {
         mainCharacter.setCharacterDirection(direction);
     }
 
-    public void setMainCharacterPosition(int row, int column) {
+    void setMainCharacterPosition(int row, int column) {
         oldMainCharacterRow = mainCharacter.getCharacterRow();
         oldMainCharacterCol = mainCharacter.getCharacterCol();
 
@@ -111,16 +113,16 @@ public class MazeDisplayer extends Canvas {
         mainCharacter.setCharacterCol(column);
     }
 
-    public void setMainCharacterName(String name) {
+    void setMainCharacterName(String name) {
         mainCharacter.setCharacterName(name);
         setImages();
     }
 
-    public void setSecondCharacterName(String name) {
+    void setSecondCharacterName(String name) {
         secondCharacter.setCharacterName(name);
     }
 
-    public void redraw() {
+    void redraw() {
         if (mazeCharArr != null) {
             this.setHeight(this.getScene().getHeight()-80 /*ToolBar*/-105 /*LowerBar*/);
             this.setWidth(this.getScene().getWidth() * 19 / 20);
@@ -192,7 +194,7 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
-    public void redrawMaze() {
+    void redrawMaze() {
         if (mazeCharArr != null) {
             hint = false;
             mazeSolutionArr = null;
@@ -200,7 +202,7 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
-    public void redrawCharacter() {
+    void redrawCharacter() {
         try {
             setCharactersImage();
             double canvasHeight = getHeight();
@@ -261,7 +263,7 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
-    public void redrawSolution() {
+    void redrawSolution() {
         try {
             drawSolutionGeneric(solutionImage);
         } catch(Exception e) {
@@ -270,7 +272,7 @@ public class MazeDisplayer extends Canvas {
 
     }
 
-    public void redrawCancelSolution() {
+    void redrawCancelSolution() {
         try {
             drawSolutionGeneric(backGroundImage);
             mazeSolutionArr = null;
@@ -279,12 +281,12 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
-    public void setMazeSolutionArr(int[][] mazeSolutionArr) {
+    void setMazeSolutionArr(int[][] mazeSolutionArr) {
         this.mazeSolutionArr = mazeSolutionArr;
     }
 
-    public void setHint(boolean hint) {
-        this.hint = hint;
+    void setHint() {
+        this.hint = true;
     }
 
 }

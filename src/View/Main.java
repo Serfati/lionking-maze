@@ -3,13 +3,11 @@ package View;
 import Model.MyModel;
 import ViewModel.MyViewModel;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 public class Main extends Application {
 
@@ -34,24 +32,17 @@ public class Main extends Application {
         myViewController.setViewModel(myViewModel);
         myViewModel.addObserver(myViewController);
 
-        scene.addEventFilter(KeyEvent.KEY_PRESSED, event -> myViewController.KeyPressed(event));
+        scene.addEventFilter(KeyEvent.KEY_PRESSED, myViewController::KeyPressed);
 
         primaryStage.setScene(scene);
         SetStageCloseEvent(primaryStage, myViewController);
         primaryStage.show();
-        //myViewModel.generateMaze(10,10);
-
-
-        //Rise Servers
-
     }
 
     private void SetStageCloseEvent(Stage primaryStage, MyViewController myViewController) {
-        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            public void handle(WindowEvent windowEvent) {
-                myViewController.exitCorrectly();
-                windowEvent.consume();
-            }
+        primaryStage.setOnCloseRequest(windowEvent -> {
+            myViewController.exitCorrectly();
+            windowEvent.consume();
         });
     }
 }

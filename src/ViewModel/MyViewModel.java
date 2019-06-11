@@ -12,13 +12,11 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class MyViewModel extends Observable implements Observer {
-
     private IModel model;
     private MediaPlayer gameSoundTrack;
     private boolean isPlayed = true;
     private MazeCharacter mainCharacter = new MazeCharacter("Simba_", 0, 0);
     private MazeCharacter secondCharacter = new MazeCharacter("Simba_Second_", 0, 0);
-
 
     public MyViewModel(IModel model) {
         this.model = model;
@@ -29,7 +27,7 @@ public class MyViewModel extends Observable implements Observer {
         if (o == model) {
             if (arg != null) {
                 String argument = (String) arg;
-                if (argument == "Maze Load") {
+                if (argument.equals("Maze Load")) {
                     secondCharacter.setCharacterName(model.getLoadedCharacter().getCharacterName()+"Second_");
                     secondCharacter.setCharacterRow(model.getMainCharacterPositionRow());
                     secondCharacter.setCharacterCol(model.getMainCharacterPositionColumn());
@@ -41,94 +39,15 @@ public class MyViewModel extends Observable implements Observer {
         }
     }
 
-    public boolean isPlayed() {
-        return isPlayed;
-    }
-
-    public void moveCharacter(KeyCode movement) {
-        model.moveCharacter(movement);
-    }
-
-    public void generateMaze(int row, int col) {
-        model.generateMaze(row, col);
-    }
-
-    public char[][] getMaze() {
-        return model.getMaze();
-    }
-
-    public String getMainCharacterName() {
-        return mainCharacter.getCharacterName();
-    }
-
-    public int getMainCharacterPositionRow() {
-        return model.getMainCharacterPositionRow();
-    }
-    public int getMainCharacterPositionColumn() {
-        return model.getMainCharacterPositionColumn();
-    }
-    public String getMainCharacterDirection() {
-        return model.getMainCharacterDirection();
-    }
-
-    public void setMainCharacterName(String character) {
-        mainCharacter.setCharacterName(character);
-    }
-
-    public String getSecondCharacterName() {
-        return secondCharacter.getCharacterName();
-    }
-
-
-    public boolean isAtTheEnd() {
-        return model.isAtTheEnd();
-    }
-
-    public int[][] getSolution() {
-        return model.getSolution();
-    }
-
-    public int[][] getMazeSolutionArr() {
-        return model.getMazeSolutionArr();
-    }
-
-    public void generateSolution() {
-        model.generateSolution();
-    }
-
-    public void saveOriginalMaze(File file) {
-        model.saveOriginalMaze(file, mainCharacter.getCharacterName());
-    }
-
-    public void saveCurrentMaze(File file) {
-        model.saveCurrentMaze(file, mainCharacter.getCharacterName());
-    }
-
-    public void loadFile(File file) {
-
-        model.loadMaze(file);
-    }
-
-    public void closeModel() {
-        model.closeModel();
-    }
-
     public void startSoundTrack(String character) {
         if (gameSoundTrack != null)
             gameSoundTrack.stop();
         String musicFile = "Resources/Music/"+character+"gameSoundTrack.mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
         gameSoundTrack = new MediaPlayer(sound);
-        gameSoundTrack.setOnEndOfMedia(new Runnable() {
-            @Override
-            public void run() {
-                gameSoundTrack.seek(Duration.ZERO);
-            }
-        });
-        if (isPlayed) {
+        gameSoundTrack.setOnEndOfMedia(() -> gameSoundTrack.seek(Duration.ZERO));
+        if (isPlayed)
             gameSoundTrack.play();
-        }
-
     }
 
     public boolean setSound() {
@@ -151,6 +70,57 @@ public class MyViewModel extends Observable implements Observer {
         mainCharacter = model.getLoadedCharacter();
         return mainCharacter;
     }
+    public void moveCharacter(KeyCode movement) {
+        model.moveCharacter(movement);
+    }
+    public void generateMaze(int row, int col) {
+        model.generateMaze(row, col);
+    }
 
+    public char[][] getMaze() {
+        return model.getMaze();
+    }
 
+    public String getMainCharacterName() {
+        return mainCharacter.getCharacterName();
+    }
+    public int getMainCharacterPositionRow() {
+        return model.getMainCharacterPositionRow();
+    }
+    public int getMainCharacterPositionColumn() {
+        return model.getMainCharacterPositionColumn();
+    }
+    public String getMainCharacterDirection() {
+        return model.getMainCharacterDirection();
+    }
+
+    public void setMainCharacterName(String character) {
+        mainCharacter.setCharacterName(character);
+    }
+
+    public String getSecondCharacterName() {
+        return secondCharacter.getCharacterName();
+    }
+    public boolean isAtTheEnd() {
+        return model.isAtTheEnd();
+    }
+    public int[][] getSolution() {
+        return model.getSolution();
+    }
+    public void generateSolution() {
+        model.generateSolution();
+    }
+    public void saveOriginalMaze(File file) {
+        model.saveOriginalMaze(file, mainCharacter.getCharacterName());
+    }
+    public void saveCurrentMaze(File file) {
+        model.saveCurrentMaze(file, mainCharacter.getCharacterName());
+    }
+
+    public void loadFile(File file) {
+        model.loadMaze(file);
+    }
+    public void closeModel() {
+        model.closeModel();
+    }
 }
