@@ -69,18 +69,17 @@ public class MyModel extends Observable implements IModel {
                         byte[] decompressedMaze = new byte[mazeDimensions[0] * mazeDimensions[1]+12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
                         is.read(decompressedMaze); //Fill decompressedMaze with bytes
                         maze = new Maze(decompressedMaze);
-                        toServer.close();
-                        fromServer.close();
                     } catch(Exception e) {
                         e.printStackTrace();
                     }
                 }
             });
-                clientMazeGenerator.communicateWithServer();
-            MyMazeGenerator m = new MyMazeGenerator();
-            this.maze = m.generate(row, col);
+            //TODO
+            clientMazeGenerator.communicateWithServer();
+//            MyMazeGenerator m = new MyMazeGenerator();
+//            this.maze = m.generate(row, col);
             int mazeRow = maze.getStartPosition().getRowIndex();
-                int mazeCol = maze.getStartPosition().getColumnIndex();
+            int mazeCol = maze.getStartPosition().getColumnIndex();
             mainCharacter = new MazeCharacter("Main_", mazeRow, mazeCol);
 
                 isAtTheEnd = false;
