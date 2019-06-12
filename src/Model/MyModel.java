@@ -1,7 +1,6 @@
 package Model;
 
 import Model.Client.Client;
-import Model.Client.IClientStrategy;
 import Model.IO.MyDecompressorInputStream;
 import Model.Server.Configurations;
 import Model.Server.Server;
@@ -34,45 +33,33 @@ public class MyModel extends Observable implements IModel {
     public MyModel() {
         Configurations.runConf();
         isAtTheEnd = false;
-        startServers();
-
-    }
-
-    private void startServers() {
+        //startServers();
         serverMazeGenerator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
         serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
         serverMazeGenerator.start();
         serverSolveMaze.start();
     }
 
-    private void closeServers() {
-        serverMazeGenerator.stop();
-        serverSolveMaze.stop();
-    }
-
     @Override
     public void generateMaze(int row, int col) {
         try {
-            Client clientMazeGenerator = new Client(InetAddress.getLocalHost(), 5400, new IClientStrategy() {
-                @Override
-                public void clientStrategy(InputStream inFromServer, OutputStream outToServer) {
-                    try {
-                        ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
-                        ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
-                        toServer.flush();
-                        int[] mazeDimensions = new int[]{row, col};
-                        toServer.writeObject(mazeDimensions); //send maze dimensions to server
-                        toServer.flush();
-                        byte[] compressedMaze = (byte[]) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
-                        InputStream is = new MyDecompressorInputStream(new ByteArrayInputStream(compressedMaze));
-                        byte[] decompressedMaze = new byte[mazeDimensions[0] * mazeDimensions[1]+12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
-                        is.read(decompressedMaze); //Fill decompressedMaze with bytes
-                        maze = new Maze(decompressedMaze);
-                        toServer.close();
-                        fromServer.close();
-                    } catch(Exception e) {
-                        e.printStackTrace();
-                    }
+            Client clientMazeGenerator = new Client(InetAddress.getLocalHost(), 5400, (inFromServer, outToServer) -> {
+                try {
+                    ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
+                    ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
+                    toServer.flush();
+                    int[] mazeDimensions = new int[]{row, col};
+                    toServer.writeObject(mazeDimensions); //send maze dimensions to server
+                    toServer.flush();
+                    byte[] compressedMaze = (byte[]) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
+                    InputStream is = new MyDecompressorInputStream(new ByteArrayInputStream(compressedMaze));
+                    byte[] decompressedMaze = new byte[mazeDimensions[0] * mazeDimensions[1]+12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
+                    is.read(decompressedMaze); //Fill decompressedMaze with bytes
+                    maze = new Maze(decompressedMaze);
+                    toServer.close();
+                    fromServer.close();
+                } catch(Exception e) {
+                    e.printStackTrace();
                 }
             });
             clientMazeGenerator.communicateWithServer();
@@ -99,9 +86,8 @@ public class MyModel extends Observable implements IModel {
             case UP:
             case W:
             case NUMPAD8:
-                if (mainCharacterPositionRow-1 < 0) {
+                if (mainCharacterPositionRow-1 < 0)
                     break;
-                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("back");
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))
@@ -110,9 +96,8 @@ public class MyModel extends Observable implements IModel {
             case DOWN:
             case X:
             case NUMPAD2:
-                if (mainCharacterPositionRow+1 >= maze.mMaze.length) {
+                if (mainCharacterPositionRow+1 >= maze.mMaze.length)
                     break;
-                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("front");
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))
@@ -121,9 +106,8 @@ public class MyModel extends Observable implements IModel {
             case LEFT:
             case A:
             case NUMPAD4:
-                if (mainCharacterPositionCol-1 < 0) {
+                if (mainCharacterPositionCol-1 < 0)
                     break;
-                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
                 if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1))
@@ -133,9 +117,8 @@ public class MyModel extends Observable implements IModel {
             case RIGHT:
             case D:
             case NUMPAD6:
-                if (mainCharacterPositionCol+1 >= maze.mMaze[0].length) {
+                if (mainCharacterPositionCol+1 >= maze.mMaze[0].length)
                     break;
-                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
                 if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1))
@@ -143,9 +126,8 @@ public class MyModel extends Observable implements IModel {
                 break;
             case Q:
             case NUMPAD7:
-                if (mainCharacterPositionCol-1 < 0 || mainCharacterPositionRow-1 < 0) {
+                if (mainCharacterPositionCol-1 < 0 || mainCharacterPositionRow-1 < 0)
                     break;
-                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
@@ -155,9 +137,8 @@ public class MyModel extends Observable implements IModel {
                 break;
             case E:
             case NUMPAD9:
-                if (mainCharacterPositionCol+1 >= maze.mMaze[0].length || mainCharacterPositionRow-1 < 0) {
+                if (mainCharacterPositionCol+1 >= maze.mMaze[0].length || mainCharacterPositionRow-1 < 0)
                     break;
-                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
@@ -167,9 +148,8 @@ public class MyModel extends Observable implements IModel {
                 break;
             case Z:
             case NUMPAD1:
-                if (mainCharacterPositionCol-1 < 0 || mainCharacterPositionRow+1 >= maze.mMaze.length) {
+                if (mainCharacterPositionCol-1 < 0 || mainCharacterPositionRow+1 >= maze.mMaze.length)
                     break;
-                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {
@@ -179,9 +159,8 @@ public class MyModel extends Observable implements IModel {
                 break;
             case C:
             case NUMPAD3:
-                if (mainCharacterPositionCol+1 >= maze.mMaze[0].length || mainCharacterPositionRow+1 >= maze.mMaze.length) {
+                if (mainCharacterPositionCol+1 >= maze.mMaze[0].length || mainCharacterPositionRow+1 >= maze.mMaze.length)
                     break;
-                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {
@@ -205,21 +184,18 @@ public class MyModel extends Observable implements IModel {
     @Override
     public void generateSolution() {
         try {
-            Client clientSolveMaze = new Client(InetAddress.getLocalHost(), 5401, new IClientStrategy() {
-                @Override
-                public void clientStrategy(InputStream inFromServer, OutputStream outToServer) {
-                    try {
-                        ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
-                        ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
-                        toServer.flush();
-                        toServer.writeObject(new Maze(maze, mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol())); //send maze to server
-                        toServer.flush();
-                        mazeSolution = (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
-                        toServer.close();
-                        fromServer.close();
-                    } catch(Exception e) {
-                        e.printStackTrace();
-                    }
+            Client clientSolveMaze = new Client(InetAddress.getLocalHost(), 5401, (inFromServer, outToServer) -> {
+                try {
+                    ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
+                    ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
+                    toServer.flush();
+                    toServer.writeObject(new Maze(maze, mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol())); //send maze to server
+                    toServer.flush();
+                    mazeSolution = (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
+                    toServer.close();
+                    fromServer.close();
+                } catch(Exception e) {
+                    e.printStackTrace();
                 }
             });
             clientSolveMaze.communicateWithServer();
@@ -233,14 +209,15 @@ public class MyModel extends Observable implements IModel {
     @Override
     public void closeModel() {
         System.out.println("Close Model");
-        closeServers();
+        serverMazeGenerator.stop();
+        serverSolveMaze.stop();
         threadPool.shutdown();
     }
 
     @Override
     public void saveOriginalMaze(File file, String name) {
         try {
-            FileOutputStream fileWriter = null;
+            FileOutputStream fileWriter;
             fileWriter = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileWriter);
             MazeCharacter mazeCharacter = new MazeCharacter(name, maze.getStartPosition().getRowIndex(), maze.getStartPosition().getColumnIndex());
@@ -313,11 +290,6 @@ public class MyModel extends Observable implements IModel {
     @Override
     public MazeCharacter getLoadedCharacter() {
         return mainCharacter;
-    }
-
-    @Override
-    public int[][] getMazeInt() {
-        return this.maze.mMaze;
     }
 
     @Override

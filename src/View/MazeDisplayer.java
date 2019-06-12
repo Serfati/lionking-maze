@@ -1,15 +1,16 @@
 package View;
+
 import Model.MazeCharacter;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+
 import java.io.FileInputStream;
 
 public class MazeDisplayer extends Canvas {
     private MazeCharacter mainCharacter = new MazeCharacter("Simba_", 0, 0);
 
     private char[][] mazeCharArr;
-    private int[][] mazeIntArr;
     private int goalPositionRow;
     private int goalPositionColumn;
     private int rowMazeSize;
@@ -60,10 +61,6 @@ public class MazeDisplayer extends Canvas {
         colMazeSize = maze[0].length;
     }
 
-    private void setGoalPosition(int row, int column) {
-        goalPositionRow = row;
-        goalPositionColumn = column;
-    }
     void setMainCharacterDirection(String direction) {
         mainCharacter.setCharacterDirection(direction);
     }
@@ -126,10 +123,11 @@ public class MazeDisplayer extends Canvas {
                 for(int i = 0; i < rowMazeSize; i++) {
                     for(int j = 0; j < colMazeSize; j++) {
                         graphicsContext2D.drawImage(backGroundImage, (startCol+j) * cellWidth, (startRow+i) * cellHeight, cellWidth, cellHeight);
-                        if (mazeIntArr[i][j] == 1) {
+                        if (mazeCharArr[i][j] == '1') {
                             graphicsContext2D.drawImage(wallImage, (startCol+j) * cellWidth, (startRow+i) * cellHeight, cellWidth, cellHeight);
                         } else if (mazeCharArr[i][j] == 'E') {
-                            setGoalPosition(i, j);
+                            goalPositionRow = i;
+                            goalPositionColumn = j;
                         }
                     }
                 }
@@ -140,9 +138,8 @@ public class MazeDisplayer extends Canvas {
     }
 
     void redrawMaze() {
-        if (mazeCharArr != null) {
+        if (mazeCharArr != null)
             drawMazeIteration();
-        }
     }
 
     void redrawCharacter() {
@@ -168,9 +165,5 @@ public class MazeDisplayer extends Canvas {
         } catch(Exception e) {
             e.printStackTrace();
         }
-    }
-
-    void setMazeInt(int[][] mazeInt) {
-        this.mazeIntArr = mazeInt;
     }
 }

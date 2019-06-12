@@ -1,10 +1,12 @@
 package ViewModel;
+
 import Model.IModel;
 import Model.MazeCharacter;
 import javafx.scene.input.KeyCode;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
+
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
@@ -109,7 +111,4 @@ public class MyViewModel extends Observable implements Observer {
         model.closeModel();
     }
 
-    public int[][] getMazeInt() {
-        return model.getMazeInt();
-    }
 }

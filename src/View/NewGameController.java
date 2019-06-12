@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 import java.util.function.UnaryOperator;
 
 public class NewGameController implements IView, Initializable {
-    private ArrayList<String> mainCharacterList = new ArrayList(Arrays.asList(new String[]{"Simba_", "Pumba_"}));
+    private ArrayList<String> mainCharacterList = new ArrayList(Arrays.asList(new String[]{"Simba_", "Pumba_", "Genie_"}));
     private String mainCharacter = "Simba_";
     @FXML
     public javafx.scene.image.ImageView newGame_mainCharacter_imageView;
