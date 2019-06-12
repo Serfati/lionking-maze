@@ -137,20 +137,17 @@ public class MyViewController implements IView, Observer, Initializable {
                             icon_fullSolution.setVisible(true);
                             icon_partSolution.setVisible(true);
                         });
-                        mazeDisplayer.redrawCancelSolution();
                         mazeDisplayer.redrawCharacter();
 
                         break;
 
                     case "Solution":
-                        mazeDisplayer.setMazeSolutionArr(myViewModel.getSolution());
                         Platform.runLater(() -> {
                             lbl_statusBar.setText("Here's the solution");
                             solve_MenuItem.setDisable(false);
                             icon_fullSolution.setVisible(false);
                             icon_partSolution.setVisible(false);
                         });
-                        mazeDisplayer.redrawSolution();
                         break;
                 }
             }
@@ -171,7 +168,7 @@ public class MyViewController implements IView, Observer, Initializable {
                 });
                 root.getChildren().add(mediaView);
                 root.getChildren().add(skipBtn);
-                Scene scene = new Scene(root, 600, 400);
+                Scene scene = new Scene(root, 1000, 700);
                 winningStage.setScene(scene);
                 Platform.runLater(() -> {
                     save_MenuItem.setDisable(true);
@@ -179,8 +176,9 @@ public class MyViewController implements IView, Observer, Initializable {
                     icon_fullSolution.setVisible(false);
                     icon_partSolution.setVisible(false);
                     lbl_statusBar.setText("Good Job! Try a different maze");
+                    myViewModel.setSound();
                     player.play();
-                    player.setMute(true);
+                    player.setMute(false);
                     winningStage.showAndWait();
                     newMaze();
                 });
@@ -297,9 +295,9 @@ public class MyViewController implements IView, Observer, Initializable {
         ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
         alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
         alert.showAndWait().ifPresent(type -> {
-            if (type == okButton) {//Current
+            if (type == okButton) { //Current
                 choose[0] = 1;
-            } else if (type == noButton) {//Original
+            } else if (type == noButton) { //Original
                 choose[0] = 2;
             }
         });
@@ -484,18 +482,14 @@ public class MyViewController implements IView, Observer, Initializable {
             double mouseX = (int) ((mouseEvent.getX()) / (mazeDisplayer.getWidth() / maxSize)-startCol);
             double mouseY = (int) ((mouseEvent.getY()) / (mazeDisplayer.getHeight() / maxSize)-startRow);
             if (!myViewModel.isAtTheEnd()) {
-                if (mouseY < myViewModel.getMainCharacterPositionRow() && mouseX == myViewModel.getMainCharacterPositionColumn()) {
+                if (mouseY < myViewModel.getMainCharacterPositionRow() && mouseX == myViewModel.getMainCharacterPositionColumn())
                     myViewModel.moveCharacter(KeyCode.UP);
-                }
-                if (mouseY > myViewModel.getMainCharacterPositionRow() && mouseX == myViewModel.getMainCharacterPositionColumn()) {
+                if (mouseY > myViewModel.getMainCharacterPositionRow() && mouseX == myViewModel.getMainCharacterPositionColumn())
                     myViewModel.moveCharacter(KeyCode.DOWN);
-                }
-                if (mouseX < myViewModel.getMainCharacterPositionColumn() && mouseY == myViewModel.getMainCharacterPositionRow()) {
+                if (mouseX < myViewModel.getMainCharacterPositionColumn() && mouseY == myViewModel.getMainCharacterPositionRow())
                     myViewModel.moveCharacter(KeyCode.LEFT);
-                }
-                if (mouseX > myViewModel.getMainCharacterPositionColumn() && mouseY == myViewModel.getMainCharacterPositionRow()) {
+                if (mouseX > myViewModel.getMainCharacterPositionColumn() && mouseY == myViewModel.getMainCharacterPositionRow())
                     myViewModel.moveCharacter(KeyCode.RIGHT);
-                }
             }
         }
     }
@@ -528,6 +522,5 @@ public class MyViewController implements IView, Observer, Initializable {
                 new KeyFrame(Duration.millis(100), new KeyValue(mazeDisplayer.scaleXProperty(), 1)),
                 new KeyFrame(Duration.millis(100), new KeyValue(mazeDisplayer.scaleYProperty(), 1)));
         timeLine.play();
-
     }
 }

@@ -58,7 +58,6 @@ public class MyViewModel extends Observable implements Observer {
     public MyViewModel(IModel model) {
         this.model = model;
     }
-
     public MazeCharacter getLoadedCharacter() {
         mainCharacter = model.getLoadedCharacter();
         return mainCharacter;
@@ -82,7 +81,6 @@ public class MyViewModel extends Observable implements Observer {
     public int getMainCharacterPositionColumn() {
         return model.getMainCharacterPositionColumn();
     }
-
     public String getMainCharacterDirection() {
         return model.getMainCharacterDirection();
     }
@@ -92,11 +90,9 @@ public class MyViewModel extends Observable implements Observer {
     public boolean isAtTheEnd() {
         return model.isAtTheEnd();
     }
-
     public int[][] getSolution() {
         return model.getSolution();
     }
-
     public void generateSolution() {
         model.generateSolution();
     }

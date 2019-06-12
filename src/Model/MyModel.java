@@ -99,6 +99,9 @@ public class MyModel extends Observable implements IModel {
             case UP:
             case W:
             case NUMPAD8:
+                if (mainCharacterPositionRow-1 < 0) {
+                    break;
+                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("back");
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))
@@ -107,6 +110,9 @@ public class MyModel extends Observable implements IModel {
             case DOWN:
             case X:
             case NUMPAD2:
+                if (mainCharacterPositionRow+1 >= maze.mMaze.length) {
+                    break;
+                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("front");
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))
@@ -115,6 +121,9 @@ public class MyModel extends Observable implements IModel {
             case LEFT:
             case A:
             case NUMPAD4:
+                if (mainCharacterPositionCol-1 < 0) {
+                    break;
+                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
                 if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1))
@@ -124,6 +133,9 @@ public class MyModel extends Observable implements IModel {
             case RIGHT:
             case D:
             case NUMPAD6:
+                if (mainCharacterPositionCol+1 >= maze.mMaze[0].length) {
+                    break;
+                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
                 if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1))
@@ -131,6 +143,9 @@ public class MyModel extends Observable implements IModel {
                 break;
             case Q:
             case NUMPAD7:
+                if (mainCharacterPositionCol-1 < 0 || mainCharacterPositionRow-1 < 0) {
+                    break;
+                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
@@ -140,6 +155,9 @@ public class MyModel extends Observable implements IModel {
                 break;
             case E:
             case NUMPAD9:
+                if (mainCharacterPositionCol+1 >= maze.mMaze[0].length || mainCharacterPositionRow-1 < 0) {
+                    break;
+                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
@@ -149,6 +167,9 @@ public class MyModel extends Observable implements IModel {
                 break;
             case Z:
             case NUMPAD1:
+                if (mainCharacterPositionCol-1 < 0 || mainCharacterPositionRow+1 >= maze.mMaze.length) {
+                    break;
+                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {
@@ -158,6 +179,9 @@ public class MyModel extends Observable implements IModel {
                 break;
             case C:
             case NUMPAD3:
+                if (mainCharacterPositionCol+1 >= maze.mMaze[0].length || mainCharacterPositionRow+1 >= maze.mMaze.length) {
+                    break;
+                }
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {

@@ -29,7 +29,6 @@ public class NewGameController implements IView, Initializable {
     public Label pleaseWait_lbl;
     private MyViewModel myViewModel;
     private UnaryOperator<TextFormatter.Change> integerFilter = change -> {
-
         String newText = change.getControlNewText();
         if (newText.matches("([1-9][0-9]*)?")) {
             return change;

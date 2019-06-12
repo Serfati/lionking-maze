@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+
 <GridPane xmlns:fx="http://javafx.com/fxml/1" onKeyPressed="#newGameKeyPressed" prefHeight="500.0" prefWidth="600.0"
           xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="View.NewGameController">
     <columnConstraints>
@@ -75,7 +82,8 @@
         <HBox minHeight="50.0" prefHeight="66.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <children>
                 <Button id="startGame_mainCharacter_prevBtn" fx:id="newGame_mainCharacter_prevBtn" minWidth="50.0"
-                        mnemonicParsing="false" onAction="#getPrevMainCharacter" text="&lt;">
+                        mnemonicParsing="false" onAction="#getPrevMainCharacter" prefHeight="13.0" prefWidth="50.0"
+                        text="&lt;">
                     <HBox.margin>
                         <Insets left="20.0"/>
                     </HBox.margin>

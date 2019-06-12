@@ -10,12 +10,10 @@ public class MazeDisplayer extends Canvas {
 
     private char[][] mazeCharArr;
     private int[][] mazeIntArr;
-    private int[][] mazeSolutionArr;
     private int goalPositionRow;
     private int goalPositionColumn;
     private int rowMazeSize;
     private int colMazeSize;
-    private boolean hint;
     private int oldMainCharacterRow;
     private int oldMainCharacterCol;
     private Image solutionImage;
@@ -83,10 +81,6 @@ public class MazeDisplayer extends Canvas {
         setImages();
     }
 
-//    void setSecondCharacterName(String name) {
-//        secondCharacter.setCharacterName(name);
-//    }
-
     void redraw() {
         if (mazeCharArr != null) {
             this.setHeight(this.getScene().getHeight()-80 /*ToolBar*/-105 /*LowerBar*/);
@@ -105,12 +99,8 @@ public class MazeDisplayer extends Canvas {
                 //Draw Maze
                 drawMazeIteration();
 
-                //draw solution
-                drawSolutionGeneric(solutionImage);
-
                 //Draw Character
                 graphicsContext2D.drawImage(mainCharacterImage, (startCol+getMainCharacterColumn()) * cellWidth, (startRow+getMainCharacterRow()) * cellHeight, cellWidth, cellHeight);
-//
                 if (mainCharacter.getCharacterRow() != goalPositionRow || mainCharacter.getCharacterCol() != goalPositionColumn)
                     graphicsContext2D.drawImage(goalImage, (startCol+goalPositionColumn) * cellWidth, (startRow+goalPositionRow) * cellHeight, cellWidth, cellHeight);
             } catch(Exception e) {
@@ -151,8 +141,6 @@ public class MazeDisplayer extends Canvas {
 
     void redrawMaze() {
         if (mazeCharArr != null) {
-            hint = false;
-            mazeSolutionArr = null;
             drawMazeIteration();
         }
     }
@@ -167,7 +155,6 @@ public class MazeDisplayer extends Canvas {
             double cellWidth = canvasWidth / maxSize;
             double startRow = (canvasHeight / 2-(cellHeight * rowMazeSize / 2)) / cellHeight;
             double startCol = (canvasWidth / 2-(cellWidth * colMazeSize / 2)) / cellWidth;
-            hint = false;
             GraphicsContext graphicsContext2D = getGraphicsContext2D();
             if (mazeCharArr[oldMainCharacterRow][oldMainCharacterCol] != '1')
                 graphicsContext2D.drawImage(backGroundImage, (startCol+oldMainCharacterCol) * cellWidth, (startRow+oldMainCharacterRow) * cellHeight, cellWidth, cellHeight);
@@ -181,49 +168,6 @@ public class MazeDisplayer extends Canvas {
         } catch(Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private void drawSolutionGeneric(Image image) {
-        double canvasHeight = getHeight();
-        double canvasWidth = getWidth();
-        double maxSize = Math.max(colMazeSize, rowMazeSize);
-        double cellHeight = canvasHeight / maxSize;
-        double cellWidth = canvasWidth / maxSize;
-        double startRow = (canvasHeight / 2-(cellHeight * rowMazeSize / 2)) / cellHeight;
-        double startCol = (canvasWidth / 2-(cellWidth * colMazeSize / 2)) / cellWidth;
-        GraphicsContext graphicsContext2D = getGraphicsContext2D();
-        int solLength = 0;
-        if (mazeSolutionArr != null) {
-            solLength = mazeSolutionArr.length-1;
-            if (hint) {
-                if (solLength != 1 && (int) Math.sqrt(solLength) == 1) {
-                }
-                else
-                    solLength = (int) Math.sqrt(solLength);
-            }
-        }
-    }
-
-    void redrawSolution() {
-        try {
-            drawSolutionGeneric(solutionImage);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    void redrawCancelSolution() {
-        try {
-            drawSolutionGeneric(backGroundImage);
-            mazeSolutionArr = null;
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    void setMazeSolutionArr(int[][] mazeSolutionArr) {
-        this.mazeSolutionArr = mazeSolutionArr;
     }
 
     void setMazeInt(int[][] mazeInt) {
