@@ -76,8 +76,8 @@ public class MyModel extends Observable implements IModel {
             });
             //TODO
             clientMazeGenerator.communicateWithServer();
-//            MyMazeGenerator m = new MyMazeGenerator();
-//            this.maze = m.generate(row, col);
+            MyMazeGenerator m = new MyMazeGenerator();
+            this.maze = m.generate(row, col);
             int mazeRow = maze.getStartPosition().getRowIndex();
             int mazeCol = maze.getStartPosition().getColumnIndex();
             mainCharacter = new MazeCharacter("Main_", mazeRow, mazeCol);
