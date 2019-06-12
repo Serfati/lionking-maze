@@ -22,7 +22,6 @@ import java.util.concurrent.Executors;
 
 public class MyModel extends Observable implements IModel {
     private MazeCharacter mainCharacter = new MazeCharacter("Main_", 0, 0);
-    private MazeCharacter secondCharacter = new MazeCharacter("Second_", 0, 0);
     private Maze maze;
     private Solution mazeSolution;
     private boolean isAtTheEnd;
@@ -69,12 +68,13 @@ public class MyModel extends Observable implements IModel {
                         byte[] decompressedMaze = new byte[mazeDimensions[0] * mazeDimensions[1]+12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
                         is.read(decompressedMaze); //Fill decompressedMaze with bytes
                         maze = new Maze(decompressedMaze);
+                        toServer.close();
+                        fromServer.close();
                     } catch(Exception e) {
                         e.printStackTrace();
                     }
                 }
             });
-            //TODO
             clientMazeGenerator.communicateWithServer();
             MyMazeGenerator m = new MyMazeGenerator();
             this.maze = m.generate(row, col);
@@ -82,9 +82,9 @@ public class MyModel extends Observable implements IModel {
             int mazeCol = maze.getStartPosition().getColumnIndex();
             mainCharacter = new MazeCharacter("Main_", mazeRow, mazeCol);
 
-                isAtTheEnd = false;
-                setChanged();
-                notifyObservers("Maze");
+            isAtTheEnd = false;
+            setChanged();
+            notifyObservers("Maze");
         } catch(UnknownHostException e) {
             e.printStackTrace();
         }
@@ -101,73 +101,39 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD8:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("back");
-                if (false)
-                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
-                if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol)) {
-                    if (false) {
-                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
-                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
-                    }
+                if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))
                     mainCharacter.setCharacterRow(mainCharacterPositionRow-1);
-
-                }
                 break;
             case DOWN:
             case X:
             case NUMPAD2:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("front");
-                if (false)
-                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
-                if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol)) {
-                    if (false) {
-                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
-                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
-                    }
+                if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))
                     mainCharacter.setCharacterRow(mainCharacterPositionRow+1);
-                }
                 break;
             case LEFT:
             case A:
             case NUMPAD4:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
-                if (false)
-                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
-                if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1)) {
-                    if (false) {
-                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
-                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
-                    }
+                if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1))
                     mainCharacter.setCharacterCol(mainCharacterPositionCol-1);
-                }
+
                 break;
             case RIGHT:
             case D:
             case NUMPAD6:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
-                if (false)
-                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
-                if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1)) {
-                    if (false) {
-                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
-                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
-                    }
+                if (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1))
                     mainCharacter.setCharacterCol(mainCharacterPositionCol+1);
-                }
                 break;
             case Q:
             case NUMPAD7:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
-                if (false)
-                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
-                    if (false) {
-                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
-                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
-                    }
                     mainCharacter.setCharacterRow(mainCharacterPositionRow-1);
                     mainCharacter.setCharacterCol(mainCharacterPositionCol-1);
                 }
@@ -176,13 +142,7 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD9:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
-                if (false)
-                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow-1, mainCharacterPositionCol))) {
-                    if (false) {
-                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
-                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
-                    }
                     mainCharacter.setCharacterRow(mainCharacterPositionRow-1);
                     mainCharacter.setCharacterCol(mainCharacterPositionCol+1);
                 }
@@ -191,13 +151,7 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD1:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("left");
-                if (false)
-                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol-1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol-1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {
-                    if (false) {
-                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
-                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
-                    }
                     mainCharacter.setCharacterRow(mainCharacterPositionRow+1);
                     mainCharacter.setCharacterCol(mainCharacterPositionCol-1);
                 }
@@ -206,13 +160,7 @@ public class MyModel extends Observable implements IModel {
             case NUMPAD3:
                 legitKey = true;
                 mainCharacter.setCharacterDirection("right");
-                if (false)
-                    secondCharacter.setCharacterDirection(mainCharacter.getCharacterDirection());
                 if (isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol+1) && (isNotWall(mainCharacterPositionRow, mainCharacterPositionCol+1) || isNotWall(mainCharacterPositionRow+1, mainCharacterPositionCol))) {
-                    if (false) {
-                        secondCharacter.setCharacterRow(mainCharacterPositionRow);
-                        secondCharacter.setCharacterCol(mainCharacterPositionCol);
-                    }
                     mainCharacter.setCharacterRow(mainCharacterPositionRow+1);
                     mainCharacter.setCharacterCol(mainCharacterPositionCol+1);
                 }
@@ -221,12 +169,8 @@ public class MyModel extends Observable implements IModel {
                 break;
 
         }
-
         if (maze.getCharAt(mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol()) == 'E')
             isAtTheEnd = true;
-        if (maze.getCharAt(secondCharacter.getCharacterRow(), secondCharacter.getCharacterCol()) == 'E')
-            isAtTheEnd = true;
-
         if (legitKey) {
             setChanged();
             notifyObservers("Character");

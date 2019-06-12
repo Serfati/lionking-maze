@@ -82,9 +82,6 @@ public class MyViewController implements IView, Observer, Initializable {
                         mazeDisplayer.setMainCharacterPosition(myViewModel.getMainCharacterPositionRow(), myViewModel.getMainCharacterPositionColumn());
                         mazeDisplayer.setMainCharacterDirection(myViewModel.getMainCharacterDirection());
                         mazeDisplayer.setMainCharacterName(myViewModel.getMainCharacterName());
-
-                        mazeDisplayer.setSecondCharacterName(myViewModel.getSecondCharacterName());
-
                         Platform.runLater(() -> {
                             CharacterColumn.set(myViewModel.getMainCharacterPositionColumn()+"");
                             CharacterRow.set(myViewModel.getMainCharacterPositionRow()+"");
@@ -112,11 +109,6 @@ public class MyViewController implements IView, Observer, Initializable {
                         mazeDisplayer.setMainCharacterPosition(mazeCharacter.getCharacterRow(), mazeCharacter.getCharacterCol());
                         mazeDisplayer.setMainCharacterDirection("front");
                         mazeDisplayer.setMainCharacterName(mazeCharacter.getCharacterName());
-
-                        //Second Character
-                        mazeDisplayer.setSecondCharacterName(myViewModel.getSecondCharacterName());
-                        mazeDisplayer.setSecondCharacterPosition(myViewModel.getMainCharacterPositionRow(), myViewModel.getMainCharacterPositionColumn());
-                        mazeDisplayer.setSecondCharacterDirection(myViewModel.getMainCharacterDirection());
 
                         Platform.runLater(() -> {
                             CharacterColumn.set(myViewModel.getMainCharacterPositionColumn()+"");
@@ -187,7 +179,6 @@ public class MyViewController implements IView, Observer, Initializable {
                     icon_fullSolution.setVisible(false);
                     icon_partSolution.setVisible(false);
                     lbl_statusBar.setText("Good Job! Try a different maze");
-                    //alert.showAndWait();
                     player.play();
                     player.setMute(true);
                     winningStage.showAndWait();

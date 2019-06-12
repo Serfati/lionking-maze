@@ -14,19 +14,14 @@ public class MyViewModel extends Observable implements Observer {
     private MediaPlayer gameSoundTrack;
     private boolean isPlayed = true;
     private MazeCharacter mainCharacter = new MazeCharacter("Simba_", 0, 0);
-    private MazeCharacter secondCharacter = new MazeCharacter("Simba_Second_", 0, 0);
 
     @Override
     public void update(Observable o, Object arg) {
         if (o == model) {
             if (arg != null) {
                 String argument = (String) arg;
-                if (argument.equals("Maze Load")) {
-                    secondCharacter.setCharacterName(model.getLoadedCharacter().getCharacterName()+"Second_");
-                    secondCharacter.setCharacterRow(model.getMainCharacterPositionRow());
-                    secondCharacter.setCharacterCol(model.getMainCharacterPositionColumn());
+                if (argument.equals("Maze Load"))
                     startSoundTrack(model.getLoadedCharacter().getCharacterName());
-                }
             }
             setChanged();
             notifyObservers(arg);
@@ -71,6 +66,7 @@ public class MyViewModel extends Observable implements Observer {
     public void moveCharacter(KeyCode movement) {
         model.moveCharacter(movement);
     }
+
     public void generateMaze(int row, int col) {
         model.generateMaze(row, col);
     }
@@ -86,21 +82,21 @@ public class MyViewModel extends Observable implements Observer {
     public int getMainCharacterPositionColumn() {
         return model.getMainCharacterPositionColumn();
     }
+
     public String getMainCharacterDirection() {
         return model.getMainCharacterDirection();
     }
     public void setMainCharacterName(String character) {
         mainCharacter.setCharacterName(character);
     }
-    public String getSecondCharacterName() {
-        return secondCharacter.getCharacterName();
-    }
     public boolean isAtTheEnd() {
         return model.isAtTheEnd();
     }
+
     public int[][] getSolution() {
         return model.getSolution();
     }
+
     public void generateSolution() {
         model.generateSolution();
     }
