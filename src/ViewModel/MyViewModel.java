@@ -1,10 +1,12 @@
 package ViewModel;
+
 import Model.IModel;
 import Model.MazeCharacter;
 import javafx.scene.input.KeyCode;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
+
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
@@ -58,7 +60,6 @@ public class MyViewModel extends Observable implements Observer {
     public MyViewModel(IModel model) {
         this.model = model;
     }
-
     public MazeCharacter getLoadedCharacter() {
         mainCharacter = model.getLoadedCharacter();
         return mainCharacter;
@@ -82,7 +83,6 @@ public class MyViewModel extends Observable implements Observer {
     public int getMainCharacterPositionColumn() {
         return model.getMainCharacterPositionColumn();
     }
-
     public String getMainCharacterDirection() {
         return model.getMainCharacterDirection();
     }
@@ -92,11 +92,9 @@ public class MyViewModel extends Observable implements Observer {
     public boolean isAtTheEnd() {
         return model.isAtTheEnd();
     }
-
     public int[][] getSolution() {
         return model.getSolution();
     }
-
     public void generateSolution() {
         model.generateSolution();
     }
@@ -113,7 +111,4 @@ public class MyViewModel extends Observable implements Observer {
         model.closeModel();
     }
 
-    public int[][] getMazeInt() {
-        return model.getMazeInt();
-    }
 }

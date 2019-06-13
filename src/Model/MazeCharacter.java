@@ -3,8 +3,6 @@ package Model;
 import java.io.Serializable;
 
 public class MazeCharacter implements Serializable {
-
-
     private String characterName;
     private int characterRow;
     private int characterCol;

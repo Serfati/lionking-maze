@@ -56,8 +56,7 @@ public class Maze implements Serializable {
     public Maze(Maze maze, int characterRow, int characterCol) {
         this.mMaze = maze.mMaze;
         this.mGoal = maze.mGoal;
-        Position newStart = new Position(characterRow, characterCol);
-        this.mStart = newStart;
+        this.mStart = new Position(characterRow, characterCol);
     }
 
     /**
