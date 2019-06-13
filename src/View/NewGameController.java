@@ -53,6 +53,7 @@ public class NewGameController implements IView, Initializable {
     }
 
     public void startGame() {
+
         try {
             int rows = Integer.valueOf(newGame_rowsInput.getText());
             int cols = Integer.valueOf(newGame_colsInput.getText());
@@ -61,6 +62,7 @@ public class NewGameController implements IView, Initializable {
             myViewModel.setMainCharacterName(mainCharacter);
             disableButtons();
             myViewModel.generateMaze(rows, cols);
+
             myViewModel.startSoundTrack(mainCharacter);
 
         } catch(Exception e) {

@@ -51,6 +51,7 @@ public class MyViewController implements IView, Observer, Initializable {
     public Label label_mainCharacterCol;
     public MenuItem save_MenuItem;
     public MenuItem solve_MenuItem;
+
     @FXML
     private MyViewModel myViewModel;
     public javafx.scene.image.ImageView icon_sound;
@@ -135,6 +136,7 @@ public class MyViewController implements IView, Observer, Initializable {
                         icon_fullSolution.setVisible(true);
                         icon_partSolution.setVisible(true);
                     });
+                    mazeDisplayer.redraw();
                     mazeDisplayer.redrawCharacter();
                     break;
                 case "Solution":
@@ -143,7 +145,9 @@ public class MyViewController implements IView, Observer, Initializable {
                         solve_MenuItem.setDisable(false);
                         icon_fullSolution.setVisible(false);
                         icon_partSolution.setVisible(false);
+
                     });
+                    mazeDisplayer.drawSolution(myViewModel.getSou());
                     break;
             }
         }
@@ -342,6 +346,7 @@ public class MyViewController implements IView, Observer, Initializable {
     }
 
     public void newMaze() {
+
         try {
             if (stageNewGameController == null) {
                 stageNewGameController = new Stage();

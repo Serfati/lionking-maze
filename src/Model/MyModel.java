@@ -7,7 +7,6 @@ import Model.Server.Server;
 import Model.Server.ServerStrategyGenerateMaze;
 import Model.Server.ServerStrategySolveSearchProblem;
 import Model.algorithms.mazeGenerators.Maze;
-import Model.algorithms.mazeGenerators.MyMazeGenerator;
 import Model.algorithms.search.Solution;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
@@ -24,7 +23,8 @@ public class MyModel extends Observable implements IModel {
     private Maze maze;
     private Solution mazeSolution;
     private boolean isAtTheEnd;
-
+    private boolean isStartNewGame;
+    private boolean isSolGAme;
     private Server serverMazeGenerator;
     private Server serverSolveMaze;
 
@@ -33,42 +33,58 @@ public class MyModel extends Observable implements IModel {
     public MyModel() {
         Configurations.runConf();
         isAtTheEnd = false;
-        //startServers();
-        serverMazeGenerator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
+        isStartNewGame = false;
         serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
-        serverMazeGenerator.start();
-        serverSolveMaze.start();
+        serverMazeGenerator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
+
     }
 
     @Override
     public void generateMaze(int row, int col) {
+        if (!isStartNewGame) {
+            isStartNewGame = true;
+
+        } else {
+
+            serverMazeGenerator.stop();
+
+            serverMazeGenerator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
+        }
+
+        serverMazeGenerator.start();
+
+
+        if (isSolGAme) {
+            serverSolveMaze.stop();
+
+            serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
+            isSolGAme = false;
+        }
+
         try {
             Client clientMazeGenerator = new Client(InetAddress.getLocalHost(), 5400, (inFromServer, outToServer) -> {
                 try {
                     ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
                     ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                     toServer.flush();
-                    int[] mazeDimensions = new int[]{row, col};
+                    int[] mazeDimensions = new int[2];
+                    mazeDimensions[0] = row;
+                    mazeDimensions[1] = col;
                     toServer.writeObject(mazeDimensions); //send maze dimensions to server
                     toServer.flush();
                     byte[] compressedMaze = (byte[]) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
                     InputStream is = new MyDecompressorInputStream(new ByteArrayInputStream(compressedMaze));
-                    byte[] decompressedMaze = new byte[mazeDimensions[0] * mazeDimensions[1]+12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
+                    byte[] decompressedMaze = new byte[mazeDimensions[0] * mazeDimensions[1]+12  /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
                     is.read(decompressedMaze); //Fill decompressedMaze with bytes
                     maze = new Maze(decompressedMaze);
-                    toServer.close();
-                    fromServer.close();
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
             });
             clientMazeGenerator.communicateWithServer();
-            MyMazeGenerator m = new MyMazeGenerator();
-            this.maze = m.generate(row, col);
             int mazeRow = maze.getStartPosition().getRowIndex();
             int mazeCol = maze.getStartPosition().getColumnIndex();
             mainCharacter = new MazeCharacter("Main_", mazeRow, mazeCol);
-
             isAtTheEnd = false;
             setChanged();
             notifyObservers("Maze");
@@ -183,17 +199,26 @@ public class MyModel extends Observable implements IModel {
 
     @Override
     public void generateSolution() {
+        if (!isSolGAme) {
+            isSolGAme = true;
+
+        } else {
+            serverSolveMaze.stop();
+            serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
+        }
+        serverSolveMaze.start();
+
         try {
             Client clientSolveMaze = new Client(InetAddress.getLocalHost(), 5401, (inFromServer, outToServer) -> {
                 try {
                     ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
                     ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                     toServer.flush();
-                    toServer.writeObject(new Maze(maze, mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol())); //send maze to server
+                    toServer.writeObject(new Maze(maze, mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol()));
                     toServer.flush();
-                    mazeSolution = (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
-                    toServer.close();
-                    fromServer.close();
+                    mazeSolution = (Solution) fromServer.readObject();
+                    //toServer.close();
+                    //fromServer.close();
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
@@ -210,7 +235,9 @@ public class MyModel extends Observable implements IModel {
     public void closeModel() {
         System.out.println("Close Model");
         serverMazeGenerator.stop();
-        serverSolveMaze.stop();
+        if (serverSolveMaze != null) {
+            serverSolveMaze.stop();
+        }
         threadPool.shutdown();
     }
 
@@ -257,6 +284,10 @@ public class MyModel extends Observable implements IModel {
         }
         return null;
 
+    }
+
+    public Solution getMazeSolution() {
+        return mazeSolution;
     }
 
     public void loadMaze(File file) {

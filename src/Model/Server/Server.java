@@ -53,7 +53,12 @@ public class Server {
 
     public void stop() {
         System.out.println("Stopping the Server!");
+        // threadPool.shutdown();
         stopped = true;
+    }
+
+    public boolean isStopped() {
+        return stopped;
     }
 
     private void handleClient(Socket aClient) {

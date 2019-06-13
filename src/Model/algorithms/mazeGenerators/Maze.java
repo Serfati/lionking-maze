@@ -187,6 +187,10 @@ public class Maze implements Serializable {
         return mazeCharArr;
     }
 
+    public void setmStart(Position mStart) {
+        this.mStart = mStart;
+    }
+
     public char getCharAt(int row, int col) {
         char[][] mazeCharArr = getMaze();
         return mazeCharArr[row][col];

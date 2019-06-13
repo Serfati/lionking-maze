@@ -1,10 +1,12 @@
 package Model;
 
+import Model.algorithms.search.Solution;
 import javafx.scene.input.KeyCode;
 
 import java.io.File;
 public interface IModel {
 
+    Solution getMazeSolution();
     void generateMaze(int width, int height);
     void moveCharacter(KeyCode movement);
     void generateSolution();

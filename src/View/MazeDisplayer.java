@@ -1,22 +1,30 @@
 package View;
 
 import Model.MazeCharacter;
+import Model.algorithms.mazeGenerators.Position;
+import Model.algorithms.search.AState;
+import Model.algorithms.search.MazeState;
+import Model.algorithms.search.Solution;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
 
 public class MazeDisplayer extends Canvas {
+
     private MazeCharacter mainCharacter = new MazeCharacter("Simba_", 0, 0);
 
     private char[][] mazeCharArr;
+
     private int goalPositionRow;
     private int goalPositionColumn;
     private int rowMazeSize;
     private int colMazeSize;
     private int oldMainCharacterRow;
     private int oldMainCharacterCol;
+
     private Image solutionImage;
     private Image goalImage;
     private Image mainCharacterImage;
@@ -104,6 +112,38 @@ public class MazeDisplayer extends Canvas {
                 e.printStackTrace();
             }
         }
+    }
+
+    void drawSolution(Solution mazeSolution) {
+        try {
+            double width = getWidth();
+            double height = getHeight();
+            double wid = width / mazeCharArr[0].length;
+            double hig = height / mazeCharArr.length;
+
+            int[][] grid = new int[mazeCharArr.length][mazeCharArr[0].length];
+            for(int i = 0; i < mazeCharArr.length; i++)
+                for(int j = 0; j < mazeCharArr[0].length; j++)
+                    grid[i][j] = Character.getNumericValue(mazeCharArr[i][j]);
+            GraphicsContext graphicsContext = getGraphicsContext2D();
+            graphicsContext.clearRect(0, 0, getWidth(), getHeight());
+            ArrayList<AState> path = mazeSolution.getSolutionPath();
+            for(int i = 0; i < grid.length; i++)
+                for(int j = 0; j < grid[i].length; j++) {
+                    if (grid[i][j] == 1)
+                        graphicsContext.drawImage(wallImage, j * wid, i * hig, wid, hig);
+                    else if (grid[i][j] == 0)
+                        graphicsContext.drawImage(backGroundImage, j * wid, i * hig, wid, hig);
+                    else
+                        graphicsContext.drawImage(backGroundImage, j * wid, i * hig, wid, hig);
+                    AState p = new MazeState(0, null, new Position(i, j));
+                    if (path.contains(p))
+                        graphicsContext.drawImage(solutionImage, j * wid, i * hig, wid, hig);
+                }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void drawMazeIteration() {

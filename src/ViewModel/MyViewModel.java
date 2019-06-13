@@ -2,6 +2,7 @@ package ViewModel;
 
 import Model.IModel;
 import Model.MazeCharacter;
+import Model.algorithms.search.Solution;
 import javafx.scene.input.KeyCode;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -64,6 +65,12 @@ public class MyViewModel extends Observable implements Observer {
         mainCharacter = model.getLoadedCharacter();
         return mainCharacter;
     }
+
+    public Solution getSou() {
+        return model.getMazeSolution();
+    }
+
+
     public void moveCharacter(KeyCode movement) {
         model.moveCharacter(movement);
     }
@@ -108,6 +115,7 @@ public class MyViewModel extends Observable implements Observer {
         model.loadMaze(file);
     }
     public void closeModel() {
+
         model.closeModel();
     }
 
