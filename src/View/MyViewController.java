@@ -258,7 +258,7 @@ public class MyViewController implements IView, Observer, Initializable {
         alert.show();
     }
 
-    public void setResizeEvent(Scene scene) {
+    void setResizeEvent(Scene scene) {
         scene.widthProperty().addListener((observable, oldValue, newValue) -> mazeDisplayer.redraw());
         scene.heightProperty().addListener((observable, oldValue, newValue) -> mazeDisplayer.redraw());
     }
@@ -267,7 +267,7 @@ public class MyViewController implements IView, Observer, Initializable {
         exitCorrectly();
     }
 
-    public void exitCorrectly() {
+    void exitCorrectly() {
         Alert alert = new Alert(Alert.AlertType.NONE);
         ButtonType leaveButton = new ButtonType("Leave", ButtonBar.ButtonData.YES);
         ButtonType stayButton = new ButtonType("Stay", ButtonBar.ButtonData.NO);

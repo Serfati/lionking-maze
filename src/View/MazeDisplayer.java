@@ -1,10 +1,10 @@
 package View;
 
 import Model.MazeCharacter;
-import Model.algorithms.mazeGenerators.Position;
-import Model.algorithms.search.AState;
-import Model.algorithms.search.MazeState;
-import Model.algorithms.search.Solution;
+import algorithms.mazeGenerators.Position;
+import algorithms.search.AState;
+import algorithms.search.MazeState;
+import algorithms.search.Solution;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -63,7 +63,7 @@ public class MazeDisplayer extends Canvas {
         return mainCharacter.getCharacterCol();
     }
 
-    public void setMaze(char[][] maze) {
+    void setMaze(char[][] maze) {
         mazeCharArr = maze;
         rowMazeSize = maze.length;
         colMazeSize = maze[0].length;

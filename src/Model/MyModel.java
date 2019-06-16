@@ -1,13 +1,13 @@
 package Model;
 
-import Model.Client.Client;
-import Model.IO.MyDecompressorInputStream;
-import Model.Server.Configurations;
-import Model.Server.Server;
-import Model.Server.ServerStrategyGenerateMaze;
-import Model.Server.ServerStrategySolveSearchProblem;
-import Model.algorithms.mazeGenerators.Maze;
-import Model.algorithms.search.Solution;
+import Client.Client;
+import IO.MyDecompressorInputStream;
+import Server.Configurations;
+import Server.Server;
+import Server.ServerStrategyGenerateMaze;
+import Server.ServerStrategySolveSearchProblem;
+import algorithms.mazeGenerators.Maze;
+import algorithms.search.Solution;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
 

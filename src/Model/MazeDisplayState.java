@@ -1,10 +1,10 @@
 package Model;
 
-import Model.algorithms.mazeGenerators.Maze;
+import algorithms.mazeGenerators.Maze;
 
 import java.io.Serializable;
 
-public class MazeDisplayState implements Serializable {
+class MazeDisplayState implements Serializable {
 
     private Maze maze;
     private MazeCharacter mazeCharacter;
@@ -14,7 +14,7 @@ public class MazeDisplayState implements Serializable {
         this.mazeCharacter = newMazeCharacter;
     }
 
-    public Maze getMaze() {
+    Maze getMaze() {
         return maze;
     }
 

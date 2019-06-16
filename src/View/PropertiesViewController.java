@@ -1,6 +1,6 @@
 package View;
 
-import Model.Server.Configurations;
+import Server.Configurations;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Dialog;

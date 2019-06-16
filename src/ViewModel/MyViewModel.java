@@ -2,7 +2,7 @@ package ViewModel;
 
 import Model.IModel;
 import Model.MazeCharacter;
-import Model.algorithms.search.Solution;
+import algorithms.search.Solution;
 import javafx.scene.input.KeyCode;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;

@@ -1,6 +1,6 @@
 package Model;
 
-import Model.algorithms.search.Solution;
+import algorithms.search.Solution;
 import javafx.scene.input.KeyCode;
 
 import java.io.File;
