@@ -67,6 +67,8 @@ public class MyModel extends Observable implements IModel {
                     byte[] decompressedMaze = new byte[mazeDimensions[0] * mazeDimensions[1]+12  /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
                     is.read(decompressedMaze); //Fill decompressedMaze with bytes
                     maze = new Maze(decompressedMaze);
+                    toServer.close();
+                    fromServer.close();
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
@@ -188,15 +190,13 @@ public class MyModel extends Observable implements IModel {
 
     @Override
     public void generateSolution() {
-        if (!isSolGAme) {
+        if (!isSolGAme)
             isSolGAme = true;
-
-        } else {
+        else {
             serverSolveMaze.stop();
             serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
         }
         serverSolveMaze.start();
-
         try {
             Client clientSolveMaze = new Client(InetAddress.getLocalHost(), 5401, (inFromServer, outToServer) -> {
                 try {
@@ -304,6 +304,7 @@ public class MyModel extends Observable implements IModel {
         char c = maze.getCharAt(row, col);
         return (c == 'S' || c == '0' || c == 'E');
     }
+
     @Override
     public MazeCharacter getLoadedCharacter() {
         return mainCharacter;

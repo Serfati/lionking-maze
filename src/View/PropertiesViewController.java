@@ -22,9 +22,13 @@ public class PropertiesViewController extends Dialog implements Initializable {
         System.out.println("Properties: saveChanges");
         String algorithmString = algorithmChoiceBox.getValue();
         String generatorString = mazeGeneratorChoiceBox.getValue();
+        int threadNum = spinner.getValue();
         System.out.println(generatorString);
         System.out.println(algorithmString);
         System.out.println(spinner.getValue());
+        Configurations.properties.setProperty("SearchingAlgorithm" , algorithmString);
+        Configurations.properties.setProperty("MazeGenerator", generatorString);
+        Configurations.properties.setProperty("NumberOfThreads",Integer.toString(threadNum));
         Configurations.runConf();
         stage.close();
     }

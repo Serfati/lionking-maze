@@ -194,32 +194,31 @@ public class MazeDisplayer extends Canvas {
     }
 
 
-    private void drawMazeIteration() {
+    private void drawMazeIteration(){
         if (mazeCharArr != null) {
             try {
-                this.setHeight(this.getScene().getHeight()-80 /*ToolBar*/-105 /*LowerBar*/);
-                this.setWidth(this.getScene().getWidth() * 19 / 20);
+                this.setHeight(this.getScene().getHeight() - 80 /*ToolBar*/ - 105 /*LowerBar*/ );
+                this.setWidth( this.getScene().getWidth() * 19/20);
                 double canvasHeight = getHeight();
                 double canvasWidth = getWidth();
                 double maxSize = Math.max(colMazeSize, rowMazeSize);
                 double cellHeight = canvasHeight / maxSize;
                 double cellWidth = canvasWidth / maxSize;
-                double startRow = (canvasHeight / 2-(cellHeight * rowMazeSize / 2)) / cellHeight;
-                double startCol = (canvasWidth / 2-(cellWidth * colMazeSize / 2)) / cellWidth;
+                double startRow = (canvasHeight / 2 - (cellHeight * rowMazeSize / 2)) / cellHeight;
+                double startCol = (canvasWidth / 2 - (cellWidth * colMazeSize / 2)) / cellWidth;
                 GraphicsContext graphicsContext2D = getGraphicsContext2D();
                 graphicsContext2D.clearRect(0, 0, getWidth(), getHeight()); //Clears the canvas
-                for(int i = 0; i < rowMazeSize; i++) {
-                    for(int j = 0; j < colMazeSize; j++) {
-                        graphicsContext2D.drawImage(backGroundImage, (startCol+j) * cellWidth, (startRow+i) * cellHeight, cellWidth, cellHeight);
-                        if (mazeCharArr[i][j] == '1') {
-                            graphicsContext2D.drawImage(wallImage, (startCol+j) * cellWidth, (startRow+i) * cellHeight, cellWidth, cellHeight);
-                        } else if (mazeCharArr[i][j] == 'E') {
+                for (int i = 0; i < rowMazeSize; i++)
+                    for (int j = 0; j < colMazeSize; j++) {
+                        graphicsContext2D.drawImage(backGroundImage, (startCol + j) * cellWidth, (startRow + i) * cellHeight, cellWidth, cellHeight);
+                        if (mazeCharArr[i][j] == '1')
+                            graphicsContext2D.drawImage(wallImage, (startCol + j) * cellWidth, (startRow + i) * cellHeight, cellWidth, cellHeight);
+                        else if (mazeCharArr[i][j] == 'E') {
                             goalPositionRow = i;
                             goalPositionColumn = j;
                         }
                     }
-                }
-            } catch(Exception e) {
+            }catch (Exception e) {
                 e.printStackTrace();
             }
         }
