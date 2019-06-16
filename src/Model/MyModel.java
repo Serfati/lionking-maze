@@ -13,7 +13,6 @@ import javafx.scene.input.KeyCode;
 
 import java.io.*;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.Observable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -36,31 +35,22 @@ public class MyModel extends Observable implements IModel {
         isStartNewGame = false;
         serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
         serverMazeGenerator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
-
     }
 
     @Override
     public void generateMaze(int row, int col) {
-        if (!isStartNewGame) {
+        if (!isStartNewGame)
             isStartNewGame = true;
-
-        } else {
-
+        else {
             serverMazeGenerator.stop();
-
             serverMazeGenerator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
         }
-
         serverMazeGenerator.start();
-
-
         if (isSolGAme) {
             serverSolveMaze.stop();
-
             serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
             isSolGAme = false;
         }
-
         try {
             Client clientMazeGenerator = new Client(InetAddress.getLocalHost(), 5400, (inFromServer, outToServer) -> {
                 try {
@@ -88,8 +78,7 @@ public class MyModel extends Observable implements IModel {
             isAtTheEnd = false;
             setChanged();
             notifyObservers("Maze");
-        } catch(UnknownHostException e) {
-            e.printStackTrace();
+        } catch(Exception ignored) {
         }
     }
 
@@ -217,8 +206,6 @@ public class MyModel extends Observable implements IModel {
                     toServer.writeObject(new Maze(maze, mainCharacter.getCharacterRow(), mainCharacter.getCharacterCol()));
                     toServer.flush();
                     mazeSolution = (Solution) fromServer.readObject();
-                    //toServer.close();
-                    //fromServer.close();
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
@@ -226,8 +213,7 @@ public class MyModel extends Observable implements IModel {
             clientSolveMaze.communicateWithServer();
             setChanged();
             notifyObservers("Solution");
-        } catch(Exception e) {
-            e.printStackTrace();
+        } catch(Exception ignored) {
         }
     }
 

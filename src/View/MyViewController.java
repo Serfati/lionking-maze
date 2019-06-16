@@ -444,6 +444,7 @@ public class MyViewController implements IView, Observer, Initializable {
 
     private void setHint() {
         icon_partSolution.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            mazeDisplayer.setHint();
             solveMaze();
             event.consume();
         });

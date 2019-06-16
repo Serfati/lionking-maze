@@ -1,8 +1,768 @@
-2019.06.16 11:40:29.592 INFO  Server.Server - Server started! (port: 5400)
-2019.06.16 11:40:29.596 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=50110,localport=5400]
-2019.06.16 11:40:29.597 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=50110,localport=5400]
-2019.06.16 11:40:29.598 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=50110,localport=5400]
-2019.06.16 11:40:29.686 ERROR Server.Server - IOException
+2019.06.16 12:06:09.045 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:06:09.050 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=56672,localport=5400]
+2019.06.16 12:06:09.050 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=56672,localport=5400]
+2019.06.16 12:06:09.052 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=56672,localport=5400]
+2019.06.16 12:06:09.128 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:06:10.053 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:06:36.706 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:06:36.707 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:06:36.708 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=56786,localport=5400]
+2019.06.16 12:06:36.709 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=56786,localport=5400]
+2019.06.16 12:06:36.710 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=56786,localport=5400]
+2019.06.16 12:06:36.757 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:06:37.711 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:07:03.814 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:07:03.815 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:07:03.823 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=56896,localport=5400]
+2019.06.16 12:07:03.823 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=56896,localport=5400]
+2019.06.16 12:07:03.824 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=56896,localport=5400]
+2019.06.16 12:07:03.873 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:07:04.825 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:07:08.362 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:07:08.363 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 12:07:34.435 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:07:34.439 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57024,localport=5400]
+2019.06.16 12:07:34.440 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57024,localport=5400]
+2019.06.16 12:07:34.442 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57024,localport=5400]
+2019.06.16 12:07:34.523 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:07:35.443 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:07:50.339 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:07:50.341 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:07:50.341 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57092,localport=5400]
+2019.06.16 12:07:50.342 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57092,localport=5400]
+2019.06.16 12:07:50.343 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57092,localport=5400]
+2019.06.16 12:07:50.393 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:07:51.344 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:08:29.390 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:08:29.391 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:08:29.392 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57250,localport=5400]
+2019.06.16 12:08:29.393 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57250,localport=5400]
+2019.06.16 12:08:29.394 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57250,localport=5400]
+2019.06.16 12:08:29.447 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:08:30.394 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:09:08.005 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:09:08.008 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:09:09.010 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:09:27.421 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:09:27.422 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:09:27.422 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57502,localport=5400]
+2019.06.16 12:09:27.423 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57502,localport=5400]
+2019.06.16 12:09:27.425 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57502,localport=5400]
+2019.06.16 12:09:27.471 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:09:28.426 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:09:37.124 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:09:37.126 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:09:37.127 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57540,localport=5400]
+2019.06.16 12:09:37.127 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57540,localport=5400]
+2019.06.16 12:09:37.128 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57540,localport=5400]
+2019.06.16 12:09:37.175 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:09:38.129 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:10:12.724 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:10:12.726 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:10:12.727 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57690,localport=5400]
+2019.06.16 12:10:12.727 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57690,localport=5400]
+2019.06.16 12:10:12.729 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57690,localport=5400]
+2019.06.16 12:10:12.780 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:10:13.729 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:10:38.832 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:10:38.833 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:10:38.834 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57800,localport=5400]
+2019.06.16 12:10:38.835 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57800,localport=5400]
+2019.06.16 12:10:38.835 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57800,localport=5400]
+2019.06.16 12:10:38.880 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:10:39.835 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:11:03.847 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:11:03.849 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:11:03.850 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57902,localport=5400]
+2019.06.16 12:11:03.850 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57902,localport=5400]
+2019.06.16 12:11:03.851 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57902,localport=5400]
+2019.06.16 12:11:03.897 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:11:04.852 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:11:06.133 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 12:11:06.134 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=51064,localport=5401]
+2019.06.16 12:11:06.134 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=51064,localport=5401]
+2019.06.16 12:11:06.135 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=51064,localport=5401]
+2019.06.16 12:11:06.206 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:11:07.135 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:11:19.619 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:11:19.620 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:11:19.621 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:11:19.622 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57970,localport=5400]
+2019.06.16 12:11:19.622 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57970,localport=5400]
+2019.06.16 12:11:19.623 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57970,localport=5400]
+2019.06.16 12:11:19.674 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:11:20.624 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:11:22.971 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:11:22.973 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:11:22.973 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=57984,localport=5400]
+2019.06.16 12:11:22.974 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=57984,localport=5400]
+2019.06.16 12:11:22.975 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=57984,localport=5400]
+2019.06.16 12:11:23.027 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:11:23.975 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:11:26.163 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:11:26.165 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 12:11:32.615 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:11:32.617 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:11:32.617 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58030,localport=5400]
+2019.06.16 12:11:32.618 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58030,localport=5400]
+2019.06.16 12:11:32.619 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58030,localport=5400]
+2019.06.16 12:11:32.666 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:11:33.619 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:11:37.371 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:11:37.372 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:11:37.373 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58052,localport=5400]
+2019.06.16 12:11:37.373 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58052,localport=5400]
+2019.06.16 12:11:37.374 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58052,localport=5400]
+2019.06.16 12:11:37.423 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:11:38.375 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:11:41.307 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:11:41.308 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:11:41.309 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58070,localport=5400]
+2019.06.16 12:11:41.309 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58070,localport=5400]
+2019.06.16 12:11:41.310 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58070,localport=5400]
+2019.06.16 12:11:41.358 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:11:42.311 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:11:51.879 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 12:11:51.880 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=51264,localport=5401]
+2019.06.16 12:11:51.881 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=51264,localport=5401]
+2019.06.16 12:11:51.882 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=51264,localport=5401]
+2019.06.16 12:11:51.953 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:11:52.882 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:12:23.711 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:23.712 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:23.713 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:12:23.713 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58242,localport=5400]
+2019.06.16 12:12:23.714 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58242,localport=5400]
+2019.06.16 12:12:23.715 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58242,localport=5400]
+2019.06.16 12:12:23.761 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:12:24.716 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:12:27.118 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:27.120 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 12:12:31.631 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:31.633 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:12:31.633 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58278,localport=5400]
+2019.06.16 12:12:31.634 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58278,localport=5400]
+2019.06.16 12:12:31.635 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58278,localport=5400]
+2019.06.16 12:12:31.681 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:12:32.636 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:12:36.502 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:36.504 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:12:36.505 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58300,localport=5400]
+2019.06.16 12:12:36.506 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58300,localport=5400]
+2019.06.16 12:12:36.506 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58300,localport=5400]
+2019.06.16 12:12:36.554 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:12:37.507 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:12:41.214 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:41.215 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:12:41.216 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58318,localport=5400]
+2019.06.16 12:12:41.216 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58318,localport=5400]
+2019.06.16 12:12:41.217 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58318,localport=5400]
+2019.06.16 12:12:41.261 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:12:42.218 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:12:44.214 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:44.215 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:12:44.216 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58332,localport=5400]
+2019.06.16 12:12:44.216 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58332,localport=5400]
+2019.06.16 12:12:44.217 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58332,localport=5400]
+2019.06.16 12:12:44.266 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:12:45.218 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:12:46.682 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:46.684 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 12:12:49.438 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:49.440 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:12:49.440 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58360,localport=5400]
+2019.06.16 12:12:49.441 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58360,localport=5400]
+2019.06.16 12:12:49.442 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58360,localport=5400]
+2019.06.16 12:12:49.489 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:12:50.443 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:12:53.670 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:53.672 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 12:12:59.521 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:12:59.522 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:12:59.523 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58404,localport=5400]
+2019.06.16 12:12:59.523 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58404,localport=5400]
+2019.06.16 12:12:59.524 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58404,localport=5400]
+2019.06.16 12:12:59.570 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:13:00.525 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:13:02.696 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:13:02.697 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:13:02.699 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58418,localport=5400]
+2019.06.16 12:13:02.699 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58418,localport=5400]
+2019.06.16 12:13:02.700 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58418,localport=5400]
+2019.06.16 12:13:02.747 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:13:03.701 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:13:07.039 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 12:13:07.039 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=51588,localport=5401]
+2019.06.16 12:13:07.040 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=51588,localport=5401]
+2019.06.16 12:13:07.040 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=51588,localport=5401]
+2019.06.16 12:13:07.112 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:13:08.041 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:13:23.158 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:13:23.159 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:13:23.159 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:13:23.160 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58502,localport=5400]
+2019.06.16 12:13:23.160 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58502,localport=5400]
+2019.06.16 12:13:23.161 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58502,localport=5400]
+2019.06.16 12:13:23.211 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:13:24.162 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:13:30.346 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:13:30.347 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:13:30.348 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58536,localport=5400]
+2019.06.16 12:13:30.348 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58536,localport=5400]
+2019.06.16 12:13:30.349 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58536,localport=5400]
+2019.06.16 12:13:30.394 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:13:31.350 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:13:33.166 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:13:33.167 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 12:13:38.362 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:13:38.363 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:13:38.364 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58572,localport=5400]
+2019.06.16 12:13:38.365 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58572,localport=5400]
+2019.06.16 12:13:38.365 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58572,localport=5400]
+2019.06.16 12:13:38.415 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:13:39.366 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:13:42.534 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:13:42.535 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:13:42.535 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58590,localport=5400]
+2019.06.16 12:13:42.536 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58590,localport=5400]
+2019.06.16 12:13:42.536 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58590,localport=5400]
+2019.06.16 12:13:42.581 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:13:43.538 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:13:50.902 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:13:50.903 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:13:50.904 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58626,localport=5400]
+2019.06.16 12:13:50.904 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58626,localport=5400]
+2019.06.16 12:13:50.905 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58626,localport=5400]
+2019.06.16 12:13:50.951 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:13:51.906 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:13:55.206 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 12:13:55.207 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=51796,localport=5401]
+2019.06.16 12:13:55.207 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=51796,localport=5401]
+2019.06.16 12:13:55.208 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=51796,localport=5401]
+2019.06.16 12:13:55.264 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:13:56.209 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:14:03.830 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:03.831 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:03.831 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:14:03.832 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58684,localport=5400]
+2019.06.16 12:14:03.832 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58684,localport=5400]
+2019.06.16 12:14:03.833 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58684,localport=5400]
+2019.06.16 12:14:03.894 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:14:04.834 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:14:07.693 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:07.695 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 12:14:14.073 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:14.075 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:14:14.075 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58732,localport=5400]
+2019.06.16 12:14:14.076 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58732,localport=5400]
+2019.06.16 12:14:14.077 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58732,localport=5400]
+2019.06.16 12:14:14.138 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:14:15.078 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:14:20.429 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:20.431 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:14:20.431 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58764,localport=5400]
+2019.06.16 12:14:20.431 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58764,localport=5400]
+2019.06.16 12:14:20.432 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58764,localport=5400]
+2019.06.16 12:14:20.489 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:14:21.433 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:14:23.685 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:23.687 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:14:23.687 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58778,localport=5400]
+2019.06.16 12:14:23.688 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58778,localport=5400]
+2019.06.16 12:14:23.688 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58778,localport=5400]
+2019.06.16 12:14:23.752 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:14:24.689 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:14:26.965 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:26.967 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:14:26.968 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58792,localport=5400]
+2019.06.16 12:14:26.968 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58792,localport=5400]
+2019.06.16 12:14:26.970 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58792,localport=5400]
+2019.06.16 12:14:27.020 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:14:27.971 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:14:39.574 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 12:14:39.575 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=51998,localport=5401]
+2019.06.16 12:14:39.575 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=51998,localport=5401]
+2019.06.16 12:14:39.575 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=51998,localport=5401]
+2019.06.16 12:14:39.628 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:14:40.576 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:14:43.997 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:43.998 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:43.999 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:14:43.999 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58864,localport=5400]
+2019.06.16 12:14:43.999 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58864,localport=5400]
+2019.06.16 12:14:44.000 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58864,localport=5400]
+2019.06.16 12:14:44.047 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:14:45.001 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:14:49.405 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:49.407 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:14:49.407 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58890,localport=5400]
+2019.06.16 12:14:49.408 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58890,localport=5400]
+2019.06.16 12:14:49.408 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58890,localport=5400]
+2019.06.16 12:14:49.454 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:14:50.409 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:14:53.713 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:14:53.714 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 12:15:04.433 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:15:04.435 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:15:04.435 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58960,localport=5400]
+2019.06.16 12:15:04.436 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58960,localport=5400]
+2019.06.16 12:15:04.436 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58960,localport=5400]
+2019.06.16 12:15:04.487 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:15:05.437 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:15:22.093 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:15:22.094 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:15:22.095 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=59030,localport=5400]
+2019.06.16 12:15:22.095 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=59030,localport=5400]
+2019.06.16 12:15:22.096 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=59030,localport=5400]
+2019.06.16 12:15:22.140 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:15:23.096 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:15:25.438 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 12:15:25.439 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=52200,localport=5401]
+2019.06.16 12:15:25.439 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=52200,localport=5401]
+2019.06.16 12:15:25.440 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=52200,localport=5401]
+2019.06.16 12:15:25.486 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:15:26.441 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:15:31.209 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:15:31.210 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:15:31.210 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:15:31.211 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=59070,localport=5400]
+2019.06.16 12:15:31.211 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=59070,localport=5400]
+2019.06.16 12:15:31.214 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=59070,localport=5400]
+2019.06.16 12:15:31.260 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:15:32.214 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:15:34.390 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 12:15:34.390 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=52240,localport=5401]
+2019.06.16 12:15:34.391 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=52240,localport=5401]
+2019.06.16 12:15:34.391 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=52240,localport=5401]
+2019.06.16 12:15:34.438 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:15:35.392 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:15:39.773 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:15:39.774 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:15:39.774 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:15:39.775 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=59110,localport=5400]
+2019.06.16 12:15:39.776 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=59110,localport=5400]
+2019.06.16 12:15:39.777 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=59110,localport=5400]
+2019.06.16 12:15:39.823 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:15:40.778 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:15:49.845 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:15:49.846 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:15:49.847 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=59152,localport=5400]
+2019.06.16 12:15:49.847 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=59152,localport=5400]
+2019.06.16 12:15:49.848 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=59152,localport=5400]
+2019.06.16 12:15:49.891 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:15:50.849 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:15:52.806 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 12:15:52.806 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=52318,localport=5401]
+2019.06.16 12:15:52.807 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=52318,localport=5401]
+2019.06.16 12:15:52.807 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=52318,localport=5401]
+2019.06.16 12:15:52.856 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:15:53.808 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:16:11.965 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:16:11.965 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:16:11.966 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:16:11.966 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=59244,localport=5400]
+2019.06.16 12:16:11.966 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=59244,localport=5400]
+2019.06.16 12:16:11.967 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=59244,localport=5400]
+2019.06.16 12:16:12.011 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:16:12.968 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:16:19.450 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:16:19.451 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:16:42.111 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:16:42.115 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=59368,localport=5400]
+2019.06.16 12:16:42.116 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=59368,localport=5400]
+2019.06.16 12:16:42.117 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=59368,localport=5400]
+2019.06.16 12:16:42.207 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:16:43.118 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:16:48.909 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:16:48.911 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:16:48.912 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=59398,localport=5400]
+2019.06.16 12:16:48.912 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=59398,localport=5400]
+2019.06.16 12:16:48.913 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=59398,localport=5400]
+2019.06.16 12:16:48.965 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:16:49.914 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 12:17:03.717 INFO  Server.Server - Stopping the Server!
+2019.06.16 12:17:03.719 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 12:17:03.720 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=59460,localport=5400]
+2019.06.16 12:17:03.720 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=59460,localport=5400]
+2019.06.16 12:17:03.721 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=59460,localport=5400]
+2019.06.16 12:17:03.771 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATP2019-Project.jar:?]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATP2019-Project.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 12:17:04.722 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 18:36:31.031 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 18:36:31.042 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=36850,localport=5400]
+2019.06.16 18:36:31.043 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=36850,localport=5400]
+2019.06.16 18:36:31.045 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=36850,localport=5400]
+2019.06.16 18:36:31.125 ERROR Server.Server - IOException
 java.net.SocketException: Socket is closed
 	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
 	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
@@ -10,14 +770,12 @@ java.net.SocketException: Socket is closed
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
-2019.06.16 11:40:30.692 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
-2019.06.16 11:40:51.021 INFO  Server.Server - Stopping the Server!
-2019.06.16 11:40:51.022 INFO  Server.Server - Stopping the Server!
-2019.06.16 11:43:23.866 INFO  Server.Server - Server started! (port: 5400)
-2019.06.16 11:43:23.871 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=50894,localport=5400]
-2019.06.16 11:43:23.871 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=50894,localport=5400]
-2019.06.16 11:43:23.873 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=50894,localport=5400]
-2019.06.16 11:43:23.938 ERROR Server.Server - IOException
+2019.06.16 18:36:32.046 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 18:36:36.647 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 18:36:36.648 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=58260,localport=5401]
+2019.06.16 18:36:36.649 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=58260,localport=5401]
+2019.06.16 18:36:36.650 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=58260,localport=5401]
+2019.06.16 18:36:36.759 ERROR Server.Server - IOException
 java.net.SocketException: Socket is closed
 	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
 	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
@@ -25,14 +783,14 @@ java.net.SocketException: Socket is closed
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
-2019.06.16 11:43:24.875 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
-2019.06.16 11:46:12.761 INFO  Server.Server - Stopping the Server!
-2019.06.16 11:46:12.763 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
-2019.06.16 11:46:36.754 INFO  Server.Server - Server started! (port: 5400)
-2019.06.16 11:46:36.759 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=51756,localport=5400]
-2019.06.16 11:46:36.759 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=51756,localport=5400]
-2019.06.16 11:46:36.761 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=51756,localport=5400]
-2019.06.16 11:46:36.828 ERROR Server.Server - IOException
+2019.06.16 18:36:37.651 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 18:36:42.212 INFO  Server.Server - Stopping the Server!
+2019.06.16 18:36:42.213 INFO  Server.Server - Stopping the Server!
+2019.06.16 18:46:10.306 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 18:46:10.310 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39230,localport=5400]
+2019.06.16 18:46:10.311 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39230,localport=5400]
+2019.06.16 18:46:10.312 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39230,localport=5400]
+2019.06.16 18:46:10.381 ERROR Server.Server - IOException
 java.net.SocketException: Socket is closed
 	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
 	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
@@ -40,14 +798,12 @@ java.net.SocketException: Socket is closed
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
-2019.06.16 11:46:37.763 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
-2019.06.16 11:47:36.369 INFO  Server.Server - Stopping the Server!
-2019.06.16 11:47:36.372 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
-2019.06.16 11:48:10.010 INFO  Server.Server - Server started! (port: 5400)
-2019.06.16 11:48:10.015 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=52170,localport=5400]
-2019.06.16 11:48:10.016 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=52170,localport=5400]
-2019.06.16 11:48:10.017 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=52170,localport=5400]
-2019.06.16 11:48:10.087 ERROR Server.Server - IOException
+2019.06.16 18:46:11.314 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 18:46:16.630 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 18:46:16.631 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=60644,localport=5401]
+2019.06.16 18:46:16.632 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=60644,localport=5401]
+2019.06.16 18:46:16.633 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=60644,localport=5401]
+2019.06.16 18:46:16.715 ERROR Server.Server - IOException
 java.net.SocketException: Socket is closed
 	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
 	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
@@ -55,13 +811,14 @@ java.net.SocketException: Socket is closed
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
-2019.06.16 11:48:11.018 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
-2019.06.16 11:49:18.277 INFO  Server.Server - Stopping the Server!
-2019.06.16 11:49:18.279 INFO  Server.Server - Server started! (port: 5400)
-2019.06.16 11:49:18.280 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=52460,localport=5400]
-2019.06.16 11:49:18.281 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=52460,localport=5400]
-2019.06.16 11:49:18.282 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=52460,localport=5400]
-2019.06.16 11:49:18.331 ERROR Server.Server - IOException
+2019.06.16 18:46:17.634 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 18:46:22.709 INFO  Server.Server - Stopping the Server!
+2019.06.16 18:46:22.710 INFO  Server.Server - Stopping the Server!
+2019.06.16 18:46:22.711 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 18:46:22.712 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39286,localport=5400]
+2019.06.16 18:46:22.713 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39286,localport=5400]
+2019.06.16 18:46:22.714 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39286,localport=5400]
+2019.06.16 18:46:22.761 ERROR Server.Server - IOException
 java.net.SocketException: Socket is closed
 	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
 	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
@@ -69,13 +826,12 @@ java.net.SocketException: Socket is closed
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
-2019.06.16 11:49:19.283 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
-2019.06.16 11:50:30.039 INFO  Server.Server - Stopping the Server!
-2019.06.16 11:50:30.040 INFO  Server.Server - Server started! (port: 5400)
-2019.06.16 11:50:30.041 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=52760,localport=5400]
-2019.06.16 11:50:30.041 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=52760,localport=5400]
-2019.06.16 11:50:30.042 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=52760,localport=5400]
-2019.06.16 11:50:30.092 ERROR Server.Server - IOException
+2019.06.16 18:46:23.715 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 18:46:23.981 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 18:46:23.982 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=60676,localport=5401]
+2019.06.16 18:46:23.983 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=60676,localport=5401]
+2019.06.16 18:46:23.984 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=60676,localport=5401]
+2019.06.16 18:46:24.032 ERROR Server.Server - IOException
 java.net.SocketException: Socket is closed
 	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
 	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
@@ -83,13 +839,17 @@ java.net.SocketException: Socket is closed
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
-2019.06.16 11:50:31.043 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
-2019.06.16 11:51:16.617 INFO  Server.Server - Stopping the Server!
-2019.06.16 11:51:16.619 INFO  Server.Server - Server started! (port: 5400)
-2019.06.16 11:51:16.620 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=52954,localport=5400]
-2019.06.16 11:51:16.621 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=52954,localport=5400]
-2019.06.16 11:51:16.622 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=52954,localport=5400]
-2019.06.16 11:51:16.672 ERROR Server.Server - IOException
+2019.06.16 18:46:24.985 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 18:46:26.572 INFO  Server.Server - Stopping the Server!
+2019.06.16 18:46:26.577 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 18:46:27.578 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 18:46:32.171 INFO  Server.Server - Stopping the Server!
+2019.06.16 18:46:32.172 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:04:17.904 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:04:17.909 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=43730,localport=5400]
+2019.06.16 19:04:17.909 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=43730,localport=5400]
+2019.06.16 19:04:17.911 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=43730,localport=5400]
+2019.06.16 19:04:17.978 ERROR Server.Server - IOException
 java.net.SocketException: Socket is closed
 	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
 	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
@@ -97,6 +857,1234 @@ java.net.SocketException: Socket is closed
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
-2019.06.16 11:51:17.623 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
-2019.06.16 11:51:22.413 INFO  Server.Server - Stopping the Server!
-2019.06.16 11:51:22.416 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:04:18.912 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:04:20.119 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:04:20.120 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=36896,localport=5401]
+2019.06.16 19:04:20.120 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=36896,localport=5401]
+2019.06.16 19:04:20.121 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=36896,localport=5401]
+2019.06.16 19:04:20.184 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:04:21.122 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:04:23.317 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:04:23.319 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:04:30.485 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:04:30.487 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:04:30.488 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=36940,localport=5401]
+2019.06.16 19:04:30.488 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=36940,localport=5401]
+2019.06.16 19:04:30.489 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=36940,localport=5401]
+2019.06.16 19:04:30.541 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:04:31.490 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:04:47.412 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:04:47.412 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:05:57.261 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:05:57.265 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=44152,localport=5400]
+2019.06.16 19:05:57.265 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=44152,localport=5400]
+2019.06.16 19:05:57.267 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=44152,localport=5400]
+2019.06.16 19:05:57.334 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:05:58.268 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:05:58.827 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:05:58.828 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=37310,localport=5401]
+2019.06.16 19:05:58.836 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=37310,localport=5401]
+2019.06.16 19:05:58.837 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=37310,localport=5401]
+2019.06.16 19:05:58.905 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:05:59.838 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:06:04.737 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:06:04.739 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:06:04.740 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=37336,localport=5401]
+2019.06.16 19:06:04.740 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=37336,localport=5401]
+2019.06.16 19:06:04.741 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=37336,localport=5401]
+2019.06.16 19:06:04.792 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:06:05.742 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:06:22.369 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:06:22.370 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:12:50.584 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:12:50.588 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=45838,localport=5400]
+2019.06.16 19:12:50.588 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=45838,localport=5400]
+2019.06.16 19:12:50.590 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=45838,localport=5400]
+2019.06.16 19:12:50.660 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:12:51.590 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:12:52.337 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:12:52.344 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39000,localport=5401]
+2019.06.16 19:12:52.345 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39000,localport=5401]
+2019.06.16 19:12:52.346 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39000,localport=5401]
+2019.06.16 19:12:52.413 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:12:53.347 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:12:54.887 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:12:54.889 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:12:54.890 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39010,localport=5401]
+2019.06.16 19:12:54.890 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39010,localport=5401]
+2019.06.16 19:12:54.891 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39010,localport=5401]
+2019.06.16 19:12:54.943 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:12:55.892 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:13:05.175 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:13:05.177 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:13:05.178 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39052,localport=5401]
+2019.06.16 19:13:05.179 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39052,localport=5401]
+2019.06.16 19:13:05.180 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39052,localport=5401]
+2019.06.16 19:13:05.225 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:13:06.181 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:13:09.911 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:13:09.913 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:13:09.914 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39074,localport=5401]
+2019.06.16 19:13:09.915 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39074,localport=5401]
+2019.06.16 19:13:09.916 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39074,localport=5401]
+2019.06.16 19:13:09.962 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:13:10.916 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:13:14.692 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:13:14.693 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:14:33.827 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:14:33.832 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=46266,localport=5400]
+2019.06.16 19:14:33.832 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=46266,localport=5400]
+2019.06.16 19:14:33.834 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=46266,localport=5400]
+2019.06.16 19:14:33.901 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:14:34.835 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:14:39.989 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:14:39.990 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39444,localport=5401]
+2019.06.16 19:14:39.991 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39444,localport=5401]
+2019.06.16 19:14:39.992 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39444,localport=5401]
+2019.06.16 19:14:40.051 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:14:40.993 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:14:45.950 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:14:45.951 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:15:24.126 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:15:24.131 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=46486,localport=5400]
+2019.06.16 19:15:24.131 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=46486,localport=5400]
+2019.06.16 19:15:24.133 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=46486,localport=5400]
+2019.06.16 19:15:24.202 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:15:25.133 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:15:29.369 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:15:29.370 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39664,localport=5401]
+2019.06.16 19:15:29.371 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39664,localport=5401]
+2019.06.16 19:15:29.372 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39664,localport=5401]
+2019.06.16 19:15:29.440 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:15:30.373 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:15:32.787 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:15:32.789 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:15:37.179 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:15:37.181 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:15:37.182 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39696,localport=5401]
+2019.06.16 19:15:37.183 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39696,localport=5401]
+2019.06.16 19:15:37.184 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39696,localport=5401]
+2019.06.16 19:15:37.244 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:15:38.185 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:15:44.451 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:15:44.453 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:15:44.454 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39730,localport=5401]
+2019.06.16 19:15:44.455 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39730,localport=5401]
+2019.06.16 19:15:44.456 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39730,localport=5401]
+2019.06.16 19:15:44.506 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:15:45.457 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:15:48.497 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:15:48.500 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:15:48.501 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:15:48.502 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=46596,localport=5400]
+2019.06.16 19:15:48.502 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=46596,localport=5400]
+2019.06.16 19:15:48.503 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=46596,localport=5400]
+2019.06.16 19:15:48.549 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:15:49.504 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:15:49.812 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:15:49.813 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39754,localport=5401]
+2019.06.16 19:15:49.813 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39754,localport=5401]
+2019.06.16 19:15:49.814 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39754,localport=5401]
+2019.06.16 19:15:49.863 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:15:50.815 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:15:53.731 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:15:53.734 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:15:54.736 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:15:56.835 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:15:56.837 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:15:56.838 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39786,localport=5401]
+2019.06.16 19:15:56.838 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39786,localport=5401]
+2019.06.16 19:15:56.839 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39786,localport=5401]
+2019.06.16 19:15:56.889 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:15:57.840 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:15:59.467 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:15:59.469 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:15:59.469 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=39800,localport=5401]
+2019.06.16 19:15:59.470 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=39800,localport=5401]
+2019.06.16 19:15:59.472 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=39800,localport=5401]
+2019.06.16 19:15:59.520 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:16:00.473 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:16:20.082 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:16:20.083 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:21:15.947 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:21:15.953 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47960,localport=5400]
+2019.06.16 19:21:15.954 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47960,localport=5400]
+2019.06.16 19:21:15.955 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47960,localport=5400]
+2019.06.16 19:21:16.024 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:21:16.957 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:21:22.651 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:21:22.652 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=41142,localport=5401]
+2019.06.16 19:21:22.652 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=41142,localport=5401]
+2019.06.16 19:21:22.653 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=41142,localport=5401]
+2019.06.16 19:21:22.721 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:21:23.654 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:21:28.695 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:21:28.696 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:23:58.511 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:23:58.516 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48616,localport=5400]
+2019.06.16 19:23:58.517 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48616,localport=5400]
+2019.06.16 19:23:58.519 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48616,localport=5400]
+2019.06.16 19:23:58.585 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:23:59.520 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:24:02.011 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:24:02.013 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=41800,localport=5401]
+2019.06.16 19:24:02.013 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=41800,localport=5401]
+2019.06.16 19:24:02.014 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=41800,localport=5401]
+2019.06.16 19:24:02.085 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:24:03.015 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:24:07.914 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:24:07.915 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:26:09.335 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:26:09.340 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49166,localport=5400]
+2019.06.16 19:26:09.341 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49166,localport=5400]
+2019.06.16 19:26:09.343 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49166,localport=5400]
+2019.06.16 19:26:09.411 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:26:10.344 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:26:13.720 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:26:13.721 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=42340,localport=5401]
+2019.06.16 19:26:13.722 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=42340,localport=5401]
+2019.06.16 19:26:13.723 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=42340,localport=5401]
+2019.06.16 19:26:13.793 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:26:14.723 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:26:19.894 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:26:19.896 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:26:19.897 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:26:37.838 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:26:37.843 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49292,localport=5400]
+2019.06.16 19:26:37.844 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49292,localport=5400]
+2019.06.16 19:26:37.846 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49292,localport=5400]
+2019.06.16 19:26:37.914 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:26:38.847 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:26:41.707 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:26:41.709 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:26:41.709 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49306,localport=5400]
+2019.06.16 19:26:41.710 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49306,localport=5400]
+2019.06.16 19:26:41.712 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49306,localport=5400]
+2019.06.16 19:26:41.757 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:26:42.711 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:26:49.094 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:26:49.097 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:27:38.801 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:27:38.805 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49554,localport=5400]
+2019.06.16 19:27:38.805 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49554,localport=5400]
+2019.06.16 19:27:38.807 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49554,localport=5400]
+2019.06.16 19:27:38.881 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:27:39.808 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:27:45.239 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:27:45.241 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:27:45.242 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49580,localport=5400]
+2019.06.16 19:27:45.242 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49580,localport=5400]
+2019.06.16 19:27:45.243 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49580,localport=5400]
+2019.06.16 19:27:45.289 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:27:46.244 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:27:53.410 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:27:53.413 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:27:53.414 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49614,localport=5400]
+2019.06.16 19:27:53.414 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49614,localport=5400]
+2019.06.16 19:27:53.415 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49614,localport=5400]
+2019.06.16 19:27:53.461 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:27:54.416 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:28:30.411 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:28:30.412 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:28:30.414 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49770,localport=5400]
+2019.06.16 19:28:30.414 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49770,localport=5400]
+2019.06.16 19:28:30.415 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49770,localport=5400]
+2019.06.16 19:28:30.460 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:28:31.416 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:28:51.987 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:28:51.989 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:28:51.990 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49860,localport=5400]
+2019.06.16 19:28:51.991 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49860,localport=5400]
+2019.06.16 19:28:51.992 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49860,localport=5400]
+2019.06.16 19:28:52.037 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:28:52.993 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:29:04.195 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:29:04.196 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:29:04.197 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49910,localport=5400]
+2019.06.16 19:29:04.198 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49910,localport=5400]
+2019.06.16 19:29:04.199 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49910,localport=5400]
+2019.06.16 19:29:04.244 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:29:05.200 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:29:20.927 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:29:20.928 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:29:20.930 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49982,localport=5400]
+2019.06.16 19:29:20.930 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49982,localport=5400]
+2019.06.16 19:29:20.931 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49982,localport=5400]
+2019.06.16 19:29:20.981 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:29:21.932 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:30:00.003 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:30:00.005 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:30:00.005 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=50142,localport=5400]
+2019.06.16 19:30:00.006 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=50142,localport=5400]
+2019.06.16 19:30:00.007 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=50142,localport=5400]
+2019.06.16 19:30:00.051 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:30:01.007 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:30:20.531 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:30:20.533 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:30:20.534 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=50224,localport=5400]
+2019.06.16 19:30:20.534 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=50224,localport=5400]
+2019.06.16 19:30:20.537 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=50224,localport=5400]
+2019.06.16 19:30:20.584 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:30:21.537 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:30:50.713 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:30:50.714 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:45:00.953 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:45:00.958 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=53784,localport=5400]
+2019.06.16 19:45:00.959 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=53784,localport=5400]
+2019.06.16 19:45:00.960 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=53784,localport=5400]
+2019.06.16 19:45:01.026 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:45:01.961 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:45:03.023 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:45:03.024 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=46946,localport=5401]
+2019.06.16 19:45:03.025 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=46946,localport=5401]
+2019.06.16 19:45:03.026 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=46946,localport=5401]
+2019.06.16 19:45:03.099 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:45:04.027 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:45:05.934 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:45:05.936 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:45:34.392 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:45:34.396 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=53942,localport=5400]
+2019.06.16 19:45:34.397 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=53942,localport=5400]
+2019.06.16 19:45:34.399 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=53942,localport=5400]
+2019.06.16 19:45:34.470 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:45:35.399 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:45:37.935 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:45:37.937 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47108,localport=5401]
+2019.06.16 19:45:37.937 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47108,localport=5401]
+2019.06.16 19:45:37.938 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47108,localport=5401]
+2019.06.16 19:45:38.008 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:45:38.939 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:45:40.966 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:45:40.968 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:45:42.121 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:45:42.122 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:45:42.124 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47128,localport=5401]
+2019.06.16 19:45:42.124 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47128,localport=5401]
+2019.06.16 19:45:42.125 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47128,localport=5401]
+2019.06.16 19:45:42.178 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:45:42.185 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:45:42.186 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47130,localport=5401]
+2019.06.16 19:45:42.186 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:45:42.188 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47130,localport=5401]
+2019.06.16 19:45:42.188 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47130,localport=5401]
+2019.06.16 19:45:42.241 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:45:42.246 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:45:42.247 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:45:42.248 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47132,localport=5401]
+2019.06.16 19:45:42.248 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47132,localport=5401]
+2019.06.16 19:45:42.249 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47132,localport=5401]
+2019.06.16 19:45:42.305 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:45:42.310 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:45:42.315 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47134,localport=5401]
+2019.06.16 19:45:42.315 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:45:42.316 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47134,localport=5401]
+2019.06.16 19:45:42.319 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47134,localport=5401]
+2019.06.16 19:45:42.369 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:45:52.054 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:45:52.056 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:45:52.057 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47176,localport=5401]
+2019.06.16 19:45:52.058 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47176,localport=5401]
+2019.06.16 19:45:52.059 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47176,localport=5401]
+2019.06.16 19:45:52.105 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:45:53.059 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:05.601 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:47:05.606 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=54328,localport=5400]
+2019.06.16 19:47:05.607 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=54328,localport=5400]
+2019.06.16 19:47:05.608 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=54328,localport=5400]
+2019.06.16 19:47:05.674 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:47:06.610 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:07.252 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:47:07.254 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47486,localport=5401]
+2019.06.16 19:47:07.262 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47486,localport=5401]
+2019.06.16 19:47:07.263 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47486,localport=5401]
+2019.06.16 19:47:07.335 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:47:08.264 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:09.799 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:47:09.800 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:47:09.801 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47500,localport=5401]
+2019.06.16 19:47:09.802 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47500,localport=5401]
+2019.06.16 19:47:09.803 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47500,localport=5401]
+2019.06.16 19:47:09.849 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:47:10.804 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:12.950 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:47:12.952 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:47:12.953 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47518,localport=5401]
+2019.06.16 19:47:12.954 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47518,localport=5401]
+2019.06.16 19:47:12.955 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47518,localport=5401]
+2019.06.16 19:47:13.000 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:47:13.956 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:15.967 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:47:15.968 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:47:15.969 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47536,localport=5401]
+2019.06.16 19:47:15.970 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47536,localport=5401]
+2019.06.16 19:47:15.972 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47536,localport=5401]
+2019.06.16 19:47:16.020 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:47:16.972 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:18.674 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:47:18.676 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:47:18.677 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47550,localport=5401]
+2019.06.16 19:47:18.677 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47550,localport=5401]
+2019.06.16 19:47:18.678 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47550,localport=5401]
+2019.06.16 19:47:18.728 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:47:19.679 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:22.191 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:47:22.192 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:47:22.193 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47564,localport=5401]
+2019.06.16 19:47:22.193 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47564,localport=5401]
+2019.06.16 19:47:22.194 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47564,localport=5401]
+2019.06.16 19:47:22.240 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:47:23.195 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:24.966 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:47:24.968 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:47:39.999 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:47:40.001 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:47:41.003 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:47.635 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:47:47.636 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:47:47.637 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47674,localport=5401]
+2019.06.16 19:47:47.637 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47674,localport=5401]
+2019.06.16 19:47:47.638 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47674,localport=5401]
+2019.06.16 19:47:47.689 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:47:48.639 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:47:50.807 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:47:50.809 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:48:01.283 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:48:01.284 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:48:01.287 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=47732,localport=5401]
+2019.06.16 19:48:01.287 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=47732,localport=5401]
+2019.06.16 19:48:01.288 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=47732,localport=5401]
+2019.06.16 19:48:01.338 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:48:02.289 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:05.694 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:51:05.699 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=55340,localport=5400]
+2019.06.16 19:51:05.700 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=55340,localport=5400]
+2019.06.16 19:51:05.702 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=55340,localport=5400]
+2019.06.16 19:51:05.771 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:06.703 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:11.381 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:51:11.383 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48514,localport=5401]
+2019.06.16 19:51:11.384 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48514,localport=5401]
+2019.06.16 19:51:11.385 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48514,localport=5401]
+2019.06.16 19:51:11.456 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:12.385 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:14.628 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:14.630 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:51:14.631 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48532,localport=5401]
+2019.06.16 19:51:14.631 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48532,localport=5401]
+2019.06.16 19:51:14.633 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48532,localport=5401]
+2019.06.16 19:51:14.682 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:15.633 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:19.444 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:19.446 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:51:19.447 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48550,localport=5401]
+2019.06.16 19:51:19.448 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48550,localport=5401]
+2019.06.16 19:51:19.449 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48550,localport=5401]
+2019.06.16 19:51:19.504 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:20.450 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:22.560 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:22.561 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:51:22.562 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48570,localport=5401]
+2019.06.16 19:51:22.563 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48570,localport=5401]
+2019.06.16 19:51:22.564 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48570,localport=5401]
+2019.06.16 19:51:22.613 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:23.565 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:27.296 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:27.298 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:51:27.299 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48588,localport=5401]
+2019.06.16 19:51:27.299 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48588,localport=5401]
+2019.06.16 19:51:27.300 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48588,localport=5401]
+2019.06.16 19:51:27.352 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:28.301 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:32.804 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:32.805 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:51:32.806 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48614,localport=5401]
+2019.06.16 19:51:32.807 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48614,localport=5401]
+2019.06.16 19:51:32.808 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48614,localport=5401]
+2019.06.16 19:51:32.856 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:33.809 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:37.964 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:37.965 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:51:37.966 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48636,localport=5401]
+2019.06.16 19:51:37.967 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48636,localport=5401]
+2019.06.16 19:51:37.968 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48636,localport=5401]
+2019.06.16 19:51:38.013 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:38.969 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:43.588 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:43.589 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:43.590 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:51:43.591 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=55510,localport=5400]
+2019.06.16 19:51:43.591 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=55510,localport=5400]
+2019.06.16 19:51:43.592 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=55510,localport=5400]
+2019.06.16 19:51:43.640 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:44.593 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:45.405 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:51:45.406 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48668,localport=5401]
+2019.06.16 19:51:45.406 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48668,localport=5401]
+2019.06.16 19:51:45.407 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48668,localport=5401]
+2019.06.16 19:51:45.457 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:46.408 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:51:48.616 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:48.618 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:51:57.404 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:51:57.406 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:51:57.406 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48720,localport=5401]
+2019.06.16 19:51:57.407 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48720,localport=5401]
+2019.06.16 19:51:57.408 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48720,localport=5401]
+2019.06.16 19:51:57.454 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:51:58.409 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:52:00.388 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:52:00.389 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:52:00.390 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48736,localport=5401]
+2019.06.16 19:52:00.391 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48736,localport=5401]
+2019.06.16 19:52:00.392 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48736,localport=5401]
+2019.06.16 19:52:00.444 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:52:01.392 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:52:02.956 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:52:02.958 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:52:03.960 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:52:07.516 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:52:07.518 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:52:07.518 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48768,localport=5401]
+2019.06.16 19:52:07.519 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48768,localport=5401]
+2019.06.16 19:52:07.520 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48768,localport=5401]
+2019.06.16 19:52:07.566 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:52:08.521 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:52:16.820 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:52:16.822 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:52:16.823 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=48810,localport=5401]
+2019.06.16 19:52:16.823 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=48810,localport=5401]
+2019.06.16 19:52:16.824 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=48810,localport=5401]
+2019.06.16 19:52:16.870 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:52:17.825 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:54:27.901 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:54:27.907 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=56190,localport=5400]
+2019.06.16 19:54:27.907 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=56190,localport=5400]
+2019.06.16 19:54:27.909 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=56190,localport=5400]
+2019.06.16 19:54:27.981 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:54:28.910 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:54:31.091 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:54:31.092 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49356,localport=5401]
+2019.06.16 19:54:31.093 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49356,localport=5401]
+2019.06.16 19:54:31.094 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49356,localport=5401]
+2019.06.16 19:54:31.165 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:54:32.095 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:54:34.105 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:54:34.107 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:54:37.865 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:54:37.867 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:54:37.868 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49388,localport=5401]
+2019.06.16 19:54:37.869 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49388,localport=5401]
+2019.06.16 19:54:37.870 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49388,localport=5401]
+2019.06.16 19:54:37.939 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:54:38.870 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:54:41.185 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:54:41.187 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:54:42.099 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:54:42.101 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:54:42.101 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49408,localport=5401]
+2019.06.16 19:54:42.102 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49408,localport=5401]
+2019.06.16 19:54:42.103 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49408,localport=5401]
+2019.06.16 19:54:42.153 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:54:43.104 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:54:45.505 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:54:45.507 ERROR Server.Server - SocketTimeout - No clients pending! Address already in use (Bind failed)
+2019.06.16 19:54:50.817 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:54:50.819 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:54:50.820 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49448,localport=5401]
+2019.06.16 19:54:50.820 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49448,localport=5401]
+2019.06.16 19:54:50.821 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49448,localport=5401]
+2019.06.16 19:54:50.871 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:54:51.822 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:54:55.897 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:54:55.899 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:54:55.900 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49470,localport=5401]
+2019.06.16 19:54:55.900 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49470,localport=5401]
+2019.06.16 19:54:55.902 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49470,localport=5401]
+2019.06.16 19:54:55.955 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:54:56.902 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:54:58.769 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:54:58.771 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:54:58.772 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49484,localport=5401]
+2019.06.16 19:54:58.772 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49484,localport=5401]
+2019.06.16 19:54:58.774 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49484,localport=5401]
+2019.06.16 19:54:58.824 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:54:59.774 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:55:03.426 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:55:03.427 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:55:03.428 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49502,localport=5401]
+2019.06.16 19:55:03.429 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49502,localport=5401]
+2019.06.16 19:55:03.430 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49502,localport=5401]
+2019.06.16 19:55:03.481 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:55:04.430 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:55:07.445 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:55:07.447 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:55:07.447 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49520,localport=5401]
+2019.06.16 19:55:07.448 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49520,localport=5401]
+2019.06.16 19:55:07.449 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49520,localport=5401]
+2019.06.16 19:55:07.502 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:55:08.450 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:55:26.193 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:55:26.194 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:55:26.196 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:55:27.198 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:55:27.550 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:55:27.551 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49604,localport=5401]
+2019.06.16 19:55:27.551 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49604,localport=5401]
+2019.06.16 19:55:27.552 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49604,localport=5401]
+2019.06.16 19:55:27.601 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:55:28.553 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:55:31.393 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:55:31.395 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:55:31.395 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49622,localport=5401]
+2019.06.16 19:55:31.396 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49622,localport=5401]
+2019.06.16 19:55:31.397 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49622,localport=5401]
+2019.06.16 19:55:31.447 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:55:32.398 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:55:47.377 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:55:47.379 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:55:47.380 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49688,localport=5401]
+2019.06.16 19:55:47.380 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49688,localport=5401]
+2019.06.16 19:55:47.381 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49688,localport=5401]
+2019.06.16 19:55:47.430 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:55:48.382 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:55:51.265 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:55:51.266 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:55:51.267 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:55:51.268 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=56554,localport=5400]
+2019.06.16 19:55:51.268 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=56554,localport=5400]
+2019.06.16 19:55:51.269 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=56554,localport=5400]
+2019.06.16 19:55:51.319 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:55:52.270 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:56:02.210 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:56:02.211 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49752,localport=5401]
+2019.06.16 19:56:02.212 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49752,localport=5401]
+2019.06.16 19:56:02.213 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49752,localport=5401]
+2019.06.16 19:56:02.266 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:56:03.214 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:56:07.681 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:56:07.683 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:56:07.683 INFO  Server.Server - Server started! (port: 5400)
+2019.06.16 19:56:07.684 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=56626,localport=5400]
+2019.06.16 19:56:07.685 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=56626,localport=5400]
+2019.06.16 19:56:07.686 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=56626,localport=5400]
+2019.06.16 19:56:07.735 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:56:08.687 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:56:11.786 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:56:11.786 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49796,localport=5401]
+2019.06.16 19:56:11.787 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49796,localport=5401]
+2019.06.16 19:56:11.787 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49796,localport=5401]
+2019.06.16 19:56:11.840 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:56:12.789 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:56:18.361 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:56:18.363 INFO  Server.Server - Server started! (port: 5401)
+2019.06.16 19:56:18.364 INFO  Server.Server - Client excepted: Socket[addr=/127.0.0.1,port=49822,localport=5401]
+2019.06.16 19:56:18.364 INFO  Server.Server - Server: Client accepted: Socket[addr=/127.0.0.1,port=49822,localport=5401]
+2019.06.16 19:56:18.365 INFO  Server.Server - Handling client with socket: Socket[addr=/127.0.0.1,port=49822,localport=5401]
+2019.06.16 19:56:18.417 ERROR Server.Server - IOException
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943) ~[?:1.8.0_201]
+	at Server.Server.handleClient(Server.java:73) ~[ATPProjectJAR.jar:2.9.1]
+	at Server.Server.lambda$runServer$0(Server.java:49) ~[ATPProjectJAR.jar:2.9.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+2019.06.16 19:56:19.366 ERROR Server.Server - SocketTimeout - No clients pending! Accept timed out
+2019.06.16 19:56:23.680 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:56:23.681 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:57:10.154 INFO  Server.Server - Stopping the Server!
+2019.06.16 19:57:10.158 INFO  Server.Server - Stopping the Server!
