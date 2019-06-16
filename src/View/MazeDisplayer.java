@@ -87,17 +87,18 @@ public class MazeDisplayer extends Canvas {
         setImages();
     }
 
-    void redraw() {
+     void redraw() {
         if (mazeCharArr != null) {
-            this.setHeight(this.getScene().getHeight()-80 /*ToolBar*/-105 /*LowerBar*/);
-            this.setWidth(this.getScene().getWidth() * 19 / 20);
+            this.setHeight(this.getScene().getHeight() - 80 /*ToolBar*/ - 105 /*LowerBar*/ );
+            this.setWidth( this.getScene().getWidth() * 19/20);
             double canvasHeight = getHeight();
             double canvasWidth = getWidth();
-            double maxSize = Math.max(colMazeSize, rowMazeSize);
+            double maxSize = Math.max(colMazeSize,rowMazeSize);
             double cellHeight = canvasHeight / maxSize;
             double cellWidth = canvasWidth / maxSize;
-            double startRow = (canvasHeight / 2-(cellHeight * rowMazeSize / 2)) / cellHeight;
-            double startCol = (canvasWidth / 2-(cellWidth * colMazeSize / 2)) / cellWidth;
+            double startRow = (canvasHeight/2 - (cellHeight * rowMazeSize / 2)) / cellHeight;
+            double startCol = (canvasWidth/2 - (cellWidth * colMazeSize / 2)) / cellWidth;
+
             try {
                 GraphicsContext graphicsContext2D = getGraphicsContext2D();
                 graphicsContext2D.clearRect(0, 0, getWidth(), getHeight()); //Clears the canvas
@@ -106,10 +107,11 @@ public class MazeDisplayer extends Canvas {
                 drawMazeIteration();
 
                 //Draw Character
-                graphicsContext2D.drawImage(mainCharacterImage, (startCol+getMainCharacterColumn()) * cellWidth, (startRow+getMainCharacterRow()) * cellHeight, cellWidth, cellHeight);
+                graphicsContext2D.drawImage(mainCharacterImage, (startCol + getMainCharacterColumn()) * cellWidth, (startRow + getMainCharacterRow()) * cellHeight, cellWidth, cellHeight);
+
                 if (mainCharacter.getCharacterRow() != goalPositionRow || mainCharacter.getCharacterCol() != goalPositionColumn)
-                    graphicsContext2D.drawImage(goalImage, (startCol+goalPositionColumn) * cellWidth, (startRow+goalPositionRow) * cellHeight, cellWidth, cellHeight);
-            } catch(Exception e) {
+                    graphicsContext2D.drawImage(goalImage, (startCol + goalPositionColumn) * cellWidth, (startRow + goalPositionRow) * cellHeight, cellWidth, cellHeight);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -193,7 +195,6 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
-
     private void drawMazeIteration(){
         if (mazeCharArr != null) {
             try {
@@ -235,7 +236,7 @@ public class MazeDisplayer extends Canvas {
         this.hint = true;
     }
 
-    void redrawCharacter() {
+    void redrawCharacter(){
         try {
             setCharactersImage();
             double canvasHeight = getHeight();
@@ -243,20 +244,20 @@ public class MazeDisplayer extends Canvas {
             double maxSize = Math.max(colMazeSize, rowMazeSize);
             double cellHeight = canvasHeight / maxSize;
             double cellWidth = canvasWidth / maxSize;
-            double startRow = (canvasHeight / 2-(cellHeight * rowMazeSize / 2)) / cellHeight;
-            double startCol = (canvasWidth / 2-(cellWidth * colMazeSize / 2)) / cellWidth;
+            double startRow = (canvasHeight / 2 - (cellHeight * rowMazeSize / 2)) / cellHeight;
+            double startCol = (canvasWidth / 2 - (cellWidth * colMazeSize / 2)) / cellWidth;
             hint = false;
             GraphicsContext graphicsContext2D = getGraphicsContext2D();
-            if (mazeCharArr[oldMainCharacterRow][oldMainCharacterCol] != '1')
-                graphicsContext2D.drawImage(backGroundImage, (startCol+oldMainCharacterCol) * cellWidth, (startRow+oldMainCharacterRow) * cellHeight, cellWidth, cellHeight);
-            graphicsContext2D.drawImage(backGroundImage, (startCol+getMainCharacterColumn()) * cellWidth, (startRow+getMainCharacterRow()) * cellHeight, cellWidth, cellHeight);
-            graphicsContext2D.drawImage(mainCharacterImage, (startCol+getMainCharacterColumn()) * cellWidth, (startRow+getMainCharacterRow()) * cellHeight, cellWidth, cellHeight);
+            if(mazeCharArr[oldMainCharacterRow][oldMainCharacterCol] != '1')
+                graphicsContext2D.drawImage(backGroundImage, (startCol + oldMainCharacterCol) * cellWidth, (startRow + oldMainCharacterRow) * cellHeight, cellWidth, cellHeight);
+            graphicsContext2D.drawImage(backGroundImage, (startCol + getMainCharacterColumn()) * cellWidth, (startRow + getMainCharacterRow()) * cellHeight, cellWidth, cellHeight);
+            graphicsContext2D.drawImage(mainCharacterImage, (startCol + getMainCharacterColumn()) * cellWidth, (startRow + getMainCharacterRow()) * cellHeight, cellWidth, cellHeight);
 
             if (mainCharacter.getCharacterRow() != goalPositionRow || mainCharacter.getCharacterCol() != goalPositionColumn) {
-                graphicsContext2D.drawImage(backGroundImage, (startCol+goalPositionColumn) * cellWidth, (startRow+goalPositionRow) * cellHeight, cellWidth, cellHeight);
-                graphicsContext2D.drawImage(goalImage, (startCol+goalPositionColumn) * cellWidth, (startRow+goalPositionRow) * cellHeight, cellWidth, cellHeight);
+                graphicsContext2D.drawImage(backGroundImage, (startCol + goalPositionColumn) * cellWidth, (startRow + goalPositionRow) * cellHeight, cellWidth, cellHeight);
+                graphicsContext2D.drawImage(goalImage, (startCol + goalPositionColumn) * cellWidth, (startRow + goalPositionRow) * cellHeight, cellWidth, cellHeight);
             }
-        } catch(Exception e) {
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }

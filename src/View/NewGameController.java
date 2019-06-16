@@ -57,12 +57,12 @@ public class NewGameController implements IView, Initializable {
         try {
             int rows = Integer.valueOf(newGame_rowsInput.getText());
             int cols = Integer.valueOf(newGame_colsInput.getText());
-            if (rows < 5 || cols < 5)
+            if (cols < 5 || rows != cols)
                 throw new Exception();
+               int twoDem = Integer.max(rows,cols);
             myViewModel.setMainCharacterName(mainCharacter);
             disableButtons();
-            myViewModel.generateMaze(rows, cols);
-
+            myViewModel.generateMaze(twoDem, twoDem);
             myViewModel.startSoundTrack(mainCharacter);
 
         } catch(Exception e) {
@@ -70,7 +70,7 @@ public class NewGameController implements IView, Initializable {
             alert.setGraphic(null);
             alert.setTitle("Error Alert");
             alert.setHeaderText("ERROR!");
-            alert.setContentText("Please enter a numbers above 5.");
+            alert.setContentText("Please enter a valid numbers \n * only dimensions above 5 \n * only square dimensions");
             alert.showAndWait();
             e.printStackTrace();
         }

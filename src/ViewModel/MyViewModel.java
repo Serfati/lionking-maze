@@ -61,20 +61,13 @@ public class MyViewModel extends Observable implements Observer {
     public MyViewModel(IModel model) {
         this.model = model;
     }
-    public MazeCharacter getLoadedCharacter() {
-        mainCharacter = model.getLoadedCharacter();
-        return mainCharacter;
-    }
-
+    public MazeCharacter getLoadedCharacter() { mainCharacter = model.getLoadedCharacter();return mainCharacter; }
     public Solution getSou() {
         return model.getMazeSolution();
     }
-
-
     public void moveCharacter(KeyCode movement) {
         model.moveCharacter(movement);
     }
-
     public void generateMaze(int row, int col) {
         model.generateMaze(row, col);
     }
@@ -99,9 +92,6 @@ public class MyViewModel extends Observable implements Observer {
     public boolean isAtTheEnd() {
         return model.isAtTheEnd();
     }
-    public int[][] getSolution() {
-        return model.getSolution();
-    }
     public void generateSolution() {
         model.generateSolution();
     }
@@ -114,9 +104,5 @@ public class MyViewModel extends Observable implements Observer {
     public void loadFile(File file) {
         model.loadMaze(file);
     }
-    public void closeModel() {
-
-        model.closeModel();
-    }
-
+    public void closeModel() {model.closeModel(); }
 }

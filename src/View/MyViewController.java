@@ -46,7 +46,6 @@ public class MyViewController implements IView, Observer, Initializable {
     private NewGameController newGameController;
     public Label lbl_characterColumn;
     public Label lbl_statusBar;
-
     public Label label_mainCharacterRow;
     public Label label_mainCharacterCol;
     public MenuItem save_MenuItem;
@@ -294,11 +293,10 @@ public class MyViewController implements IView, Observer, Initializable {
         ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
         alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
         alert.showAndWait().ifPresent(type -> {
-            if (type == okButton) { //Current
+            if (type == okButton) //Current
                 choose[0] = 1;
-            } else if (type == noButton) { //Original
+             else if (type == noButton)  //Original
                 choose[0] = 2;
-            }
         });
         if (choose[0] == 0) {
             lbl_statusBar.setText("Save was canceled");
@@ -323,7 +321,6 @@ public class MyViewController implements IView, Observer, Initializable {
                 lbl_statusBar.setText("Saved original maze");
             }
         }
-
         event.consume();
     }
 
@@ -346,7 +343,6 @@ public class MyViewController implements IView, Observer, Initializable {
     }
 
     public void newMaze() {
-
         try {
             if (stageNewGameController == null) {
                 stageNewGameController = new Stage();

@@ -1,6 +1,6 @@
 package Model;
 
-import Client.Client;
+import Client.*;
 import IO.MyDecompressorInputStream;
 import Server.Configurations;
 import Server.Server;
@@ -35,10 +35,13 @@ public class MyModel extends Observable implements IModel {
         isStartNewGame = false;
         serverSolveMaze = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
         serverMazeGenerator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
+        serverMazeGenerator.start();
+        serverSolveMaze.start();
     }
 
     @Override
     public void generateMaze(int row, int col) {
+        int twoDem = Integer.max(row,col);
         if (!isStartNewGame)
             isStartNewGame = true;
         else {
@@ -58,8 +61,8 @@ public class MyModel extends Observable implements IModel {
                     ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                     toServer.flush();
                     int[] mazeDimensions = new int[2];
-                    mazeDimensions[0] = row;
-                    mazeDimensions[1] = col;
+                    mazeDimensions[0] = twoDem;
+                    mazeDimensions[1] = twoDem;
                     toServer.writeObject(mazeDimensions); //send maze dimensions to server
                     toServer.flush();
                     byte[] compressedMaze = (byte[]) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
