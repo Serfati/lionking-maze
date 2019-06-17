@@ -1,5 +1,5 @@
 # THE MAZE - GUI on Progress 
-We implemented in Java (8) a maze game
+We implemented in Java (8) a maze game, while the GUI was written with XML in JavaFX. This task encompassed many advanced programming principles such as proper class and interface design, server/client, proper use of thread pools, binding and SOLID coding guidelines. It also involved several design patterns such as decorator, observer/observable and singleton to name a few.
 
 # How to run?
 
@@ -9,7 +9,13 @@ We implemented in Java (8) a maze game
 
 
 # GUI
+![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI1.png)
 
+![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI4.png)
+
+![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI2.png)
+
+![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI3.png)
 
 
 Licence:
