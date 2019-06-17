@@ -17,6 +17,7 @@ We implemented in Java (8) a maze game, while the GUI was written with XML in Ja
 ![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI4.png)
 
 * Different Characters
+
 ![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI5.png)
 
 * Controls
