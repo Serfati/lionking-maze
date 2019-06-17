@@ -1,8 +1,10 @@
 # The Lion King Maze 
 ==========================================================
 
-[![Build Status](https://travis-ci.org/lemire/JavaFastPFOR.png)]
-[![Coverage Status](https://coveralls.io/repos/github/lemire/JavaFastPFOR/badge.svg?branch=master)](https://coveralls.io/github/lemire/JavaFastPFOR?branch=master)
+![Build Status](https://travis-ci.org/lemire/JavaFastPFOR.png)
+[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/nevoit/AutomatedMessages/blob/master/LICENSE)
+![GitHub](https://img.shields.io/github/license/nevoit/Automated-Messages.svg) 
+![GitHub All Releases](https://img.shields.io/github/downloads/nevoit/Automated-Messages/total.svg)
 
 We implemented in Java (8) a maze game, while the GUI was written with XML in JavaFX. This task encompassed many advanced programming principles such as proper class and interface design, server/client, proper use of thread pools, binding and SOLID coding guidelines. It also involved several design patterns such as decorator, observer/observable and singleton to name a few. We also practice use with Maven repositories manager include log4j2 LogManager
 
