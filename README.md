@@ -1,4 +1,4 @@
-# THE MAZE - GUI on Progress 
+# The Lion King Maze 
 We implemented in Java (8) a maze game, while the GUI was written with XML in JavaFX. This task encompassed many advanced programming principles such as proper class and interface design, server/client, proper use of thread pools, binding and SOLID coding guidelines. It also involved several design patterns such as decorator, observer/observable and singleton to name a few.
 
 # How to run?
@@ -9,12 +9,16 @@ We implemented in Java (8) a maze game, while the GUI was written with XML in Ja
 
 
 # GUI
+Gameplay
 ![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI1.png)
 
+Can ask for part/full solution
 ![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI4.png)
 
+Choose diffrent character : Simba Pumba or Genie
 ![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI2.png)
 
+Controls
 ![alt text](https://github.com/Serfati/ATP2019-Project/blob/master/Resources/Images/GUI3.png)
 
 
