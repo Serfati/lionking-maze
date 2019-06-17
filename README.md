@@ -1,5 +1,10 @@
 # The Lion King Maze 
-We implemented in Java (8) a maze game, while the GUI was written with XML in JavaFX. This task encompassed many advanced programming principles such as proper class and interface design, server/client, proper use of thread pools, binding and SOLID coding guidelines. It also involved several design patterns such as decorator, observer/observable and singleton to name a few.
+==========================================================
+
+[![Build Status](https://travis-ci.org/lemire/JavaFastPFOR.png)](https://travis-ci.org/lemire/JavaFastPFOR) [![][maven img]][maven] [![][license img]][license] [![docs-badge][]][docs]
+[![Coverage Status](https://coveralls.io/repos/github/lemire/JavaFastPFOR/badge.svg?branch=master)](https://coveralls.io/github/lemire/JavaFastPFOR?branch=master)
+
+We implemented in Java (8) a maze game, while the GUI was written with XML in JavaFX. This task encompassed many advanced programming principles such as proper class and interface design, server/client, proper use of thread pools, binding and SOLID coding guidelines. It also involved several design patterns such as decorator, observer/observable and singleton to name a few. We also practice use with Maven repositories manager include log4j2 LogManager
 
 # How to run?
 
