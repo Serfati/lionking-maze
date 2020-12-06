@@ -35,7 +35,7 @@ We implemented in Java (8) a maze game, while the GUI was written with XML in Ja
 Licence:
 =============
 
-Copyright 2019 Avihai Serfati and Moran Chery
+Copyright 2019 Avihai Serfati 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
